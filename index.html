@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>$TCULT — TON CULT</title>
+  <meta name="description" content="$TCULT: The TON CULT. Coin → Cult → Movement. Join the Inner Circle and help convert the masses to TON." />
+  <meta property="og:title" content="$TCULT — TON CULT" />
+  <meta property="og:description" content="The TON CULT. Coin → Cult → Movement. Join the Inner Circle." />
+  <meta property="og:type" content="website" />
+  <style>
+    :root{
+      --bg:#0b0b0c;
+      --bg2:#101113;
+      --text:#f4f1e8;
+      --muted:#bdb7a5;
+      --gold:#d9a524;
+      --gold-2:#b78310;
+      --gold-3:#6a4b0e;
+      --ton:#0098ea;
+      --danger:#e45858;
+      --ok:#64d29a;
+      --card:#121317;
+      --border:rgba(255,255,255,.08);
+      --shadow:0 10px 30px rgba(0,0,0,.45);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:radial-gradient(1200px 800px at 50% -10%, #1b1710 0%, var(--bg) 45%);color:var(--text);font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;line-height:1.55}
+    a{color:var(--ton);text-decoration:none}
+    img{max-width:100%;display:block}
+    .wrap{max-width:1120px;margin:0 auto;padding:28px}
+    .nav{position:sticky;top:0;background:linear-gradient(180deg,#0b0b0cc0,#0b0b0c00);backdrop-filter:saturate(120%) blur(6px); z-index:50}
+    .nav .inner{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;border-bottom:1px solid var(--border)}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{width:42px;height:42px;border-radius:50%;box-shadow:var(--shadow)}
+    .brand b{letter-spacing:.5px}
+    .links{display:flex;gap:18px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border:1px solid var(--border);border-radius:999px;background:linear-gradient(180deg,#1b1c20,#121318);color:var(--text);box-shadow:var(--shadow);transition:transform .06s ease, background .2s}
+    .btn:hover{transform:translateY(-1px)}
+    .btn.gold{background:linear-gradient(180deg,var(--gold),var(--gold-2));color:#18120a;border:0;font-weight:700}
+    .btn.ton{border-color:#007fc0;color:#e8f6ff}
+    .hero{padding:60px 28px 28px}
+    .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:32px}
+    @media (max-width:920px){.hero .wrap{grid-template-columns:1fr;}}
+    .card{background:linear-gradient(180deg,#14161a,#0f1014);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}
+    .badge{display:inline-block;padding:6px 12px;border-radius:999px;background:linear-gradient(180deg,#2a2112,#1a150c);border:1px solid #6a4b0e;color:var(--gold);font-weight:700;letter-spacing:.3px}
+    h1{font-size:clamp(28px,4.2vw,48px);margin:12px 0 10px}
+    h2{font-size:clamp(22px,3vw,30px);margin:0 0 14px}
+    p.lead{font-size:18px;color:var(--muted);max-width:60ch}
+    .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+    .pill{display:flex;align-items:center;gap:10px;padding:10px 14px;border:1px dashed var(--gold-3);border-radius:12px;background:#15120c;color:#f7e6c2}
+    code.addr{user-select:all}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    @media (max-width:900px){.grid{grid-template-columns:1fr}}
+    .section{padding:42px 0}
+    .tokenomics li{display:flex;justify-content:space-between;padding:10px 12px;border:1px solid var(--border);border-radius:12px;background:linear-gradient(180deg,#16171b,#121317)}
+    .progress{height:10px;border-radius:8px;background:#1a1a1a;overflow:hidden;border:1px solid var(--border)}
+    .bar{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-2));}
+    .road{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    @media (max-width:900px){.road{grid-template-columns:1fr}}
+    .road .step{position:relative;padding-left:16px}
+    .road .step::before{content:"";position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+    .faq details{background:#121318;border:1px solid var(--border);padding:14px 16px;border-radius:12px}
+    footer{border-top:1px solid var(--border);padding:24px 0;color:#a9a6a0}
+    .tiny{font-size:13px;color:#a99f8c}
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <div class="nav">
+    <div class="inner wrap">
+      <div class="brand">
+        <img src="logo-512.png" alt="$TCULT logo" />
+        <b>$TCULT • TON CULT</b>
+      </div>
+      <div class="links">
+        <a class="btn ton" href="https://tinyurl.com/BuyTCULT" target="_blank">🔥 Buy on Gas Pump</a>
+        <a class="btn" href="#roadmap">Roadmap</a>
+        <a class="btn" href="#tokenomics">Tokenomics</a>
+        <a class="btn" href="https://t.me/TCULT_GROUP" target="_blank">Telegram</a>
+        <a class="btn" href="https://x.com/i/communities/1964017380331311157" target="_blank">X Community</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="badge">Coin → Cult → Movement</span>
+        <h1>$TCULT — The TON CULT</h1>
+        <p class="lead">
+          We’re converting the masses to **TON**. Not a meme — a Movement. Built on lore, discipline, and an army that raids nonstop.
+          The few become a Cult. Cults become Movements.
+        </p>
+        <div class="ctaRow">
+          <a class="btn gold" target="_blank" href="https://tinyurl.com/BuyTCULT">🔥 Buy $TCULT</a>
+          <a class="btn" target="_blank" href="https://t.me/TCULT_GROUP">👥 Join Telegram</a>
+          <a class="btn" target="_blank" href="https://x.com/i/communities/1964017380331311157">🕯️ X Community</a>
+        </div>
+        <div class="pill" style="margin-top:16px;">
+          <span>CA:</span>
+          <code class="addr">EQDFEJbv8N9ocgDqumICqdSCAi5wY7kJFr0x0jFotjrHabuK</code>
+        </div>
+        <div class="pill">
+          <span>LP/Safety:</span>
+          <span>Mint/Freeze revoked • LP locked/burned (links)</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Why TON • Why $TCULT</h2>
+        <ul style="margin:0;padding-left:18px;color:var(--muted)">
+          <li>TON + Telegram rails = native distribution</li>
+          <li>Lore-first brand with consistent visuals & raids</li>
+          <li>Transparent locks & treasury reporting</li>
+          <li>Built to outlast: **$TCULT = TON CULT**</li>
+        </ul>
+        <img src="banner-1500x500.jpg" alt="Cult banner" style="margin-top:14px;border-radius:12px;border:1px solid var(--border)">
+      </div>
+    </div>
+  </section>
+
+  <!-- TOKENOMICS -->
+  <section id="tokenomics" class="section">
+    <div class="wrap">
+      <h2>Tokenomics</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Distribution</h3>
+          <ul class="tokenomics" style="list-style:none;padding:0;display:grid;gap:10px">
+            <li><span>Holders</span><strong>90%</strong></li>
+            <li><span>Community</span><strong>2%</strong></li>
+            <li><span>Treasury</span><strong>4–5%</strong></li>
+            <li><span>Dev</span><strong>3%</strong></li>
+          </ul>
+          <div style="margin-top:14px">
+            <div class="progress" title="visual dist">
+              <div class="bar" style="width:90%"></div>
+            </div>
+          </div>
+          <p class="tiny" style="margin-top:10px">Visual only; see explorer for exact distribution.</p>
+        </div>
+
+        <div class="card">
+          <h3>Locks & Commitments</h3>
+          <ul style="margin:0;padding-left:18px;color:var(--muted)">
+            <li>Dev supply total: <b>35M (3.5%)</b></li>
+            <li>Locked: <b>22.6M (2.26%)</b> for 2 months</li>
+            <li>Locked: <b>33.2M (3.32%)</b> for 6 months</li>
+            <li>Mint/Freeze: <b>Revoked</b></li>
+            <li>LP: <b>Locked/Burned</b> (tx proofs)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Mission</h3>
+          <p class="lead" style="margin:0">
+            Above money and all else, $TCULT exists to **convert the masses to TON**. The strongest Cult on the strongest chain.
+          </p>
+          <div style="margin-top:10px" class="pill"> $TCULT = TON CULT </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SAFETY -->
+  <section class="section">
+    <div class="wrap">
+      <h2>Safety & Transparency</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Checklist</h3>
+          <ul style="margin:0;padding-left:18px;color:var(--muted)">
+            <li>Mint & Freeze authorities revoked</li>
+            <li>LP locked/burned with on-chain proof</li>
+            <li>Public treasury ledger (weekly reports)</li>
+            <li>Open-source comms: all links pinned</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Official Links</h3>
+          <p class="tiny">Replace with real links once live.</p>
+          <ul style="margin:0;padding-left:18px">
+            <li><a target="_blank" href="https://tinyurl.com/BuyTCULT">Buy on Gas Pump</a></li>
+            <li><a target="_blank" href="https://t.me/TCULT_GROUP">Telegram Group</a></li>
+            <li><a target="_blank" href="https://x.com/i/communities/1964017380331311157">X Community</a></li>
+            <li><a target="_blank" href="#roadmap">Roadmap</a></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Press Kit</h3>
+          <p class="tiny">Logos, banners, brand guide (zip)</p>
+          <a class="btn" href="#" target="_blank">Download Kit</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROADMAP -->
+  <section id="roadmap" class="section" style="background:linear-gradient(180deg,#0e0f12,#0c0d10)">
+    <div class="wrap">
+      <h2>Roadmap</h2>
+      <div class="road">
+        <div class="card">
+          <h3>Phase I — Initiation</h3>
+          <div class="step">Launch on Gas Pump</div>
+          <div class="step">Telegram + X communities formed</div>
+          <div class="step">First raids & meme drops</div>
+        </div>
+        <div class="card">
+          <h3>Phase II — Conversion</h3>
+          <div class="step">$15.3k MC → DEX Migration</div>
+          <div class="step">100+ TG members • 50+ X members</div>
+          <div class="step">Meme army shilling begins</div>
+        </div>
+        <div class="card">
+          <h3>Phase III — Strengthening the Cult</h3>
+          <div class="step">$30k–$50k MC target</div>
+          <div class="step">Locks & treasury reports</div>
+          <div class="step">Partnerships • Shiller program</div>
+        </div>
+        <div class="card">
+          <h3>Phase IV — The Movement</h3>
+          <div class="step">$100k+ MC goal</div>
+          <div class="step">PFP/NFT drop</div>
+          <div class="step">Cross-community alliances</div>
+          <div class="step">$TCULT recognized as TON’s Cult Movement</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="wrap faq">
+      <h2>FAQ</h2>
+      <details>
+        <summary>What is $TCULT?</summary>
+        <p>$TCULT is the TON CULT — a community-first movement focused on converting the masses to TON using lore, discipline, and relentless raids.</p>
+      </details>
+      <details>
+        <summary>How do I buy?</summary>
+        <p>Use our Gas Pump link: <a target="_blank" href="https://tinyurl.com/BuyTCULT">tinyurl.com/BuyTCULT</a>. After migration, trade on TON DEXes (links will be added).</p>
+      </details>
+      <details>
+        <summary>When DEX?</summary>
+        <p>After we reach ~$15.3k market cap. The push is community-driven — shill, raid, recruit.</p>
+      </details>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div>$TCULT • TON CULT — Coin → Cult → Movement</div>
+      <div class="tiny" style="margin-top:6px">© 2025 TCULT. Not investment advice. DYOR.</div>
+    </div>
+  </footer>
+</body>
+</html>
