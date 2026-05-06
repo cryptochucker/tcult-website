@@ -124,7 +124,11 @@
     .asset-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
     @media (max-width:760px){.asset-row{grid-template-columns:1fr}}
     .asset-row img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:14px;border:1px solid var(--border);background:#121014}
-    .artifact-card{display:flex;flex-direction:column;gap:8px;background:linear-gradient(180deg,#1a161e,#13101a);border:1px solid var(--border);border-radius:var(--radius);padding:18px;min-height:148px}
+    .artifact-card{display:flex;flex-direction:column;gap:8px;background:linear-gradient(180deg,#1a161e,#13101a);border:1px solid var(--border);border-radius:var(--radius);padding:18px;min-height:148px;position:relative;overflow:hidden;isolation:isolate}
+    .artifact-card::before{content:"";position:absolute;inset:0;background-image:var(--artifact-bg-img,none);background-repeat:no-repeat;background-position:var(--artifact-bg-pos, right -24px bottom -24px);background-size:var(--artifact-bg-size, auto 115%);opacity:.14;filter:saturate(1.05);pointer-events:none;z-index:0;transition:opacity .35s ease, transform .55s ease;transform-origin:bottom right}
+    .artifact-card::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,12,18,.55) 0%,rgba(15,12,18,.15) 45%,rgba(15,12,18,0) 75%);pointer-events:none;z-index:0}
+    .artifact-card:hover::before{opacity:.21;transform:scale(1.04)}
+    .artifact-card > *{position:relative;z-index:1}
     .artifact-card .icon{font-size:18px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:10px;background:#1f1815;border:1px solid var(--border);color:var(--gold);font-weight:700}
     .artifact-card h3{margin:6px 0 4px}
     .artifact-card p{margin:0;color:var(--muted);font-size:14px;line-height:1.5}
@@ -360,7 +364,7 @@
         </div>
       </div>
       <div class="artifact-grid">
-        <div class="artifact-card">
+        <div class="artifact-card" style="--artifact-bg-img:url('assets/optimized/sticker-join-softly.webp')">
           <div class="icon" aria-hidden="true">S</div>
           <h3>Static sticker pack</h3>
           <p>Plush mascots ready for Telegram group chats. Cute, weird, and easy to send.</p>
@@ -369,7 +373,7 @@
             <a class="btn gold" href="https://t.me/addstickers/tcult_plush_static_001_by_TCultPlushBot" target="_blank" rel="noopener">Open sticker pack</a>
           </div>
         </div>
-        <div class="artifact-card">
+        <div class="artifact-card" style="--artifact-bg-img:url('assets/optimized/artifact-cards/medallion-flex.webp')">
           <div class="icon" aria-hidden="true">A</div>
           <h3>Animated sticker pack</h3>
           <p>The plush cult, in motion. Reactions, loops, and tiny rituals for the group chat.</p>
@@ -378,7 +382,7 @@
             <a class="btn gold" href="https://t.me/addstickers/tcult_plush_pack_001_by_TCultPlushBot" target="_blank" rel="noopener">Open animated pack</a>
           </div>
         </div>
-        <div class="artifact-card">
+        <div class="artifact-card" style="--artifact-bg-img:url('assets/optimized/pfp-gold-rare.webp')">
           <div class="icon" aria-hidden="true">P</div>
           <h3>Founder PFP NFTs</h3>
           <p>Plush founder identities on TON via Getgems. A medallion ladder so the cult can recognize its own. Identity layer, not a price layer.</p>
@@ -387,7 +391,7 @@
             <a class="btn gold" href="https://getgems.io/collection/EQDVxgzpPPwPizYvTwbDyEiR_v-f004T0tqOMVQF408Dxwnq" target="_blank" rel="noopener">View Founder PFPs</a>
           </div>
         </div>
-        <div class="artifact-card">
+        <div class="artifact-card" style="--artifact-bg-img:url('assets/optimized/artifact-cards/gift-box-plush.webp')">
           <div class="icon" aria-hidden="true">G</div>
           <h3>Telegram gifts &amp; collectibles</h3>
           <p>Gift-style video sticker pack and Getgems collectible concepts are live while official Telegram Gifts remain future-facing.</p>
@@ -397,13 +401,16 @@
             <a class="btn" href="https://getgems.io/collection/EQAG4K6UZzw8Aw7jk8CF8XVMPE9ghxB6k0ckJxtSDPQ6LRU5" target="_blank" rel="noopener">View Gift Concepts</a>
           </div>
         </div>
-        <div class="artifact-card">
+        <div class="artifact-card" style="--artifact-bg-img:url('assets/optimized/artifact-cards/plush-tap-botfather.webp');--artifact-bg-pos:right -10px center;--artifact-bg-size:auto 130%">
           <div class="icon" aria-hidden="true">M</div>
           <h3>Mini-apps &amp; games</h3>
-          <p>The first $TCULT mini-app is being built now: a simple Telegram-native experience for the cult. No wallet gates, no paid mechanics. We will share it when it is ready.</p>
-          <span class="status">In production</span>
+          <p>Plush Tap is live: tap the plush, build a soft cult score, and share the result back in the group chat. Telegram-native games, stickers, animations, and rituals are how the plush cult spreads.</p>
+          <span class="status">Live</span>
+          <div class="card-actions">
+            <a class="btn gold" href="https://t.me/TCultPlushBot/plushtap" target="_blank" rel="noopener">Play Plush Tap</a>
+          </div>
         </div>
-        <div class="artifact-card">
+        <div class="artifact-card" style="--artifact-bg-img:url('assets/optimized/artifact-cards/gold-founder-plushie.webp')">
           <div class="icon" aria-hidden="true">+</div>
           <h3>Physical plushies</h3>
           <p>The endgame is not just images. The path leads to plushies you can put on a desk, gift to a fellow cultist, and hold in your hand.</p>
@@ -463,10 +470,10 @@
           <div class="step">Recognition for the people who showed up early</div>
         </div>
         <div class="card">
-          <span class="phase-tag">Phase IV &middot; Next build</span>
+          <span class="phase-tag">Phase IV &middot; Live</span>
           <h3>Mini-apps &amp; Telegram experiments</h3>
-          <div class="step">First $TCULT mini-app being built now: simple, Telegram-native, no wallet gates</div>
-          <div class="step">Group rituals the cult can play together</div>
+          <div class="step">Plush Tap mini game live on Telegram: tap the plush, build a cult score, share the result</div>
+          <div class="step">More mini games, tap loops, sticker mechanics, and group rituals planned</div>
           <div class="step">Cross-community plush experiments on TON</div>
         </div>
         <div class="card phase-v" style="grid-column:1/-1">
@@ -524,11 +531,11 @@
       </details>
       <details>
         <summary>Are the stickers, PFPs, and plushies live yet?</summary>
-        <p>Static and animated Telegram sticker packs are live. Founder PFPs are live on Getgems (initial 12 listed). Gift-style sticker concepts and the Getgems gift concept collection are live. Mini-apps and games are next. Official Telegram Gifts are future-facing, and physical plushies are still long arc with no preorder. All open links are in the artifacts section above.</p>
+        <p>Static and animated Telegram sticker packs are live. Founder PFPs are live on Getgems (initial 12 listed). Gift-style sticker concepts and the Getgems gift concept collection are live. The first $TCULT mini game, Plush Tap, is live on Telegram. Official Telegram Gifts are future-facing, and physical plushies are still long arc with no preorder. All open links are in the artifacts section above.</p>
       </details>
       <details>
         <summary>Are there games or apps coming?</summary>
-        <p>Yes. The first $TCULT mini-app is being built now: simple, Telegram-native, no wallet gates, no paid mechanics. We will share it in the Telegram group when it is ready. Group rituals and tap loops are the starting point.</p>
+        <p>The first $TCULT Telegram mini game, <a href="https://t.me/TCultPlushBot/plushtap" target="_blank" rel="noopener">Plush Tap</a>, is live. The next growth loop is simple: games, stickers, animations, and group-chat rituals that make the plush cult easy to share.</p>
       </details>
       <details>
         <summary>How do I buy $TCULT?</summary>
