@@ -407,9 +407,9 @@
           <p>Three plush mini games live on Telegram: Plush Tap (daily tap ritual), Plush Run (3-lane runner chasing the daily gift), Plush Hop (vertical climb to the daily gift gate). Telegram-native games, stickers, animations, and rituals are how the plush cult spreads.</p>
           <span class="status">Live</span>
           <div class="card-actions">
-            <a class="btn gold" href="https://t.me/TCultPlushBot/plushtap" target="_blank" rel="noopener">Play Plush Tap</a>
-            <a class="btn gold" href="https://t.me/TCultPlushBot/plushrun" target="_blank" rel="noopener">Play Plush Run</a>
-            <a class="btn gold" href="https://t.me/TCultPlushBot/plushhop" target="_blank" rel="noopener">Play Plush Hop</a>
+            <a class="btn gold" href="https://t.me/TCultPlushBot/plushtap" data-tg-app="plushtap" target="_blank" rel="noopener">Play Plush Tap</a>
+            <a class="btn gold" href="https://t.me/TCultPlushBot/plushrun" data-tg-app="plushrun" target="_blank" rel="noopener">Play Plush Run</a>
+            <a class="btn gold" href="https://t.me/TCultPlushBot/plushhop" data-tg-app="plushhop" target="_blank" rel="noopener">Play Plush Hop</a>
           </div>
         </div>
         <div class="artifact-card" style="--artifact-bg-img:url('assets/optimized/artifact-cards/gold-founder-plushie.webp')">
@@ -537,7 +537,7 @@
       </details>
       <details>
         <summary>Are there games or apps coming?</summary>
-        <p>Three plush Telegram mini games are live: <a href="https://t.me/TCultPlushBot/plushtap" target="_blank" rel="noopener">Plush Tap</a> (daily tap ritual), <a href="https://t.me/TCultPlushBot/plushrun" target="_blank" rel="noopener">Plush Run</a> (3-lane runner chasing the daily gift), and <a href="https://t.me/TCultPlushBot/plushhop" target="_blank" rel="noopener">Plush Hop</a> (vertical climb to the daily gift gate). More games, stickers, animations, and group-chat rituals are the growth loop.</p>
+        <p>Three plush Telegram mini games are live: <a href="https://t.me/TCultPlushBot/plushtap" data-tg-app="plushtap" target="_blank" rel="noopener">Plush Tap</a> (daily tap ritual), <a href="https://t.me/TCultPlushBot/plushrun" data-tg-app="plushrun" target="_blank" rel="noopener">Plush Run</a> (3-lane runner chasing the daily gift), and <a href="https://t.me/TCultPlushBot/plushhop" data-tg-app="plushhop" target="_blank" rel="noopener">Plush Hop</a> (vertical climb to the daily gift gate). More games, stickers, animations, and group-chat rituals are the growth loop.</p>
       </details>
       <details>
         <summary>How do I buy $TCULT?</summary>
@@ -581,6 +581,39 @@
       } else {
         fallbackSelect();
       }
+    });
+  })();
+
+  (function setupTelegramMiniAppLinks(){
+    var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent || '');
+    if (!isMobile) return;
+
+    document.addEventListener('click', function(e){
+      var link = e.target.closest('a[data-tg-app]');
+      if (!link) return;
+      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+
+      var appName = link.getAttribute('data-tg-app');
+      if (!appName) return;
+
+      e.preventDefault();
+
+      var fallbackUrl = link.href;
+      var nativeUrl = 'tg://resolve?domain=TCultPlushBot&appname=' + encodeURIComponent(appName);
+      var pageHidden = false;
+      var markHidden = function(){
+        pageHidden = true;
+      };
+
+      window.addEventListener('pagehide', markHidden, { once: true });
+      window.addEventListener('blur', markHidden, { once: true });
+      window.location.href = nativeUrl;
+
+      window.setTimeout(function(){
+        if (!pageHidden) {
+          window.location.href = fallbackUrl;
+        }
+      }, 900);
     });
   })();
   </script>
