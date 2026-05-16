@@ -1,0 +1,938 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>$TCULT TON Blockchain Utility White Paper</title>
+  <meta name="description" content="$TCULT white paper for TON blockchain utility, AI-assisted development, and the product roadmap beyond games.">
+  <meta name="theme-color" content="#070807">
+  <link rel="icon" type="image/png" sizes="64x64" href="../assets/optimized/favicon-64.png">
+  <style>
+    :root {
+      --bg: #070807;
+      --paper: #fbf7ed;
+      --ink: #171510;
+      --muted: #5c5a54;
+      --gold: #c8922e;
+      --gold-soft: #f6d98c;
+      --ton: #168fd8;
+      --green: #308f54;
+      --line: #ded4c0;
+      --panel: #fffdf7;
+      --dark: #0c1111;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      background: var(--bg);
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      line-height: 1.58;
+      letter-spacing: 0;
+    }
+
+    a {
+      color: #0f6fa9;
+      text-decoration: none;
+    }
+
+    .wp-skip {
+      position: fixed;
+      left: 16px;
+      top: -50px;
+      z-index: 30;
+      padding: 10px 14px;
+      border-radius: 7px;
+      background: #ffe8a6;
+      color: #080907;
+      font-weight: 900;
+    }
+
+    .wp-skip:focus {
+      top: 16px;
+    }
+
+    .wp-topbar {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 20;
+      background: linear-gradient(180deg, rgba(6, 8, 7, 0.92), rgba(6, 8, 7, 0.64));
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(18px);
+    }
+
+    .wp-topbar-inner {
+      width: min(1180px, calc(100vw - 32px));
+      min-height: 66px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .wp-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff7e6;
+      font-size: 14px;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .wp-mark {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 1px solid rgba(246, 217, 140, 0.62);
+      background: #090b0a url("../assets/brand/tcult-gold-medallion-mark.png") center / cover no-repeat;
+      box-shadow: 0 0 24px rgba(246, 217, 140, 0.28);
+      overflow: hidden;
+    }
+
+    .wp-nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .wp-nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    .wp-nav a,
+    .page-actions a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 37px;
+      padding: 9px 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 247, 230, 0.18);
+      background: rgba(255, 255, 255, 0.07);
+      color: rgba(255, 247, 230, 0.86);
+      font-size: 12px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .wp-nav a:hover,
+    .wp-nav a.active,
+    .page-actions a:hover {
+      border-color: rgba(246, 217, 140, 0.7);
+      background: rgba(246, 217, 140, 0.14);
+      color: #ffe8a6;
+    }
+
+    .wp-nav a.nav-cta {
+      border-color: rgba(246, 217, 140, 0.72);
+      background: linear-gradient(180deg, #ffe2a0, #d99124);
+      color: #15100a;
+    }
+
+    .cover a,
+    .credit-line a {
+      color: #ffe8a6;
+      font-weight: 900;
+    }
+
+    .cover {
+      position: relative;
+      min-height: 100vh;
+      display: grid;
+      align-items: end;
+      padding: 58px;
+      color: #fff7e6;
+      overflow: hidden;
+      background: #050605 url("../assets/posters/public/ai-signal-weave.png") center / cover no-repeat;
+      page-break-after: always;
+      padding-top: 100px;
+    }
+
+    .cover::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(90deg, rgba(6, 8, 7, 0.92), rgba(6, 8, 7, 0.52), rgba(6, 8, 7, 0.92));
+      pointer-events: none;
+    }
+
+    .cover-video {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .cover-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 980px;
+    }
+
+    .kicker {
+      display: inline-block;
+      margin-bottom: 22px;
+      padding: 8px 12px;
+      border: 1px solid rgba(246, 217, 140, 0.5);
+      border-radius: 999px;
+      color: #ffe8a6;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 22px;
+      font-size: 62px;
+      line-height: 0.98;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 0 0 15px;
+      color: #16130d;
+      font-size: 32px;
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin-bottom: 8px;
+      font-size: 20px;
+      line-height: 1.2;
+    }
+
+    .cover p {
+      max-width: 830px;
+      color: rgba(255, 247, 230, 0.83);
+      font-size: 18px;
+    }
+
+    .credit-line {
+      margin-top: 34px;
+      display: grid;
+      gap: 5px;
+      color: rgba(255, 247, 230, 0.76);
+      font-size: 13px;
+      font-weight: 760;
+    }
+
+    .page {
+      max-width: 1020px;
+      margin: 0 auto;
+      padding: 48px 54px;
+    }
+
+    .toc {
+      page-break-after: always;
+    }
+
+    .toc-grid {
+      display: grid;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .toc-row {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 13px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+
+    .toc-number {
+      color: var(--gold);
+      font-weight: 950;
+    }
+
+    .section {
+      padding: 24px 0 28px;
+      border-top: 1px solid var(--line);
+      page-break-inside: avoid;
+    }
+
+    .section:first-child {
+      border-top: 0;
+    }
+
+    .lead {
+      color: #35312a;
+      font-size: 18px;
+      line-height: 1.68;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .callout {
+      margin: 20px 0;
+      padding: 18px 20px;
+      border-left: 5px solid var(--gold);
+      background: #fff7df;
+      color: #272016;
+      page-break-inside: avoid;
+    }
+
+    .grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid.three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .card {
+      padding: 17px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      page-break-inside: avoid;
+    }
+
+    .card p,
+    li {
+      color: #3f3b34;
+    }
+
+    ul,
+    ol {
+      margin: 10px 0 0;
+      padding-left: 21px;
+    }
+
+    li {
+      margin-bottom: 7px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 18px 0;
+      font-size: 13px;
+      page-break-inside: avoid;
+    }
+
+    th,
+    td {
+      padding: 10px 11px;
+      border: 1px solid var(--line);
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      background: #efe2c0;
+      color: #1d170f;
+      font-weight: 900;
+    }
+
+    .label {
+      display: inline-block;
+      margin-bottom: 8px;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .architecture {
+      margin: 20px 0;
+      padding: 20px;
+      border-radius: 8px;
+      color: #fff7e6;
+      background: #071011;
+      page-break-inside: avoid;
+    }
+
+    .arch-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .arch-card {
+      padding: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.055);
+    }
+
+    .arch-card strong {
+      color: #ffe6a8;
+    }
+
+    .arch-card span {
+      display: block;
+      margin-top: 6px;
+      color: rgba(255, 247, 230, 0.76);
+      font-size: 13px;
+    }
+
+    .reference-list {
+      padding-left: 18px;
+      font-size: 12px;
+    }
+
+    .footer-note {
+      margin-top: 36px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      color: #6c6557;
+      font-size: 12px;
+    }
+
+    .page-actions {
+      margin: 28px 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .page-actions a {
+      border-color: rgba(21, 17, 11, 0.18);
+      background: #15110b;
+      color: #fff7e6;
+    }
+
+    @media (max-width: 760px) {
+      .wp-topbar-inner {
+        min-height: 72px;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+        padding: 11px 0;
+      }
+
+      .wp-nav {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .cover {
+        min-height: 86vh;
+        padding: 130px 22px 36px;
+      }
+
+      h1 {
+        font-size: 38px;
+      }
+
+      .page {
+        padding: 36px 22px;
+      }
+
+      .grid.two,
+      .grid.three,
+      .arch-grid {
+        grid-template-columns: 1fr;
+      }
+
+      table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+
+    @media print {
+      @page {
+        size: letter;
+        margin: 0.55in;
+      }
+
+      .wp-skip,
+      .wp-topbar,
+      .cover-video,
+      .page-actions {
+        display: none;
+      }
+
+      body {
+        background: #fffaf0;
+      }
+
+      .cover {
+        min-height: auto;
+        height: 10in;
+        margin: -0.55in;
+        padding: 0.65in;
+      }
+
+      .page {
+        padding: 0;
+      }
+
+      .section {
+        page-break-inside: avoid;
+      }
+
+      a {
+        color: #0d5d8f;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="wp-skip" href="#whitepaper">Skip to white paper</a>
+  <header class="wp-topbar">
+    <div class="wp-topbar-inner">
+      <a class="wp-brand" href="../index.html" aria-label="$TCULT portal home">
+        <span class="wp-mark" aria-hidden="true"></span>
+        <span>$TCULT White Paper</span>
+      </a>
+      <nav class="wp-nav" aria-label="$TCULT white paper navigation">
+        <a href="../index.html">Portal</a>
+        <a href="../lore.html">Lore</a>
+        <a href="../thesis.html">Thesis</a>
+        <a class="active" href="TCULT_TON_BLOCKCHAIN_UTILITY_WHITE_PAPER.html">White Paper</a>
+        <a href="https://x.com/i/communities/1964017380331311157" target="_blank" rel="noopener">X Community</a>
+        <a class="nav-cta" href="https://t.me/TCULT_GROUP" target="_blank" rel="noopener">Telegram</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="cover" id="whitepaper">
+    <video class="cover-video" src="../assets/videos/ai-signal-weave.mp4" autoplay muted loop playsinline poster="../assets/posters/public/ai-signal-weave.png"></video>
+    <div class="cover-inner">
+      <span class="kicker">$TCULT White Paper</span>
+      <h1>Culture is the interface. The TON blockchain is the rail. AI is the engine.</h1>
+      <p>A public thesis for the $TCULT technology layer: Telegram-native community distribution, AI-assisted development, TON blockchain utility, and a guarded product ladder that moves beyond games into real user tools.</p>
+      <div class="credit-line">
+        <span>Developed by <a href="https://x.com/CryptoChucker" target="_blank" rel="noopener">@CryptoChucker</a></span>
+        <span>Version 1.0 | May 2026</span>
+        <span>Copyright 2026 JMS AI Solutions. All rights reserved.</span>
+      </div>
+    </div>
+  </section>
+
+  <main class="page">
+    <section class="toc">
+      <span class="kicker" style="color:#8a641e;border-color:#d9b65c;background:#fff7df">Table Of Contents</span>
+      <h2>Contents</h2>
+      <div class="toc-grid">
+        <div class="toc-row"><span class="toc-number">01</span><span>Executive Thesis</span></div>
+        <div class="toc-row"><span class="toc-number">02</span><span>Why The TON Blockchain Matters To $TCULT</span></div>
+        <div class="toc-row"><span class="toc-number">03</span><span>The Product Ladder Beyond Games</span></div>
+        <div class="toc-row"><span class="toc-number">04</span><span>$TCULT Guard: The First Serious Utility</span></div>
+        <div class="toc-row"><span class="toc-number">05</span><span>Data, Wallet, And Verification Architecture</span></div>
+        <div class="toc-row"><span class="toc-number">06</span><span>Acton, Tolk, And The Guard Registry</span></div>
+        <div class="toc-row"><span class="toc-number">07</span><span>AI-Assisted Development And Agentic Future</span></div>
+        <div class="toc-row"><span class="toc-number">08</span><span>Safety Boundaries, Release Gates, And Roadmap</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <span class="label">01 | Executive Thesis</span>
+      <h2>$TCULT is a culture-led TON blockchain utility studio.</h2>
+      <p class="lead">$TCULT begins with a meme, but the serious thesis is larger: $TCULT combines community energy, character identity, Telegram-native distribution, and AI-assisted production to build useful applications on the TON blockchain.</p>
+      <p>The first games proved that the community interacts with $TCULT through simple, fast, mobile-native surfaces. Plush Tap, Plush Run, and Plush Hop are not the final product. They are the participation layer. They teach the community to open, play, share, return, and recognize the $TCULT world.</p>
+      <p>The utility layer is being developed to help TON blockchain users understand links, assets, collections, mini apps, DEX pool references, wallet-facing actions, and future agentic permissions before they interact. The project does not lead with trading advice, custody, yield, or financial promises. It leads with readable facts, official-resource checks, and a calm user experience that fits inside Telegram.</p>
+      <div class="callout">
+        <strong>Core positioning:</strong> The plush checks before you click. $TCULT Guard becomes the trust and discovery layer that lets the meme become useful without becoming reckless.
+      </div>
+    </section>
+
+    <section class="section">
+      <span class="label">02 | Why The TON Blockchain Matters</span>
+      <h2>The TON blockchain gives $TCULT a natural product surface.</h2>
+      <p>The TON blockchain matters because it sits close to Telegram behavior. $TCULT already lives in the language of Telegram groups, bots, mini apps, stickers, gifts, and social sharing. That makes the TON blockchain more than a settlement layer. It is the infrastructure connecting community rituals to wallet-aware tools, official resources, assets, verified records, and future applications.</p>
+      <div class="grid two">
+        <article class="card">
+          <span class="label">Telegram-Native Access</span>
+          <h3>Mini apps keep friction low.</h3>
+          <p>$TCULT utilities are designed to open inside Telegram, feel mobile-first, and make the first useful action clear. The project keeps games public and simple while utility surfaces mature into more serious product lanes over time.</p>
+        </article>
+        <article class="card">
+          <span class="label">Wallet-Aware Utility</span>
+          <h3>TON Connect supports optional depth.</h3>
+          <p>TON Connect is the standard wallet connection protocol for the TON blockchain. The $TCULT product path starts with no-wallet read-only utility, then introduces optional TON Connect features after the product proves useful.</p>
+        </article>
+        <article class="card">
+          <span class="label">Indexed Data</span>
+          <h3>API v3 enables readable facts.</h3>
+          <p>TON Center API v3 provides indexed blockchain access for transactions, traces, jettons, NFTs, actions, wallet states, and analytics. That makes it suitable for scan cards, evidence tabs, explorer links, and read-only user education.</p>
+        </article>
+        <article class="card">
+          <span class="label">Builder Tooling</span>
+          <h3>Acton supports the on-chain layer.</h3>
+          <p>Acton combines project creation, build, testing, debugging, deployment, verification, wrappers, and CI into one TON blockchain smart-contract workflow. That is a strong match for a small, verifiable Guard Registry later.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <span class="label">03 | Product Ladder</span>
+      <h2>The $TCULT roadmap climbs from play to utility to agentic safety.</h2>
+      <p>The strongest path is not to abandon games. The strongest path is to make games the front door while utility becomes the reason people keep the project on their radar.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Layer</th>
+            <th>Job</th>
+            <th>Representative Products</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Community play</td>
+            <td>Bring people back through fast, shareable loops.</td>
+            <td>Plush Tap, Plush Run, Plush Hop, seasonal games, Plush Patrol.</td>
+          </tr>
+          <tr>
+            <td>Identity and collection</td>
+            <td>Make community participation visible and collectible.</td>
+            <td>Sticker packs, PFPs, gift concepts, local cosmetic gift shelves.</td>
+          </tr>
+          <tr>
+            <td>TON blockchain utility</td>
+            <td>Give users tools that help them understand the ecosystem before interacting.</td>
+            <td>$TCULT Guard, Gift Vault, Route Compass, official resource checks.</td>
+          </tr>
+          <tr>
+            <td>On-chain records</td>
+            <td>Create a public reference layer for known official resources.</td>
+            <td>Acton/Tolk Guard Registry, verified resource hashes, public get methods.</td>
+          </tr>
+          <tr>
+            <td>Agentic utility</td>
+            <td>Support safer interaction with future AI agents, permissions, and dedicated agent wallets.</td>
+            <td>Guard Agent, Agent Registry, Agent Hub, funding and permission education.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <span class="label">04 | First Serious Utility</span>
+      <h2>$TCULT Guard is the best first functional TON blockchain app.</h2>
+      <p>$TCULT Guard is being developed as a Telegram-native scan and verification companion for TON blockchain users. Its job is simple: help a user understand what they are looking at before they interact.</p>
+      <div class="grid two">
+        <article class="card">
+          <h3>V0: Read-only scan utility</h3>
+          <ul>
+            <li>Supports pasted or scanned TON blockchain addresses, jettons, NFT collections, mini app links, Getgems links, DEX references, and Telegram links.</li>
+            <li>Detects the input type and normalizes it into readable facts.</li>
+            <li>Shows a Plush Guard verdict card with careful labels such as Verified match, Unknown, Mismatch, Needs review, Caution, or Unable to verify.</li>
+            <li>Displays evidence tabs for Identity, Contract, Activity, Liquidity, and Links.</li>
+            <li>Generates a shareable checked card for Telegram and X.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>V1: Optional personal context</h3>
+          <ul>
+            <li>Introduces optional TON Connect after V0 proves useful.</li>
+            <li>Shows read-only wallet context, unknown jettons or NFTs, official $TCULT assets, saved scans, and watchlists.</li>
+            <li>Keeps wallet connection optional, never asks for seed phrases, and never custodies funds.</li>
+            <li>Uses signed preferences only where the user clearly approves them.</li>
+          </ul>
+        </article>
+      </div>
+      <div class="callout">
+        $TCULT Guard is designed as a verification and evidence layer, not a trading recommendation engine. It presents evidence, sources, context, and caution while avoiding trading direction, return language, guarantee language, reward claims, or anything that turns a verification card into financial advice.
+      </div>
+    </section>
+
+    <section class="section">
+      <span class="label">05 | Utility Backlog</span>
+      <h2>The utility roadmap extends the ecosystem beyond games.</h2>
+      <div class="grid two">
+        <article class="card">
+          <h3>$TCULT Arcade Hub</h3>
+          <p>A single Telegram mini app that organizes the live games, daily challenges, local cosmetic gift shelves, current media, and future game routing. It keeps the play layer cohesive and gives new members one place to start.</p>
+        </article>
+        <article class="card">
+          <h3>$TCULT Gift Vault</h3>
+          <p>A utility surface for viewing, explaining, and verifying $TCULT gifts, PFPs, stickers, Getgems collections, and future collectible lanes. This connects identity, lore, and official-resource checks.</p>
+        </article>
+        <article class="card">
+          <h3>$TCULT Route Compass</h3>
+          <p>A read-only route explainer that helps users understand swap or liquidity routes and then deep-links to official providers. The product explains context, does not execute trades, and does not custody funds.</p>
+        </article>
+        <article class="card">
+          <h3>Plush Patrol</h3>
+          <p>A future game that teaches the Guard habit through play. Bad links, fake tokens, and mystery boxes approach the plush gate. The player sorts, blocks, or checks them before they reach the community.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <span class="label">06 | Architecture</span>
+      <h2>The public utility layer has six connected parts.</h2>
+      <div class="architecture">
+        <p style="color:rgba(255,247,230,0.82)">The $TCULT architecture connects community signal, playable experiences, AI-assisted production, TON blockchain data, future contracts, catalog memory, and freshness reviews into one product operating model.</p>
+        <div class="arch-grid">
+          <div class="arch-card"><strong>Community Layer</strong><span>Telegram, X, social rituals, arcade play, and lore moments.</span></div>
+          <div class="arch-card"><strong>Experience Layer</strong><span>Games, mini apps, artifacts, public pages, and future utility surfaces.</span></div>
+          <div class="arch-card"><strong>AI Studio Layer</strong><span>Content, design, analysis, QA, handoffs, and controlled development support.</span></div>
+          <div class="arch-card"><strong>TON blockchain Layer</strong><span>TON Connect, indexed data, wallet-aware experiences, assets, and future contracts.</span></div>
+          <div class="arch-card"><strong>Catalog Layer</strong><span>Version memory, architecture records, gates, and build maps.</span></div>
+          <div class="arch-card"><strong>Freshness Layer</strong><span>30-day review, replacement candidates, new utilities, and community excitement loops.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <span class="label">07 | Data, Wallet, And Verification Architecture</span>
+      <h2>$TCULT utility is read-only first and wallet-aware later.</h2>
+      <p>The Guard architecture starts from public data and user-submitted inputs. A user pastes a link, address, collection, or mini app reference. The app normalizes the input, identifies the type, checks official-resource records, reads public indexed data where available, then presents an evidence card.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Component</th>
+            <th>Public Function</th>
+            <th>Boundary</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Input normalizer</td>
+            <td>Recognizes TON blockchain addresses, links, jettons, NFT collections, DEX references, and Telegram mini apps.</td>
+            <td>No transaction execution.</td>
+          </tr>
+          <tr>
+            <td>Evidence engine</td>
+            <td>Shows metadata, official links, explorer routes, action summaries, and basic contract context.</td>
+            <td>No financial recommendation language.</td>
+          </tr>
+          <tr>
+            <td>Official resource registry</td>
+            <td>Compares known $TCULT and partner resources against input records.</td>
+            <td>No public accusations of unknown projects.</td>
+          </tr>
+          <tr>
+            <td>Optional TON Connect path</td>
+            <td>Adds read-only personal context when the user chooses to connect a wallet.</td>
+            <td>No custody, no seed phrases, no automatic approvals.</td>
+          </tr>
+          <tr>
+            <td>Share-card renderer</td>
+            <td>Creates careful, branded, readable cards for Telegram and X.</td>
+            <td>No exaggerated claims, no reward claims, no trading-signal framing.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <span class="label">08 | Acton, Tolk, And The Guard Registry</span>
+      <h2>The on-chain layer is small, public, and verifiable.</h2>
+      <p>The first on-chain $TCULT utility does not custody user funds or execute swaps. The first planned contract is a Guard Registry: a small public-good record system for known official resources.</p>
+      <p>The Guard Registry maps project labels, official addresses, collection references, mini app references, and link hashes to public records. The app reads those records to show whether an input matches a known official resource. It does not label unknown assets as scams. It does not rank assets by upside. It does not turn an evidence match into a recommendation.</p>
+      <div class="grid two">
+        <article class="card">
+          <h3>Planned record model</h3>
+          <ul>
+            <li>record hash</li>
+            <li>resource type</li>
+            <li>label hash</li>
+            <li>official address or link hash</li>
+            <li>status enum</li>
+            <li>updated timestamp</li>
+            <li>updater or admin address</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Proof gates before mainnet</h3>
+          <ul>
+            <li>Acton environment check.</li>
+            <li>Compilation, formatting, linting, and test results pass.</li>
+            <li>Localnet read and update tests.</li>
+            <li>Gas snapshot and regression review.</li>
+            <li>Fuzz or mutation testing where practical.</li>
+            <li>Generated TypeScript wrappers consumed by the prototype UI.</li>
+            <li>Source verification dry-run before production release.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <span class="label">09 | AI-Assisted Development</span>
+      <h2>AI accelerates the studio and does not replace judgment.</h2>
+      <p>The $TCULT studio model uses AI for research, code handoffs, architecture updates, image and video production planning, QA scans, public-copy safety checks, and iteration. This is especially useful because the project has multiple surfaces: games, website, lore, utility apps, registry design, social media, and future agentic systems.</p>
+      <p>The key is controlled acceleration. AI helps generate options and maintain velocity, while human approval remains the gate for public releases, mainnet decisions, security-sensitive flows, and anything involving user trust.</p>
+      <div class="callout">
+        AI is the engine, not the authority. The public trust layer is clear, conservative, and verifiable.
+      </div>
+    </section>
+
+    <section class="section">
+      <span class="label">10 | Agentic Future</span>
+      <h2>Guard matures before agentic wallet products launch.</h2>
+      <p>The TON blockchain documentation describes agentic wallets as self-custody wallets for autonomous AI agents. The architecture separates the owner key from an agent operator key, but the agent controls the balance deposited into its own agentic wallet. The docs also state that the contracts are a developer preview and have not completed a formal audit.</p>
+      <p>That makes the path clear: $TCULT does not rush into user-funded autonomous agent execution. The safer sequence is Guard first, optional wallet-aware context second, Guard Registry third, and agentic products later. The planned agentic layer explores agent profiles, permission scans, known wallet addresses, budget education, operator-key rotation education, and Guard checks before users fund agentic wallets.</p>
+    </section>
+
+    <section class="section">
+      <span class="label">11 | Roadmap</span>
+      <h2>Near-term delivery proves utility before complexity.</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Phase</th>
+            <th>Goal</th>
+            <th>Public Message</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Phase 0</td>
+            <td>The live arcade foundation remains active.</td>
+            <td>The games are live. The plush world is moving.</td>
+          </tr>
+          <tr>
+            <td>Phase 1</td>
+            <td>$TCULT Guard V0 launches as a read-only scan utility.</td>
+            <td>The plush checks before you click.</td>
+          </tr>
+          <tr>
+            <td>Phase 1.5</td>
+            <td>Unify games into a $TCULT Arcade Hub.</td>
+            <td>One portal for the $TCULT game world.</td>
+          </tr>
+          <tr>
+            <td>Phase 2</td>
+            <td>Optional wallet-aware context arrives after V0 proves useful.</td>
+            <td>Connect only when you choose. Read-only first.</td>
+          </tr>
+          <tr>
+            <td>Phase 3</td>
+            <td>An Acton/Tolk Guard Registry enters testnet validation.</td>
+            <td>Official-resource checks become public records.</td>
+          </tr>
+          <tr>
+            <td>Phase 4</td>
+            <td>Guard Agent, Agent Registry, and Agent Hub move into agentic utility planning.</td>
+            <td>Agentic utility needs a safety layer first.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <span class="label">12 | Success Metrics</span>
+      <h2>$TCULT measures utility, not just attention.</h2>
+      <div class="grid three">
+        <article class="card">
+          <h3>Games</h3>
+          <ul>
+            <li>plays per day</li>
+            <li>replays per user</li>
+            <li>share clicks</li>
+            <li>score posts</li>
+            <li>mobile issue rate</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Guard</h3>
+          <ul>
+            <li>scans per day</li>
+            <li>repeat scanner usage</li>
+            <li>share-card rate</li>
+            <li>false-positive reports</li>
+            <li>time to useful verdict</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Future Agentic Layer</h3>
+          <ul>
+            <li>verified agent records</li>
+            <li>scans before funding</li>
+            <li>revoked access events</li>
+            <li>testnet flows completed</li>
+            <li>zero custody incidents</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <span class="label">13 | Public Safety Language</span>
+      <h2>The wording is part of the product.</h2>
+      <p>$TCULT builds trust through careful language. The public copy is confident about the roadmap, and the utility layer never overstates what a scan proves.</p>
+      <div class="grid two">
+        <article class="card">
+          <h3>Preferred Language</h3>
+          <ul>
+            <li>Check before you click.</li>
+            <li>Readable on-chain facts.</li>
+            <li>Known official source.</li>
+            <li>Unknown.</li>
+            <li>Needs review.</li>
+            <li>Unable to verify.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Avoid</h3>
+          <ul>
+            <li>Guarantee language.</li>
+            <li>Trading direction.</li>
+            <li>Return promises.</li>
+            <li>Outcome predictions.</li>
+            <li>Eligibility assumptions.</li>
+            <li>Reward claims.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <span class="label">14 | References</span>
+      <h2>Research sources</h2>
+      <p class="muted">This public white paper summarizes the $TCULT product roadmap dated May 15, 2026, and public TON blockchain documentation.</p>
+      <ol class="reference-list">
+        <li>TON blockchain Acton documentation, "A unified toolchain for TON smart contracts," https://ton-blockchain.github.io/acton/</li>
+        <li>Acton docs, "Welcome to Acton," https://ton-blockchain.github.io/acton/docs/welcome</li>
+        <li>Acton docs, "dApp development," https://ton-blockchain.github.io/acton/docs/dapps</li>
+        <li>Acton docs, "Verification," https://ton-blockchain.github.io/acton/docs/verify</li>
+        <li>Acton docs, "Testing overview," https://ton-blockchain.github.io/acton/docs/testing/overview</li>
+        <li>TON Docs, "TON Connect overview," https://docs.ton.org/ecosystem/ton-connect/overview</li>
+        <li>TON Docs, "TON Center API v3 overview," https://docs.ton.org/ecosystem/api/toncenter/v3/overview</li>
+        <li>TON Docs, "AppKit: SDK for decentralized applications," https://docs.ton.org/ecosystem/appkit/overview</li>
+        <li>TON Docs, "Agentic wallet contracts," https://docs.ton.org/ecosystem/ai/wallets</li>
+        <li>$TCULT product roadmap, "Mini Apps, Games, And Utility Roadmap," dated May 15, 2026.</li>
+        <li>$TCULT research brief on high-value TON blockchain utility opportunities, dated May 15, 2026.</li>
+      </ol>
+      <div class="footer-note">
+        Developed by <a href="https://x.com/CryptoChucker" target="_blank" rel="noopener">@CryptoChucker</a>. Copyright 2026 JMS AI Solutions. All rights reserved. This white paper is informational and does not provide financial, investment, legal, security, or tax advice.
+      </div>
+      <div class="page-actions" aria-label="$TCULT page links">
+        <a href="../index.html">Portal Home</a>
+        <a href="../lore.html">Lore Page</a>
+        <a href="../thesis.html">Thesis Page</a>
+        <a href="https://x.com/CryptoChucker" target="_blank" rel="noopener">@CryptoChucker</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,630 +1,426 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>$TCULT - The #1 Cult Community on TON</title>
-  <meta name="description" content="$TCULT is the #1 cult community on TON. We are not a chart. We are a movement. Long-term believers building stickers, founder PFPs, mini-apps, and plushies together." />
-  <meta property="og:title" content="$TCULT - The #1 Cult Community on TON" />
-  <meta property="og:description" content="$TCULT is the strongest community on TON. We are not a chart. We are a movement. Stickers, founder PFPs, mini-apps, and plushies, built by the people who actually showed up." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.tcult.site/" />
-  <meta property="og:site_name" content="$TCULT" />
-  <meta property="og:image" content="https://tcult.site/assets/banner-1500x500.png" />
-  <meta property="og:image:width" content="1500" />
-  <meta property="og:image:height" content="500" />
-  <meta property="og:image:alt" content="$TCULT plush cult mascot lineup wide banner" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="$TCULT - The #1 Cult Community on TON" />
-  <meta name="twitter:description" content="The strongest community on TON. Loyalty, stickers, founder PFPs, mini-apps, and plushies. More than a meme coin." />
-  <meta name="twitter:image" content="https://tcult.site/assets/banner-1500x500.png" />
-  <meta name="twitter:image:alt" content="$TCULT plush cult mascot lineup wide banner" />
-  <meta name="theme-color" content="#0c0a0e" />
-  <link rel="icon" type="image/png" sizes="64x64" href="assets/optimized/favicon-64.png" />
-  <link rel="icon" type="image/png" sizes="256x256" href="assets/optimized/favicon-256.png" />
-  <link rel="apple-touch-icon" href="assets/optimized/favicon-256.png" />
-  <style>
-    :root{
-      --bg:#0c0a0e;
-      --bg-warm:#18120e;
-      --bg-card:#16131a;
-      --bg-card-2:#120f15;
-      --text:#f5ede0;
-      --muted:#c2b9a8;
-      --plush:#f6c5a8;
-      --plush-2:#ffd9b8;
-      --gold:#f0c060;
-      --gold-2:#c8932e;
-      --gold-3:#6a4b0e;
-      --ton:#0098ea;
-      --ton-2:#33b3f0;
-      --blush:#ff8caa;
-      --border:rgba(255,229,196,.10);
-      --shadow:0 14px 40px rgba(0,0,0,.5);
-      --radius:18px;
-      --radius-lg:24px;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;background:radial-gradient(1200px 800px at 50% -10%, #2a1d12 0%, var(--bg) 45%);color:var(--text);font-family:ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;line-height:1.55}
-    a{color:var(--ton-2);text-decoration:none}
-    a:hover{color:#7fd0ff}
-    img{max-width:100%;display:block}
-    picture{display:contents}
-    :focus-visible{outline:2px solid var(--plush);outline-offset:2px;border-radius:6px}
-    .wrap{max-width:1120px;margin:0 auto;padding:28px}
-    .nav{position:sticky;top:0;background:linear-gradient(180deg,rgba(12,10,14,.92),rgba(12,10,14,.55) 80%,rgba(12,10,14,0));backdrop-filter:saturate(140%) blur(8px);z-index:50}
-    .nav .inner{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1px solid var(--border);max-width:1120px;margin:0 auto}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.4px}
-    .brand .mark{width:38px;height:38px;border-radius:50%;background:radial-gradient(circle at 35% 35%, var(--plush-2), var(--plush) 60%, var(--gold-2) 100%);box-shadow:var(--shadow), inset -3px -4px 8px rgba(0,0,0,.18)}
-    .links{display:flex;gap:10px;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 16px;border:1px solid var(--border);border-radius:999px;background:linear-gradient(180deg,#1d1822,#15121a);color:var(--text);box-shadow:var(--shadow);transition:transform .08s ease, background .2s, border-color .2s;font-weight:600;font-size:14px;cursor:pointer}
-    .btn:hover{transform:translateY(-1px);border-color:rgba(255,229,196,.22)}
-    .btn.gold{background:linear-gradient(180deg,var(--plush-2),var(--gold));color:#241804;border:0;font-weight:700}
-    .btn.ton{border-color:#0a6fa6;color:#e8f6ff;background:linear-gradient(180deg,#0d2233,#0a1a26)}
-    .btn.ton:hover{border-color:var(--ton)}
-    .btn.ghost{background:transparent;color:var(--muted);font-weight:500}
-    .btn.ghost:hover{color:var(--text)}
-    .hero{padding:54px 0 28px}
-    .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
-    @media (max-width:920px){.hero .wrap{grid-template-columns:1fr;gap:24px}}
-    .card{background:linear-gradient(180deg,var(--bg-card),var(--bg-card-2));border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:24px}
-    .badge{display:inline-block;padding:6px 12px;border-radius:999px;background:linear-gradient(180deg,#2a1f12,#1c1408);border:1px solid #6a4b0e;color:var(--gold);font-weight:700;font-size:13px;letter-spacing:.4px;text-transform:uppercase}
-    h1{font-size:clamp(32px,5vw,56px);margin:14px 0 12px;line-height:1.08;letter-spacing:-.5px}
-    h1 .accent{background:linear-gradient(180deg,var(--plush-2),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
-    h2{font-size:clamp(24px,3.2vw,32px);margin:0 0 16px;letter-spacing:-.3px}
-    h3{font-size:18px;margin:0 0 10px}
-    p.lead{font-size:18px;color:var(--muted);max-width:60ch;margin:0 0 4px}
-    .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px;align-items:center}
-    .pill{display:flex;align-items:center;gap:10px;padding:10px 14px;border:1px dashed var(--gold-3);border-radius:12px;background:#15120c;color:#f7e6c2;font-size:14px;margin-top:12px;flex-wrap:wrap}
-    .pill code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;word-break:break-all}
-    code.addr{user-select:all}
-    .pill-copy{appearance:none;-webkit-appearance:none;font:inherit;cursor:pointer;text-align:left;color:#f7e6c2;width:auto;transition:border-color .25s ease, background .25s ease, transform .12s ease}
-    .pill-copy:hover{border-color:var(--plush-2);background:#1a160e;transform:translateY(-1px)}
-    .pill-copy:active{transform:translateY(0)}
-    .pill-copy:focus-visible{outline:2px solid var(--plush);outline-offset:2px}
-    .pill-copy .copy-hint{font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:.5px;font-weight:700;padding:3px 8px;border-radius:6px;background:#2a1f12;border:1px solid var(--gold-3);transition:color .2s ease, background .2s ease, border-color .2s ease;flex-shrink:0;white-space:nowrap}
-    .pill-copy:hover .copy-hint{background:#3a2a14;color:var(--plush-2);border-color:var(--plush-2)}
-    .pill-copy.copied{border-color:#64d29a;background:#0e1a12}
-    .pill-copy.copied .copy-hint{color:#0e1a12;background:#64d29a;border-color:#64d29a}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    @media (max-width:900px){.grid{grid-template-columns:1fr}}
-    .artifact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
-    .section{padding:48px 0}
-    .section.warm{background:linear-gradient(180deg,#11100f,#0c0b0e)}
-    .road{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-    @media (max-width:900px){.road{grid-template-columns:1fr}}
-    .road .step{position:relative;padding-left:18px;margin:8px 0;color:var(--muted);font-size:15px}
-    .road .step::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:50%;background:var(--gold)}
-    .road .phase-tag{display:inline-block;font-size:12px;letter-spacing:.6px;color:var(--gold);text-transform:uppercase;font-weight:700;margin-bottom:6px}
-    .road .phase-v{border:1px solid rgba(255,196,158,.25);background:linear-gradient(180deg,#1f1610,#15110d)}
-    .road .phase-v .phase-tag{color:var(--plush-2)}
-    .road .phase-v .step::before{background:var(--plush)}
-    .faq details{background:#15131a;border:1px solid var(--border);padding:14px 16px;border-radius:12px;margin-bottom:10px}
-    .faq summary{cursor:pointer;font-weight:600}
-    .faq details[open] summary{margin-bottom:8px}
-    .faq p{margin:0;color:var(--muted)}
-    footer{border-top:1px solid var(--border);padding:26px 0 32px;color:#a9a6a0}
-    .tiny{font-size:13px;color:#a99f8c}
-    .mascot-stage{position:relative;display:flex;align-items:center;justify-content:center;min-height:340px;border-radius:var(--radius-lg);overflow:hidden;background:radial-gradient(circle at 50% 40%, #2a1d12 0%, #16110d 60%, #0e0b0a 100%);border:1px solid var(--border);box-shadow:var(--shadow)}
-    .mascot-stage img{max-width:78%;max-height:300px;object-fit:contain;filter:drop-shadow(0 16px 30px rgba(0,0,0,.55))}
-    .mascot-fallback{display:flex;flex-direction:column;align-items:center;gap:10px;color:var(--muted);text-align:center;padding:24px}
-    .mascot-fallback .blob{width:160px;height:160px;border-radius:50%;background:radial-gradient(circle at 35% 30%, var(--plush-2), var(--plush) 55%, var(--gold-2) 100%);box-shadow:0 18px 40px rgba(0,0,0,.45), inset -8px -12px 20px rgba(0,0,0,.18);position:relative}
-    .mascot-fallback .blob::before,.mascot-fallback .blob::after{content:"";position:absolute;top:58px;width:14px;height:14px;border-radius:50%;background:#1a1108}
-    .mascot-fallback .blob::before{left:46px}
-    .mascot-fallback .blob::after{right:46px}
-    .mascot-fallback small{font-size:12px;letter-spacing:.4px;text-transform:uppercase;color:#a99f8c}
-    .wide-art{border-radius:var(--radius-lg);border:1px solid var(--border);overflow:hidden;box-shadow:var(--shadow);background:#100d10}
-    .wide-art img{width:100%;height:auto}
-    .visual-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch}
-    @media (max-width:900px){.visual-grid{grid-template-columns:1fr}}
-    .visual-card{background:linear-gradient(180deg,#1a161e,#13101a);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
-    .visual-card img{width:100%;aspect-ratio:1/1;object-fit:cover;background:#121014}
-    .visual-card .copy{padding:16px}
-    .visual-card p{margin:0;color:var(--muted);font-size:14px}
-    .asset-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    @media (max-width:760px){.asset-row{grid-template-columns:1fr}}
-    .asset-row img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:14px;border:1px solid var(--border);background:#121014}
-    .artifact-card{display:flex;flex-direction:column;gap:8px;background:linear-gradient(180deg,#1a161e,#13101a);border:1px solid var(--border);border-radius:var(--radius);padding:18px;min-height:148px;position:relative;overflow:hidden;isolation:isolate}
-    .artifact-card::before{content:"";position:absolute;inset:0;background-image:var(--artifact-bg-img,none);background-repeat:no-repeat;background-position:var(--artifact-bg-pos, right -24px bottom -24px);background-size:var(--artifact-bg-size, auto 115%);opacity:.14;filter:saturate(1.05);pointer-events:none;z-index:0;transition:opacity .35s ease, transform .55s ease;transform-origin:bottom right}
-    .artifact-card::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,12,18,.55) 0%,rgba(15,12,18,.15) 45%,rgba(15,12,18,0) 75%);pointer-events:none;z-index:0}
-    .artifact-card:hover::before{opacity:.21;transform:scale(1.04)}
-    .artifact-card > *{position:relative;z-index:1}
-    .artifact-card .icon{font-size:18px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:10px;background:#1f1815;border:1px solid var(--border);color:var(--gold);font-weight:700}
-    .artifact-card h3{margin:6px 0 4px}
-    .artifact-card p{margin:0;color:var(--muted);font-size:14px;line-height:1.5}
-    .artifact-card .status{display:inline-block;font-size:11px;letter-spacing:.5px;text-transform:uppercase;color:var(--plush-2);margin-top:8px;font-weight:700}
-    .artifact-card .card-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-    .artifact-card .card-actions .btn{padding:8px 12px;font-size:13px;flex-shrink:0}
-    .marquee{display:flex;overflow:hidden;padding:14px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:#0f0d10;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-    .marquee-track{display:flex;gap:24px;width:max-content;animation:marquee-scroll 38s linear infinite;will-change:transform}
-    .marquee:hover .marquee-track{animation-play-state:paused}
-    .marquee span{white-space:nowrap;color:var(--muted);font-size:14px;letter-spacing:.4px;flex-shrink:0}
-    .marquee span::before{content:"\2756";color:var(--gold);margin-right:10px;font-size:11px}
-    @keyframes marquee-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-    .lore{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:start}
-    @media (max-width:920px){.lore{grid-template-columns:1fr}}
-    .lore p{color:var(--muted);font-size:16px}
-    .quote{border-left:3px solid var(--gold);padding:6px 14px;color:#e7dcc6;font-style:italic;margin:14px 0}
-    .footnote{padding:10px 0;color:#9d9484;font-size:13px}
-    .creed{margin:0;padding-left:0;list-style:none;display:grid;gap:10px}
-    .creed li{position:relative;padding-left:22px;color:var(--muted);font-size:15px}
-    .creed li::before{content:"\2756";position:absolute;left:0;top:0;color:var(--gold);font-size:14px}
-    .creed li strong{color:var(--text)}
-    .join-card{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:center}
-    @media (max-width:760px){.join-card{grid-template-columns:1fr}}
-    .join-links{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:10px}
-
-    /* ----- Visual polish: background plush watermarks ----- */
-    .has-bg-plush{position:relative;overflow:hidden;isolation:isolate}
-    .has-bg-plush::before{content:"";position:absolute;inset:-8% -4%;background-image:url('assets/optimized/mascot-primary.webp');background-repeat:no-repeat;background-position:-40px 50%;background-size:auto 115%;opacity:.07;filter:saturate(.85) blur(.5px);pointer-events:none;z-index:-1}
-    .has-bg-plush--right::before{background-position:calc(100% + 40px) 50%;transform:scaleX(-1)}
-    .has-bg-plush--center::before{background-position:50% 55%;background-size:auto 130%;opacity:.05}
-
-    /* ----- Hero mascot gentle bob ----- */
-    @keyframes plush-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
-    .mascot-stage img{animation:plush-bob 4.4s ease-in-out infinite;will-change:transform}
-
-    /* ----- Card hover lift + glow ----- */
-    .card{transition:transform .25s ease, border-color .25s ease, box-shadow .35s ease}
-    .card:hover{transform:translateY(-3px);border-color:rgba(255,229,196,.22);box-shadow:0 18px 50px rgba(0,0,0,.55), 0 0 30px rgba(246,197,168,.06)}
-
-    /* ----- Visual card image scale on hover ----- */
-    .visual-card{transition:transform .25s ease, border-color .25s ease, box-shadow .35s ease}
-    .visual-card img{transition:transform .55s ease}
-    .visual-card:hover{transform:translateY(-3px);border-color:rgba(255,229,196,.22);box-shadow:0 18px 50px rgba(0,0,0,.55)}
-    .visual-card:hover img{transform:scale(1.04)}
-
-    /* ----- Artifact card hover ----- */
-    .artifact-card{transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease}
-    .artifact-card:hover{transform:translateY(-2px);border-color:rgba(246,197,168,.22);box-shadow:0 16px 40px rgba(0,0,0,.5)}
-    .artifact-card .icon{transition:transform .35s ease, background-color .25s ease, color .25s ease}
-    .artifact-card:hover .icon{transform:rotate(-6deg) scale(1.06);background:#26201a;color:var(--plush-2)}
-
-    /* ----- Asset row picture hover (medallion ladder) ----- */
-    .asset-row picture{transition:transform .35s ease;display:block}
-    .asset-row picture:hover{transform:translateY(-3px) scale(1.02)}
-
-    /* ----- Button shimmer on hover ----- */
-    .btn{transition:transform .12s ease, background .25s ease, border-color .25s ease, box-shadow .25s ease, color .25s ease}
-    .btn:hover{box-shadow:0 14px 30px rgba(0,0,0,.45), 0 0 18px rgba(246,197,168,.08)}
-    .btn.gold:hover{box-shadow:0 14px 30px rgba(0,0,0,.45), 0 0 22px rgba(246,197,168,.4);transform:translateY(-2px)}
-
-    /* ----- Phase V card subtle pulse-glow ----- */
-    @keyframes phase-v-glow{0%,100%{box-shadow:var(--shadow), 0 0 0 rgba(246,197,168,0)}50%{box-shadow:var(--shadow), 0 0 24px rgba(246,197,168,.08)}}
-    .road .phase-v{animation:phase-v-glow 6s ease-in-out infinite}
-    .road .phase-v:hover .phase-tag{text-shadow:0 0 12px rgba(255,217,184,.55)}
-
-    /* ----- Quote micro-animation ----- */
-    .quote{transition:border-color .25s ease, color .25s ease}
-    .quote:hover{border-color:var(--plush-2);color:#fff3df}
-
-    /* ----- Reduced motion respect ----- */
-    @media (prefers-reduced-motion: reduce){
-      *,*::before,*::after{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.05s !important}
-      .mascot-stage img{animation:none}
-      .marquee-track{animation:none;transform:translateX(0)}
-      .road .phase-v{animation:none}
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>$TCULT - TON blockchain Portal</title>
+  <meta name="description" content="$TCULT is a TON blockchain community-first movement building Telegram-native games, lore, artifacts, architecture, AI-assisted systems, and future TON blockchain utility applications.">
+  <meta name="theme-color" content="#070807">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/optimized/favicon-64.png">
+  <link rel="apple-touch-icon" href="assets/optimized/favicon-256.png">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-  <!-- NAV -->
-  <nav class="nav">
-    <div class="inner">
-      <div class="brand">
-        <div class="mark" aria-hidden="true"></div>
-        <span>$TCULT &middot; The #1 Cult Community on TON</span>
-      </div>
-      <div class="links">
-        <a class="btn" href="#cult">The Cult</a>
-        <a class="btn" href="#artifacts">Artifacts</a>
-        <a class="btn" href="#roadmap">Roadmap</a>
-        <a class="btn" href="https://t.me/TCULT_GROUP" target="_blank" rel="noopener">Telegram</a>
-        <a class="btn" href="https://x.com/i/communities/1964017380331311157" target="_blank" rel="noopener">X Community</a>
-      </div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html" aria-label="$TCULT portal home">
+        <span class="mark" aria-hidden="true"></span>
+        <span>$TCULT Portal</span>
+      </a>
+      <nav class="nav" aria-label="$TCULT website navigation">
+        <a class="active" href="index.html">Portal</a>
+        <a href="lore.html">Lore</a>
+        <a href="thesis.html">Thesis</a>
+        <a href="whitepaper/TCULT_TON_BLOCKCHAIN_UTILITY_WHITE_PAPER.html">White Paper</a>
+        <a href="#arcade">Arcade</a>
+        <a href="#artifacts">Artifacts</a>
+        <a href="#architecture">Architecture</a>
+        <a class="nav-cta" href="https://t.me/TCULT_GROUP" target="_blank" rel="noopener">Telegram</a>
+      </nav>
     </div>
-  </nav>
+  </header>
 
   <main id="main">
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="wrap">
-      <div>
-        <span class="badge">$TCULT &nbsp;=&nbsp; $TON CULT</span>
-        <h1><span class="accent">$TCULT</span> is the #1 COMMUNITY ON $TON</h1>
-        <p class="lead">
-          $TCULT is the TON CULT in plush form: a committed community of TON believers building the strongest movement on the chain. The plush is cute. The community is serious. Stickers, founder PFPs, mini-apps, and plushies, built by the people who actually showed up. Diamond hands, soft mascot. We are not here for one candle.
-        </p>
-        <div class="ctaRow">
-          <a class="btn gold" href="https://t.me/TCULT_GROUP" target="_blank" rel="noopener">Join Telegram</a>
-          <a class="btn" href="https://x.com/i/communities/1964017380331311157" target="_blank" rel="noopener">X Community</a>
-          <a class="btn ghost" href="https://tinyurl.com/BuyTCULT" target="_blank" rel="noopener">Buy on Gas Pump</a>
-        </div>
-        <button type="button" class="pill pill-copy" data-copy="EQDFEJbv8N9ocgDqumICqdSCAi5wY7kJFr0x0jFotjrHabuK" aria-label="Copy contract address to clipboard">
-          <span>CA:</span>
-          <code class="addr">EQDFEJbv8N9ocgDqumICqdSCAi5wY7kJFr0x0jFotjrHabuK</code>
-          <span class="copy-hint" aria-hidden="true">Copy</span>
-        </button>
+    <section class="hero">
+      <div class="hero-media">
+        <video src="assets/videos/all-hands-build.mp4" autoplay muted loop playsinline poster="assets/lineups/core-cast-lineup.png"></video>
       </div>
-
-      <div class="mascot-stage" aria-label="$TCULT plush mascot">
-        <picture>
-          <source srcset="assets/optimized/mascot-primary.webp" type="image/webp" />
-          <img src="assets/mascot-primary.png" alt="$TCULT plush mascot, a small robed plush figure with a glowing medallion" decoding="async" onerror="this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex';" />
-        </picture>
-        <div class="mascot-fallback" style="display:none">
-          <div class="blob" aria-hidden="true"></div>
-          <small>Plush mascot drop incoming</small>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LAUNCH VISUALS -->
-  <section class="section">
-    <div class="wrap">
-      <div class="wide-art">
-        <picture>
-          <source srcset="assets/optimized/banner-1500x500.webp" type="image/webp" />
-          <img src="assets/banner-1500x500.png" alt="$TCULT plush cult mascot lineup wide banner" loading="lazy" decoding="async" />
-        </picture>
-      </div>
-    </div>
-  </section>
-
-  <!-- $TCULT IS THE TON CULT -->
-  <section id="cult" class="section">
-    <div class="wrap">
-      <h2>$TCULT is the TON CULT</h2>
-      <p class="lead" style="margin-bottom:18px">$TCULT means $TON CULT. The cult is a committed community of TON believers, not horror, not coercion, not a coordinated chart. It is loyalty, shared identity, Telegram-native rituals, and a plush mascot we can rally around. We are here to build the strongest community on TON.</p>
-      <div class="grid">
-        <div class="card">
-          <h3>We show up</h3>
-          <p style="color:var(--muted);margin:0">The cult is the people who keep showing up: in the group chat, on the timeline, in the next sticker drop. We do not disappear at the first green candle. We do not ghost when it wobbles. We stay.</p>
-        </div>
-        <div class="card">
-          <h3>Community first</h3>
-          <p style="color:var(--muted);margin:0">Every sticker, every PFP, every plushie is built for the people who actually showed up. New faces get welcomed in, not flipped on. We lift the next member up. We build out loud.</p>
-        </div>
-        <div class="card">
-          <h3>Loyalty as identity</h3>
-          <p style="color:var(--muted);margin:0">Diamond hands, soft mascot. $TCULT is not a flip; it is an identity. We are long-term believers in TON, in this community, and in each other. Hold the symbol. Grow the cult.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MARQUEE -->
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee-track">
-      <span>$TCULT is the TON CULT</span>
-      <span>The plush is cute. The community is serious.</span>
-      <span>Diamond hands, soft mascot</span>
-      <span>We are not here for one candle</span>
-      <span>Loyalty over hype</span>
-      <span>Drop PLUSH if you are still here</span>
-      <span>$TCULT is the TON CULT</span>
-      <span>The plush is cute. The community is serious.</span>
-      <span>Diamond hands, soft mascot</span>
-      <span>We are not here for one candle</span>
-      <span>Loyalty over hype</span>
-      <span>Drop PLUSH if you are still here</span>
-    </div>
-  </div>
-
-  <!-- LORE -->
-  <section class="section warm has-bg-plush">
-    <div class="wrap lore">
-      <div>
-        <h2>The TON CULT has taken plush form.</h2>
-        <p>Other meme coins promise a quick flip. $TCULT promises a group chat that actually means something. The cult is the people who keep showing up: onboarding the next person, sharing the next sticker, carrying the symbol, and building the long arc of a real community on TON.</p>
-        <div class="quote">"Diamond hands. Soft mascot. Loud cult."</div>
-        <p>$TCULT is a movement, not a market move. We are not here for one candle.</p>
-      </div>
-      <div class="card">
-        <h3>What the cult believes</h3>
-        <ul class="creed">
-          <li><strong>Loyalty over hype.</strong> We are here for the long arc.</li>
-          <li><strong>Community over chart.</strong> The group chat is the product.</li>
-          <li><strong>Build, do not sell.</strong> Every artifact is for the people in the room.</li>
-          <li><strong>Welcome, do not flip.</strong> Lift the next member up.</li>
-          <li><strong>Stay, do not ghost.</strong> We do not disappear at the first green candle.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- COMMUNITY ARTIFACTS -->
-  <section id="artifacts" class="section">
-    <div class="wrap">
-      <h2>Community artifacts</h2>
-      <p class="lead" style="margin-bottom:18px">The cult is built out of small shareable things: stickers in the group chat, animated reactions, founder PFPs, mini-apps, and eventually plushies you can actually hold. Everything below is for the people who actually showed up.</p>
-      <div class="visual-grid" style="margin-bottom:18px">
-        <div class="visual-card">
-          <picture>
-            <source srcset="assets/optimized/sticker-join-softly.webp" type="image/webp" />
-            <img src="assets/sticker-join-softly.png" alt="$TCULT Join Softly sticker preview" loading="lazy" decoding="async" />
-          </picture>
-          <div class="copy">
-            <h3>Sticker-native culture</h3>
-            <p>The first artifacts are built for Telegram sharing: readable, cute, and easy to drop into a group chat the moment a new face joins.</p>
+      <div class="shell">
+        <div class="hero-copy">
+          <div class="hero-kicker-row">
+            <span class="eyebrow">$TCULT</span>
+            <span class="tag ton">TON blockchain</span>
+            <span class="tag green">AI Powered</span>
           </div>
-        </div>
-        <div class="visual-card">
-          <picture>
-            <source srcset="assets/optimized/pfp-gold-rare.webp" type="image/webp" />
-            <img src="assets/pfp-gold-rare.png" alt="$TCULT gold medallion plush PFP preview" loading="lazy" decoding="async" />
-          </picture>
-          <div class="copy">
-            <h3>Founder identity layer</h3>
-            <p>Founder PFPs use visible medallions and clean mascot reads so the cult can recognize its own at a glance. Identity, not investment.</p>
+          <h1>The meme is the signal. The build is the movement.</h1>
+          <p class="lead">$TCULT is a character-led TON blockchain community building games, collectibles, architecture, and future utility applications around a simple idea: culture brings people in, useful technology gives them a reason to stay.</p>
+          <div class="actions">
+            <a class="btn primary" href="#arcade">Play The Arcade</a>
+            <a class="btn" href="lore.html">Meet The Council</a>
+            <a class="btn ton" href="thesis.html">Read The Thesis</a>
+            <a class="btn" href="https://x.com/i/communities/1964017380331311157" target="_blank" rel="noopener">X Community</a>
+            <a class="btn" href="https://x.com/i/chat/g2054570641982926879" target="_blank" rel="noopener">X Group Chat</a>
           </div>
         </div>
       </div>
-      <div class="artifact-grid">
-        <div class="artifact-card" style="--artifact-bg-img:url('assets/optimized/sticker-join-softly.webp')">
-          <div class="icon" aria-hidden="true">S</div>
-          <h3>Static sticker pack</h3>
-          <p>Plush mascots ready for Telegram group chats. Cute, weird, and easy to send.</p>
-          <span class="status">Live</span>
-          <div class="card-actions">
-            <a class="btn gold" href="https://t.me/addstickers/tcult_plush_static_001_by_TCultPlushBot" target="_blank" rel="noopener">Open sticker pack</a>
+    </section>
+
+    <section class="section alt" id="arcade">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Live Arcade</span>
+            <h2>Three playable rituals are already live.</h2>
+            <p class="lead">The arcade is the daily participation layer. Each game is light, fast, Telegram-native, and built to make the plush world feel active every time the community opens the portal.</p>
           </div>
+          <div class="note">Every live game keeps both its Telegram mini app link and direct web app link so the redesign preserves the existing launched surfaces.</div>
         </div>
-        <div class="artifact-card" style="--artifact-bg-img:url('assets/optimized/artifact-cards/medallion-flex.webp')">
-          <div class="icon" aria-hidden="true">A</div>
-          <h3>Animated sticker pack</h3>
-          <p>The plush cult, in motion. Reactions, loops, and tiny rituals for the group chat.</p>
-          <span class="status">Live</span>
-          <div class="card-actions">
-            <a class="btn gold" href="https://t.me/addstickers/tcult_plush_pack_001_by_TCultPlushBot" target="_blank" rel="noopener">Open animated pack</a>
-          </div>
-        </div>
-        <div class="artifact-card" style="--artifact-bg-img:url('assets/optimized/pfp-gold-rare.webp')">
-          <div class="icon" aria-hidden="true">P</div>
-          <h3>Founder PFP NFTs</h3>
-          <p>Plush founder identities on TON via Getgems. A medallion ladder so the cult can recognize its own. Identity layer, not a price layer.</p>
-          <span class="status">Live</span>
-          <div class="card-actions">
-            <a class="btn gold" href="https://getgems.io/tcult" target="_blank" rel="noopener">View Founder PFPs</a>
-          </div>
-        </div>
-        <div class="artifact-card" style="--artifact-bg-img:url('assets/optimized/artifact-cards/gift-box-plush.webp')">
-          <div class="icon" aria-hidden="true">G</div>
-          <h3>Telegram gifts &amp; collectibles</h3>
-          <p>Gift-style video sticker pack and Getgems collectible concepts are live while official Telegram Gifts remain future-facing.</p>
-          <span class="status">Concepts live</span>
-          <div class="card-actions">
-            <a class="btn gold" href="https://t.me/addstickers/tcult_gift_concepts_001_by_TCultPlushBot" target="_blank" rel="noopener">Open gift sticker pack</a>
-            <a class="btn" href="https://getgems.io/collection/EQAG4K6UZzw8Aw7jk8CF8XVMPE9ghxB6k0ckJxtSDPQ6LRU5" target="_blank" rel="noopener">View Gift Concepts</a>
-          </div>
-        </div>
-        <div class="artifact-card" style="--artifact-bg-img:url('assets/optimized/artifact-cards/plush-tap-botfather.webp');--artifact-bg-pos:right -10px center;--artifact-bg-size:auto 130%">
-          <div class="icon" aria-hidden="true">M</div>
-          <h3>Mini-apps &amp; games</h3>
-          <p>Three plush mini games live on Telegram: Plush Tap (daily tap ritual), Plush Run (3-lane runner chasing the daily gift), Plush Hop (vertical climb to the daily gift gate). Telegram-native games, stickers, animations, and rituals are how the plush cult spreads.</p>
-          <span class="status">Live</span>
-          <div class="card-actions">
-            <a class="btn gold" href="https://t.me/TCultPlushBot/plushtap" data-tg-app="plushtap" target="_blank" rel="noopener">Play Plush Tap</a>
-            <a class="btn gold" href="https://t.me/TCultPlushBot/plushrun" data-tg-app="plushrun" target="_blank" rel="noopener">Play Plush Run</a>
-            <a class="btn gold" href="https://t.me/TCultPlushBot/plushhop" data-tg-app="plushhop" target="_blank" rel="noopener">Play Plush Hop</a>
-          </div>
-        </div>
-        <div class="artifact-card" style="--artifact-bg-img:url('assets/optimized/artifact-cards/gold-founder-plushie.webp')">
-          <div class="icon" aria-hidden="true">+</div>
-          <h3>Physical plushies</h3>
-          <p>The endgame is not just images. The path leads to plushies you can put on a desk, gift to a fellow cultist, and hold in your hand.</p>
-          <span class="status">Long arc</span>
+
+        <div class="grid three">
+          <article class="card game-card">
+            <div class="game-window tap"><span class="status-pill">Live mini app</span></div>
+            <div class="card-body">
+              <span class="tag">Plush Tap</span>
+              <h3>The daily tap ritual.</h3>
+              <p>A fast first-touch game for quick engagement, score chasing, and easy community participation.</p>
+              <div class="actions">
+                <a class="btn primary" href="https://t.me/TCultPlushBot/plushtap" data-tg-app="plushtap" target="_blank" rel="noopener">Play In Telegram</a>
+                <a class="btn" href="https://client-cryptochucker-tcult-plush-ta.vercel.app/" target="_blank" rel="noopener">Open Web App</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card game-card">
+            <div class="game-window run"><span class="status-pill">Live mini app</span></div>
+            <div class="card-body">
+              <span class="tag">Plush Run</span>
+              <h3>The chase through the plush lane.</h3>
+              <p>A motion-driven arcade loop designed for quick sessions, clean replays, and shareable runs.</p>
+              <div class="actions">
+                <a class="btn primary" href="https://t.me/TCultPlushBot/plushrun" data-tg-app="plushrun" target="_blank" rel="noopener">Play In Telegram</a>
+                <a class="btn" href="https://plush-run.vercel.app/" target="_blank" rel="noopener">Open Web App</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card game-card">
+            <div class="game-window hop"><span class="status-pill">Live mini app</span></div>
+            <div class="card-body">
+              <span class="tag">Plush Hop</span>
+              <h3>The bounce loop.</h3>
+              <p>A simple jump-and-survive game that keeps the arcade playful while the broader build expands.</p>
+              <div class="actions">
+                <a class="btn primary" href="https://t.me/TCultPlushBot/plushhop" data-tg-app="plushhop" target="_blank" rel="noopener">Play In Telegram</a>
+                <a class="btn" href="https://plush-hop.vercel.app/" target="_blank" rel="noopener">Open Web App</a>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- MEDALLION LADDER -->
-  <section class="section warm has-bg-plush has-bg-plush--right">
-    <div class="wrap">
-      <h2>Medallion identity ladder</h2>
-      <p class="lead" style="margin-bottom:16px">Copper, silver, gold, platinum, glowing, and fire. A simple identity language so the cult can recognize each other. Carry the symbol. Belonging, not yield.</p>
-      <div class="asset-row">
-        <picture>
-          <source srcset="assets/optimized/pfp-copper-common.webp" type="image/webp" />
-          <img src="assets/pfp-copper-common.png" alt="$TCULT copper medallion plush PFP, common tier" loading="lazy" decoding="async" />
-        </picture>
-        <picture>
-          <source srcset="assets/optimized/pfp-gold-rare.webp" type="image/webp" />
-          <img src="assets/pfp-gold-rare.png" alt="$TCULT gold medallion plush PFP, rare tier" loading="lazy" decoding="async" />
-        </picture>
-        <picture>
-          <source srcset="assets/optimized/pfp-fire-mythic.webp" type="image/webp" />
-          <img src="assets/pfp-fire-mythic.png" alt="$TCULT fire medallion plush PFP, mythic tier" loading="lazy" decoding="async" />
-        </picture>
-      </div>
-    </div>
-  </section>
-
-  <!-- ROADMAP -->
-  <section id="roadmap" class="section">
-    <div class="wrap">
-      <h2>Community roadmap</h2>
-      <p class="lead" style="margin-bottom:18px">A community/product roadmap, not a token roadmap. Concrete moves, no promises about price, supply, or timing.</p>
-      <div class="road">
-        <div class="card">
-          <span class="phase-tag">Phase I</span>
-          <h3>Plush rebrand &amp; community revival</h3>
-          <div class="step">Retire the old gritty cultist look</div>
-          <div class="step">Lock canonical plush mascot art and tone</div>
-          <div class="step">Wake the Telegram and X communities back up</div>
-        </div>
-        <div class="card">
-          <span class="phase-tag">Phase II &middot; Live</span>
-          <h3>Sticker pack &amp; animated stickers</h3>
-          <div class="step">Static sticker pack live on Telegram: plush join-softly, holder-nap, soft-but-early</div>
-          <div class="step">Animated sticker pack live on Telegram: plush mascots in motion</div>
-          <div class="step">Daily Telegram cadence and community rituals</div>
-        </div>
-        <div class="card">
-          <span class="phase-tag">Phase III &middot; Live</span>
-          <h3>Founder PFP identity layer</h3>
-          <div class="step">Founder Plush launch shelf live on Getgems (initial 12 listed)</div>
-          <div class="step">Medallion ladder: Copper, Silver, Gold, Platinum, Glowing, Fire</div>
-          <div class="step">Recognition for the people who showed up early</div>
-        </div>
-        <div class="card">
-          <span class="phase-tag">Phase IV &middot; Live</span>
-          <h3>Mini-apps &amp; Telegram experiments</h3>
-          <div class="step">Three plush mini games live on Telegram: Plush Tap (daily ritual), Plush Run (lane runner), Plush Hop (gift tower)</div>
-          <div class="step">More mini games, tap loops, sticker mechanics, and group rituals planned</div>
-          <div class="step">Cross-community plush experiments on TON</div>
-        </div>
-        <div class="card phase-v" style="grid-column:1/-1">
-          <span class="phase-tag">Phase V</span>
-          <h3>Plushies &amp; Telegram gift collectibles</h3>
-          <div class="step">Gift concept sticker pack and Getgems gift concept collection live now (official Telegram Gifts remain future-facing)</div>
-          <div class="step">Physical plushie prototypes you can hold, gift, and post (long arc, no preorder)</div>
-          <div class="step">A community that has earned the right to call itself a cult</div>
+    <section class="section ember-band" id="lore-preview">
+      <div class="shell">
+        <div class="split">
+          <div>
+            <span class="eyebrow">Lore Engine</span>
+            <h2>The Grand Council gives the build its myth.</h2>
+            <p class="lead">The $TCULT world is carried by workers, operators, signal keepers, and four mythic council seats. The story is not decoration. It is how the community understands the build: play becomes ritual, ritual becomes identity, identity becomes momentum, and momentum becomes useful TON blockchain technology.</p>
+            <div class="actions">
+              <a class="btn primary" href="lore.html">Open The Lore Page</a>
+              <a class="btn" href="lore.html#council">Enter The Grand Council</a>
+            </div>
+          </div>
+          <div class="media-frame">
+            <video src="assets/videos/council-reveal-stinger.mp4" autoplay muted loop playsinline poster="assets/lineups/mythic-circle-lineup.png"></video>
+            <div class="overlay-caption">
+              <strong>The Council appears when the build reaches a threshold.</strong>
+              <p>Throne, Ember, Aegis, and Beacon represent vision, invention, protection, and signal.</p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- JOIN THE CULT -->
-  <section class="section warm has-bg-plush has-bg-plush--center">
-    <div class="wrap">
-      <h2>Join the cult. Build the community. Carry the symbol.</h2>
-      <div class="card join-card">
-        <div>
-          <h3>The cult lives in the group chat</h3>
-          <p style="color:var(--muted);margin:0 0 10px">Drop into Telegram, say PLUSH, vote on the next sticker, and welcome the next person who walks in. The strongest community on TON gets built one group chat at a time.</p>
-          <ul class="join-links">
-            <li><a class="btn gold" href="https://t.me/TCULT_GROUP" target="_blank" rel="noopener">Join Telegram</a></li>
-            <li><a class="btn" href="https://x.com/i/communities/1964017380331311157" target="_blank" rel="noopener">X Community</a></li>
-            <li><a class="btn ghost" href="https://tinyurl.com/BuyTCULT" target="_blank" rel="noopener">Buy on Gas Pump</a></li>
-          </ul>
+    <section class="section" id="artifacts">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Artifacts And Store Links</span>
+            <h2>The launched collectibles stay visible.</h2>
+            <p class="lead">The new portal keeps the original artifact lanes intact: Telegram sticker packs, animated packs, founder PFPs, and gift concepts remain directly reachable from the redesigned site.</p>
+          </div>
+          <div class="note">Artifacts are the identity layer. They give the community visible symbols while the arcade and utility lanes keep expanding.</div>
         </div>
-        <div>
-          <p style="margin:0;color:var(--muted);font-size:14px"><strong style="color:var(--text)">Built by CryptoChucker.</strong> The originator and steward of $TCULT. The cult is community-led; CryptoChucker builds, narrates, and ships.</p>
-          <p class="tiny" style="margin-top:10px">Always verify the contract address on this page before transacting. Not financial advice. The plush just looked at you weird.</p>
+
+        <div class="artifact-list" aria-label="$TCULT artifact and store links">
+          <article class="artifact-row">
+            <img src="assets/optimized/sticker-soft-but-early.webp" alt="$TCULT static sticker preview">
+            <div>
+              <span class="tag">Telegram Stickers</span>
+              <h3>Static Plush Sticker Pack</h3>
+              <p>Soft, early, and built for everyday chat rituals.</p>
+            </div>
+            <a class="btn primary" href="https://t.me/addstickers/tcult_plush_static_001_by_TCultPlushBot" target="_blank" rel="noopener">Open Pack</a>
+          </article>
+
+          <article class="artifact-row">
+            <img src="assets/optimized/sticker-join-softly.webp" alt="$TCULT animated sticker preview">
+            <div>
+              <span class="tag">Telegram Stickers</span>
+              <h3>Animated Plush Sticker Pack</h3>
+              <p>Motion-first expressions for Telegram raids, replies, and community moments.</p>
+            </div>
+            <a class="btn primary" href="https://t.me/addstickers/tcult_plush_pack_001_by_TCultPlushBot" target="_blank" rel="noopener">Open Pack</a>
+          </article>
+
+          <article class="artifact-row">
+            <img src="assets/optimized/pfp-gold-rare.webp" alt="$TCULT founder PFP preview">
+            <div>
+              <span class="tag">Getgems</span>
+              <h3>Founder PFPs</h3>
+              <p>Collectible identity pieces for the earliest believers in the TON blockchain world.</p>
+            </div>
+            <a class="btn primary" href="https://getgems.io/tcult" target="_blank" rel="noopener">View PFPs</a>
+          </article>
+
+          <article class="artifact-row">
+            <img src="assets/optimized/artifact-cards/gift-box-plush.webp" alt="$TCULT gift concept preview">
+            <div>
+              <span class="tag">Getgems</span>
+              <h3>Gift Concepts</h3>
+              <p>A separate collectible lane for gift-style plush concepts and future identity experiments.</p>
+            </div>
+            <a class="btn primary" href="https://getgems.io/collection/EQAG4K6UZzw8Aw7jk8CF8XVMPE9ghxB6k0ckJxtSDPQ6LRU5" target="_blank" rel="noopener">View Concepts</a>
+          </article>
+
+          <article class="artifact-row">
+            <img src="assets/optimized/sticker-holder-nap.webp" alt="$TCULT Telegram gift sticker preview">
+            <div>
+              <span class="tag">Telegram Stickers</span>
+              <h3>Gift Sticker Pack</h3>
+              <p>Plush gift art for Telegram sharing and future culture loops.</p>
+            </div>
+            <a class="btn primary" href="https://t.me/addstickers/tcult_gift_concepts_001_by_TCultPlushBot" target="_blank" rel="noopener">Open Pack</a>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FAQ -->
-  <section class="section">
-    <div class="wrap faq">
-      <h2>FAQ</h2>
-      <details>
-        <summary>What is the TON CULT?</summary>
-        <p>$TCULT means $TON CULT. The cult is a committed community of TON believers, not horror, not coercion, not a coordinated chart. It is loyalty, shared identity, Telegram-native rituals, and a plush mascot we can rally around. We are here to build the strongest community on TON.</p>
-      </details>
-      <details>
-        <summary>What is $TCULT?</summary>
-        <p>$TCULT is the TON CULT in plush form: a community of long-term believers building stickers, founder PFPs, mini-apps, and plushies together. The old gritty cultist era is retired. The new $TCULT is cute, weird, loyal, and built around the people who actually show up.</p>
-      </details>
-      <details>
-        <summary>What makes $TCULT different?</summary>
-        <p>Most meme coins are charts with a logo bolted on. $TCULT is a community first. The plush is cute. The community is serious. Diamond hands, soft mascot. We are not here for one candle. We are trying to build something the people in the room actually want to hold onto: stickers, PFPs, mini-apps, and a group chat that means something.</p>
-      </details>
-      <details>
-        <summary>How do I join?</summary>
-        <p>Hop into the <a href="https://t.me/TCULT_GROUP" target="_blank" rel="noopener">Telegram group</a> and the <a href="https://x.com/i/communities/1964017380331311157" target="_blank" rel="noopener">X community</a>. Drop a "PLUSH" so the cult knows you are here. Vote on the next sticker. Welcome the next person.</p>
-      </details>
-      <details>
-        <summary>Are the stickers, PFPs, and plushies live yet?</summary>
-        <p>Static and animated Telegram sticker packs are live. Founder PFPs are live on Getgems (initial 12 listed). Gift-style sticker concepts and the Getgems gift concept collection are live. Three $TCULT plush mini games (Plush Tap, Plush Run, Plush Hop) are live on Telegram. Official Telegram Gifts are future-facing, and physical plushies are still long arc with no preorder. All open links are in the artifacts section above.</p>
-      </details>
-      <details>
-        <summary>Are there games or apps coming?</summary>
-        <p>Three plush Telegram mini games are live: <a href="https://t.me/TCultPlushBot/plushtap" data-tg-app="plushtap" target="_blank" rel="noopener">Plush Tap</a> (daily tap ritual), <a href="https://t.me/TCultPlushBot/plushrun" data-tg-app="plushrun" target="_blank" rel="noopener">Plush Run</a> (3-lane runner chasing the daily gift), and <a href="https://t.me/TCultPlushBot/plushhop" data-tg-app="plushhop" target="_blank" rel="noopener">Plush Hop</a> (vertical climb to the daily gift gate). More games, stickers, animations, and group-chat rituals are the growth loop.</p>
-      </details>
-      <details>
-        <summary>How do I buy $TCULT?</summary>
-        <p>Use the <a href="https://tinyurl.com/BuyTCULT" target="_blank" rel="noopener">Gas Pump link</a>. Always verify the contract address on this page before transacting. Not financial advice. DYOR.</p>
-      </details>
-    </div>
-  </section>
+    <section class="section ton-band" id="architecture">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Solution Architecture</span>
+            <h2>A high-level map of the $TCULT build engine.</h2>
+            <p class="lead">The public architecture view shows how community, lore, mini apps, artifacts, AI-assisted production, TON blockchain rails, and engineering documentation connect into one operating system.</p>
+          </div>
+          <div class="note">The detailed object-and-edge diagrams stay in the architecture catalog. This public map is the visual story: everything connects back to a disciplined build loop.</div>
+        </div>
 
+        <div class="architecture-stage">
+          <div class="architecture-layout">
+            <svg class="solution-map" viewBox="0 0 1180 720" role="img" aria-labelledby="map-title map-desc">
+              <title id="map-title">$TCULT high-level solution architecture</title>
+              <desc id="map-desc">A visual architecture connecting community, lore, games, artifacts, AI-assisted build systems, TON blockchain, utility applications, and architecture catalog around the $TCULT core.</desc>
+              <defs>
+                <linearGradient id="coreGrad" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0%" stop-color="#ffe6a8"/>
+                  <stop offset="52%" stop-color="#f6c85a"/>
+                  <stop offset="100%" stop-color="#c06b28"/>
+                </linearGradient>
+                <linearGradient id="tonGrad" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0%" stop-color="#bff4ff"/>
+                  <stop offset="100%" stop-color="#22b8ff"/>
+                </linearGradient>
+                <linearGradient id="greenGrad" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0%" stop-color="#d8ffd9"/>
+                  <stop offset="100%" stop-color="#72d887"/>
+                </linearGradient>
+                <filter id="glow">
+                  <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+                  <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+              </defs>
+
+              <rect x="16" y="16" width="1148" height="688" rx="8" fill="#080d0e" stroke="rgba(255,255,255,0.12)"/>
+              <path d="M 590 92 C 760 116 902 220 958 365 C 904 520 760 622 590 640 C 414 622 277 520 222 365 C 279 220 414 116 590 92 Z" fill="rgba(255,255,255,0.022)" stroke="rgba(246,200,90,0.22)" stroke-width="2"/>
+              <path d="M 590 147 C 721 164 835 248 878 365 C 835 484 721 560 590 575 C 454 560 344 484 301 365 C 344 248 454 164 590 147 Z" fill="rgba(34,184,255,0.025)" stroke="rgba(34,184,255,0.24)" stroke-width="2"/>
+              <path class="flow data" d="M 286 185 C 390 135 495 148 590 255"/>
+              <path class="flow auto" d="M 590 255 C 680 146 792 136 898 190"/>
+              <path class="flow ton" d="M 742 365 C 848 385 934 450 980 560"/>
+              <path class="flow auth" d="M 590 470 C 503 572 382 598 252 548"/>
+              <path class="flow data" d="M 438 365 C 340 392 238 382 150 320"/>
+              <path class="flow auto" d="M 742 365 C 848 340 948 298 1030 220"/>
+              <path class="flow ton" d="M 590 470 C 640 544 636 602 590 640"/>
+
+              <g class="map-node" filter="url(#glow)">
+                <path d="M590 225 L713 292 L713 438 L590 505 L467 438 L467 292 Z" fill="url(#coreGrad)" stroke="#fff0bd" stroke-width="3"/>
+                <text x="590" y="348" text-anchor="middle" fill="#140f09" font-size="34" font-weight="950">$TCULT</text>
+                <text x="590" y="379" text-anchor="middle" fill="#241707" font-size="15" font-weight="850">culture + build engine</text>
+              </g>
+
+              <g class="map-node">
+                <rect x="84" y="254" width="205" height="132" rx="8" fill="rgba(255,255,255,0.07)" stroke="rgba(246,200,90,0.38)"/>
+                <text x="187" y="304" text-anchor="middle" class="map-label">Community</text>
+                <text x="187" y="332" text-anchor="middle" class="map-small">Telegram, X, rituals</text>
+                <text x="187" y="354" text-anchor="middle" class="map-small">attention into participation</text>
+              </g>
+
+              <g class="map-node">
+                <rect x="176" y="126" width="220" height="118" rx="8" fill="rgba(255,122,61,0.105)" stroke="rgba(255,122,61,0.46)"/>
+                <text x="286" y="176" text-anchor="middle" class="map-label">Lore Layer</text>
+                <text x="286" y="204" text-anchor="middle" class="map-small">characters, council, story</text>
+              </g>
+
+              <g class="map-node">
+                <rect x="784" y="128" width="230" height="124" rx="8" fill="rgba(246,200,90,0.095)" stroke="rgba(246,200,90,0.46)"/>
+                <text x="899" y="174" text-anchor="middle" class="map-label">AI Build Studio</text>
+                <text x="899" y="202" text-anchor="middle" class="map-small">creative systems, agents</text>
+                <text x="899" y="224" text-anchor="middle" class="map-small">release discipline</text>
+              </g>
+
+              <g class="map-node">
+                <rect x="844" y="306" width="235" height="126" rx="8" fill="rgba(99,236,255,0.095)" stroke="rgba(99,236,255,0.45)"/>
+                <text x="962" y="356" text-anchor="middle" class="map-label">Mini Apps</text>
+                <text x="962" y="384" text-anchor="middle" class="map-small">arcade, utility, portals</text>
+                <text x="962" y="406" text-anchor="middle" class="map-small">Telegram-native surfaces</text>
+              </g>
+
+              <g class="map-node">
+                <rect x="782" y="520" width="242" height="118" rx="8" fill="rgba(114,216,135,0.105)" stroke="rgba(114,216,135,0.48)"/>
+                <text x="903" y="568" text-anchor="middle" class="map-label">TON blockchain rails</text>
+                <text x="903" y="596" text-anchor="middle" class="map-small">wallets, assets, identity</text>
+              </g>
+
+              <g class="map-node">
+                <rect x="384" y="574" width="412" height="82" rx="8" fill="rgba(255,255,255,0.065)" stroke="rgba(247,239,226,0.18)"/>
+                <text x="590" y="614" text-anchor="middle" class="map-label">Catalog Layer</text>
+                <text x="590" y="639" text-anchor="middle" class="map-small">living build records for every shipped surface</text>
+              </g>
+
+              <g class="map-node">
+                <rect x="142" y="498" width="230" height="118" rx="8" fill="rgba(255,125,165,0.095)" stroke="rgba(255,125,165,0.44)"/>
+                <text x="257" y="546" text-anchor="middle" class="map-label">Artifacts</text>
+                <text x="257" y="574" text-anchor="middle" class="map-small">stickers, PFPs, gifts</text>
+              </g>
+
+              <g class="map-node">
+                <rect x="478" y="60" width="224" height="110" rx="8" fill="rgba(34,184,255,0.085)" stroke="rgba(34,184,255,0.46)"/>
+                <text x="590" y="106" text-anchor="middle" class="map-label">Grand Council</text>
+                <text x="590" y="134" text-anchor="middle" class="map-small">future signal + intelligence</text>
+              </g>
+            </svg>
+
+            <aside class="legend-panel" aria-label="Architecture legend and catalog links">
+              <div class="legend-item">
+                <span class="legend-swatch data"></span>
+                <div><strong>Data flow</strong><br><span class="copy">Signals from community play, artifact interaction, site visits, and product usage inform the next build cycle.</span></div>
+              </div>
+              <div class="legend-item">
+                <span class="legend-swatch auto"></span>
+                <div><strong>Automation and agents</strong><br><span class="copy">AI-assisted planning, content production, quality checks, and release operations support the studio without replacing human judgment.</span></div>
+              </div>
+              <div class="legend-item">
+                <span class="legend-swatch auth"></span>
+                <div><strong>Trust and gates</strong><br><span class="copy">Architecture records, approval gates, public reveal timing, and version snapshots keep the system from becoming chaos.</span></div>
+              </div>
+              <div class="legend-item">
+                <span class="legend-swatch ton"></span>
+                <div><strong>TON blockchain integration</strong><br><span class="copy">Games, artifacts, utility lanes, wallet-aware experiences, and future applications connect through Telegram and TON blockchain-native primitives.</span></div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="thesis-preview">
+      <div class="shell">
+        <div class="split">
+          <div class="media-frame">
+            <video src="assets/videos/ai-signal-weave.mp4" autoplay muted loop playsinline poster="assets/posters/public/ai-signal-weave.png"></video>
+            <div class="overlay-caption">
+              <strong>Culture is the interface. AI is the coordination layer. The TON blockchain is the rail.</strong>
+              <p>The thesis page explains the technical direction and the product doctrine behind the ecosystem.</p>
+            </div>
+          </div>
+          <div>
+            <span class="eyebrow">Technical Thesis</span>
+            <h2>A serious builder program wrapped in a meme-native world.</h2>
+            <p class="lead">The thesis and white-paper page goes deeper into the strategy: Telegram-native distribution, AI-assisted production, TON blockchain primitives, living architecture, and utility applications that can become genuinely useful for TON blockchain users.</p>
+            <div class="actions">
+              <a class="btn primary" href="thesis.html">Read The Thesis</a>
+              <a class="btn" href="thesis.html#white-paper">Open White Paper Layer</a>
+              <a class="btn ton" href="whitepaper/TCULT_TON_BLOCKCHAIN_UTILITY_WHITE_PAPER.html">Read White Paper</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="roadmap">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Public Roadmap</span>
+            <h2>Show the lanes, protect the vault.</h2>
+            <p class="lead">$TCULT can reveal momentum without giving away private utility concepts before they are close to launch. The public promise is steady: more games, richer lore, stronger artifacts, and useful TON blockchain applications when they are ready.</p>
+          </div>
+          <div class="note">The project keeps excitement high by telling the direction clearly and revealing each utility lane when it is ready for public attention.</div>
+        </div>
+
+        <div class="grid four">
+          <article class="card">
+            <div class="card-body">
+              <span class="tag">Now</span>
+              <h3>Arcade Heartbeat</h3>
+              <p>Keep live games reachable, improve the community loop, and turn each playable surface into a clearer part of the $TCULT world.</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-body">
+              <span class="tag">Next</span>
+              <h3>Lore Depth</h3>
+              <p>Give the Grand Council and core cast enough story power that people can follow the characters as much as the chart.</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-body">
+              <span class="tag">Build</span>
+              <h3>Utility Applications</h3>
+              <p>Develop practical TON blockchain-native tools in guarded lanes, then reveal them when the experience is strong enough to stand publicly.</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-body">
+              <span class="tag">Always</span>
+              <h3>Freshness Loop</h3>
+              <p>Refresh architecture, content, games, and product ideas on a steady cycle so the community keeps seeing life and motion.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <script>
-  (function(){
-    document.addEventListener('click', function(e){
-      var btn = e.target.closest('.pill-copy');
-      if (!btn) return;
-      var text = btn.getAttribute('data-copy');
-      if (!text) return;
-      var hint = btn.querySelector('.copy-hint');
-      var prev = hint ? hint.textContent : null;
-      function flash(){
-        btn.classList.add('copied');
-        if (hint) hint.textContent = 'Copied!';
-        setTimeout(function(){
-          btn.classList.remove('copied');
-          if (hint && prev) hint.textContent = prev;
-        }, 1800);
-      }
-      function fallbackSelect(){
-        var code = btn.querySelector('code');
-        if (code && window.getSelection){
-          var range = document.createRange();
-          range.selectNodeContents(code);
-          var sel = window.getSelection();
-          sel.removeAllRanges();
-          sel.addRange(range);
-          try { if (document.execCommand('copy')) flash(); } catch(_){}
-        }
-      }
-      if (navigator.clipboard && navigator.clipboard.writeText){
-        navigator.clipboard.writeText(text).then(flash).catch(fallbackSelect);
-      } else {
-        fallbackSelect();
-      }
-    });
-  })();
-
-  (function setupTelegramMiniAppLinks(){
-    var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent || '');
-    if (!isMobile) return;
-
-    document.addEventListener('click', function(e){
-      var link = e.target.closest('a[data-tg-app]');
-      if (!link) return;
-      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-
-      var appName = link.getAttribute('data-tg-app');
-      if (!appName) return;
-
-      e.preventDefault();
-
-      var fallbackUrl = link.href;
-      var nativeUrl = 'tg://resolve?domain=TCultPlushBot&appname=' + encodeURIComponent(appName);
-      var pageHidden = false;
-      var markHidden = function(){
-        pageHidden = true;
-      };
-
-      window.addEventListener('pagehide', markHidden, { once: true });
-      window.addEventListener('blur', markHidden, { once: true });
-      window.location.href = nativeUrl;
-
-      window.setTimeout(function(){
-        if (!pageHidden) {
-          window.location.href = fallbackUrl;
-        }
-      }, 900);
-    });
-  })();
-  </script>
-
-  <footer>
-    <div class="wrap">
-      <div><strong>$TCULT</strong> &middot; The #1 Cult Community on TON</div>
-      <div class="tiny" style="margin-top:6px">More than a meme coin. The strongest community on TON.</div>
-      <div class="tiny footnote">&copy; 2026 $TCULT. Not financial advice. DYOR. Built by CryptoChucker.</div>
+  <footer class="footer">
+    <div class="shell footer-inner">
+      <div class="footer-stack">
+        <p>$TCULT: community first, games in the open, TON blockchain utility revealed when ready.</p>
+        <div class="footer-credit">&copy; 2026 JMS AI Solutions. Developed by <a href="https://x.com/CryptoChucker" target="_blank" rel="noopener">@CryptoChucker</a>.</div>
+      </div>
+      <div class="actions" style="margin-top:0">
+        <a class="btn primary" href="https://t.me/TCULT_GROUP" target="_blank" rel="noopener">Join Telegram</a>
+        <a class="btn" href="https://tinyurl.com/BuyTCULT" target="_blank" rel="noopener">Gas Pump</a>
+        <a class="btn" href="thesis.html">Thesis</a>
+      </div>
     </div>
   </footer>
 
+  <script>
+    (function setupTelegramMiniAppLinks() {
+      var params = new URLSearchParams(window.location.search);
+      if (!params.has("tgWebAppPlatform")) return;
+      document.querySelectorAll("[data-tg-app]").forEach(function(link) {
+        var app = link.getAttribute("data-tg-app");
+        if (app) link.href = "https://t.me/TCultPlushBot/" + app;
+      });
+    })();
+  </script>
 </body>
 </html>
