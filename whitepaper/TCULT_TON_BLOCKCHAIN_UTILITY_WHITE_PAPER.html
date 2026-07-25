@@ -541,7 +541,7 @@
   </header>
 
   <section class="cover" id="whitepaper">
-    <img class="cover-video" src="../assets/utility/tcult-terminal-ledger-architecture-640x360.webp" alt="$TCULT Terminal with Cipher routing a TON signal while Ledger verifies the evidence card.">
+    <video class="cover-video" src="../assets/videos/grand-council-chamber.mp4" muted loop playsinline preload="metadata" poster="../assets/posters/public/grand-council-chamber.png" data-motion-background aria-hidden="true"></video>
     <div class="cover-inner">
       <span class="kicker">$TCULT White Paper</span>
       <h1>Paste the signal. Read the evidence.</h1>
@@ -944,5 +944,34 @@
       </div>
     </section>
   </main>
+  <script>
+    (function setupMotionBackgrounds() {
+      var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      var motionVideos = Array.prototype.slice.call(document.querySelectorAll("video[autoplay], [data-motion-background]"));
+
+      function syncMotion() {
+        motionVideos.forEach(function(video) {
+          if (reducedMotion.matches || document.hidden) {
+            video.pause();
+            return;
+          }
+
+          video.muted = true;
+          var playRequest = video.play();
+          if (playRequest && typeof playRequest.catch === "function") {
+            playRequest.catch(function() {});
+          }
+        });
+      }
+
+      syncMotion();
+      document.addEventListener("visibilitychange", syncMotion);
+      if (typeof reducedMotion.addEventListener === "function") {
+        reducedMotion.addEventListener("change", syncMotion);
+      } else if (typeof reducedMotion.addListener === "function") {
+        reducedMotion.addListener(syncMotion);
+      }
+    })();
+  </script>
 </body>
 </html>
