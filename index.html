@@ -27,10 +27,48 @@
   <meta name="twitter:image:alt" content="$TCULT Portal with the plush Council, TON signal architecture, games, lore, artifacts, and Telegram-native utilities.">
   <link rel="icon" type="image/png" sizes="64x64" href="assets/optimized/favicon-64.png">
   <link rel="apple-touch-icon" href="assets/optimized/favicon-256.png">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20260801-1">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="cinematic-entry" data-cinematic-entry role="dialog" aria-modal="true" aria-label="$TCULT cinematic entrance">
+    <div class="cinematic-entry-media" aria-hidden="true">
+      <video src="assets/videos/council-reveal-stinger.mp4" autoplay muted loop playsinline preload="auto" poster="assets/posters/public/council-reveal-stinger.png" data-entry-video></video>
+    </div>
+    <div class="cinematic-entry-shade" aria-hidden="true"></div>
+    <div class="cinematic-entry-rail" aria-hidden="true"><span></span></div>
+    <button class="cinematic-skip" type="button" data-enter-cinematic>Skip entrance</button>
+    <div class="cinematic-chapters" aria-hidden="true">
+      <div class="cinematic-chapter" style="--entry-delay: 0.55s">
+        <span>Culture</span>
+        <strong>is the interface.</strong>
+      </div>
+      <div class="cinematic-chapter" style="--entry-delay: 3.55s">
+        <span>TON</span>
+        <strong>is the rail.</strong>
+      </div>
+      <div class="cinematic-chapter" style="--entry-delay: 6.55s">
+        <span>Telegram</span>
+        <strong>is the engine.</strong>
+      </div>
+      <div class="cinematic-chapter" style="--entry-delay: 9.55s">
+        <span>$TCULT</span>
+        <strong>is the movement.</strong>
+      </div>
+    </div>
+    <div class="cinematic-final">
+      <span class="eyebrow">The TON CULT has entered the portal</span>
+      <h2>Join the cult.</h2>
+      <p>Built inside Telegram. Powered by TON. Carried by community.</p>
+      <div class="cinematic-final-actions">
+        <button class="btn primary" type="button" data-enter-cinematic>Enter The Portal</button>
+        <a class="btn ton" href="https://t.me/TCULT_GROUP" target="_blank" rel="noopener">Join Telegram</a>
+      </div>
+    </div>
+  </div>
+  <noscript><style>.cinematic-entry { display: none; }</style></noscript>
+
   <header class="topbar">
     <div class="topbar-inner">
       <a class="brand" href="index.html" aria-label="$TCULT portal home">
@@ -47,6 +85,7 @@
         <a href="#arcade">Arcade</a>
         <a href="#artifacts">Artifacts</a>
         <a href="#architecture">Architecture</a>
+        <a href="#token">Token</a>
         <a class="nav-cta" href="https://t.me/TCULT_GROUP" target="_blank" rel="noopener">Telegram</a>
       </nav>
     </div>
@@ -60,16 +99,25 @@
       <div class="shell">
         <div class="hero-copy">
           <div class="hero-kicker-row">
-            <span class="eyebrow">$TCULT Terminal</span>
-            <span class="tag ton">Read-only evidence</span>
-            <span class="tag green">In development</span>
+            <span class="eyebrow">$TCULT is the TON CULT</span>
+            <span class="tag ton">Telegram-native</span>
+            <span class="tag green">Built on TON</span>
           </div>
-          <h1>Paste the signal. Read the evidence.</h1>
-          <p class="lead">$TCULT Terminal is the bot-first evidence lane now in development for @TCultPlushBot. Paste a TON jetton address or explorer link, get a fast evidence panel, then see bundle analysis and a plain-language explanation. Public access follows deployment and live Telegram QA.</p>
+          <h1>Join the cult. Build what Telegram becomes next.</h1>
+          <p class="lead">$TCULT is the TON CULT: a Telegram-native community turning lore, games, artifacts, and builder energy into the strongest movement on TON.</p>
+          <div class="manifesto-row" aria-label="$TCULT movement pillars">
+            <span><strong>Culture</strong> the interface</span>
+            <span><strong>TON</strong> the rail</span>
+            <span><strong>Telegram</strong> the engine</span>
+          </div>
           <div class="actions">
-            <a class="btn primary" href="#utilities">See Terminal Progress</a>
-            <a class="btn ton" href="#arcade">Play The Live Arcade</a>
-            <a class="btn" href="https://t.me/TCULT_GROUP" target="_blank" rel="noopener">Join Telegram</a>
+            <a class="btn primary" href="https://t.me/TCULT_GROUP" target="_blank" rel="noopener">Join The Cult</a>
+            <a class="btn ton" href="#arcade">Enter The Portal</a>
+            <button class="btn" type="button" data-replay-cinematic>Replay Entrance</button>
+          </div>
+          <div class="hero-ca-slot" aria-label="$TCULT V2 contract address">
+            <span>CA</span>
+            <code>EQBbuFW3-zTqkL3ZMuVPVqGWOMHqh8e-uEfPDISDNpNouhBY</code>
           </div>
         </div>
       </div>
@@ -501,6 +549,126 @@
         </div>
       </div>
     </section>
+
+    <section class="section token-band" id="token">
+      <div class="shell">
+        <div class="token-simple-head">
+          <div class="token-copy">
+            <div class="token-policy-labels">
+              <span class="eyebrow">$TCULT V2</span>
+              <span class="token-stage-badge token-stage-launch">Launch state: Live</span>
+            </div>
+            <h2>$TCULT V2 Tokenomics</h2>
+            <p class="lead">The approved V2 allocation and official contract address are shown below.</p>
+          </div>
+          <article class="token-policy-total" aria-label="V2 allocation basis">
+            <span>V2 allocation basis</span>
+            <strong>1,000,000,000</strong>
+            <p>$TCULT</p>
+            <small>Approved allocation basis. Live supply is read from the verified CA.</small>
+          </article>
+        </div>
+
+        <div class="token-allocation-layout">
+          <figure class="token-chart-card">
+            <div class="token-pie" role="img" aria-label="Policy allocation chart: Liquidity 30 percent, Treasury 15 percent, Community Reserve 10 percent, Marketing and Operations 10 percent, Founder 5 percent, Holder Migration 10 percent, and Public Float Reserve 20 percent.">
+              <div class="token-pie-center">
+                <span>V2</span>
+                <strong>Allocation</strong>
+                <small>approved policy</small>
+              </div>
+            </div>
+            <figcaption>Seven categories. One clear V2 allocation.</figcaption>
+          </figure>
+
+          <div class="token-allocation-panel">
+            <div class="token-allocation-heading">
+              <div>
+                <span class="eyebrow">Approved allocation</span>
+                <h3>One policy. Seven clear categories.</h3>
+              </div>
+              <p>Approved policy percentages total 100%.</p>
+            </div>
+            <div class="token-allocation-table-wrap">
+              <table class="token-allocation-table">
+                <caption class="sr-only">Approved $TCULT V2 allocation policy</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Category</th>
+                    <th scope="col">Amount ($TCULT)</th>
+                    <th scope="col">Share</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><th scope="row"><span class="token-swatch liquidity" aria-hidden="true"></span>Liquidity</th><td data-label="Amount">300M</td><td data-label="Share">30%</td></tr>
+                  <tr><th scope="row"><span class="token-swatch treasury" aria-hidden="true"></span>Treasury</th><td data-label="Amount">150M</td><td data-label="Share">15%</td></tr>
+                  <tr><th scope="row"><span class="token-swatch community" aria-hidden="true"></span>Community Reserve</th><td data-label="Amount">100M</td><td data-label="Share">10%</td></tr>
+                  <tr><th scope="row"><span class="token-swatch marketing" aria-hidden="true"></span>Marketing &amp; Operations</th><td data-label="Amount">100M</td><td data-label="Share">10%</td></tr>
+                  <tr><th scope="row"><span class="token-swatch founder" aria-hidden="true"></span>Founder</th><td data-label="Amount">50M</td><td data-label="Share">5%</td></tr>
+                  <tr><th scope="row"><span class="token-swatch migration" aria-hidden="true"></span>Holder Migration</th><td data-label="Amount">100M</td><td data-label="Share">10%</td></tr>
+                  <tr><th scope="row"><span class="token-swatch float" aria-hidden="true"></span>Public Float Reserve</th><td data-label="Amount">200M</td><td data-label="Share">20%</td></tr>
+                </tbody>
+                <tfoot>
+                  <tr><th scope="row">Total</th><td data-label="Amount">1,000M</td><td data-label="Share">100%</td></tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="token-confidence-head">
+          <span class="eyebrow">Proof-gated confidence</span>
+          <h3>What the community can verify.</h3>
+          <p>Proven items are marked verified. Unimplemented safeguards stay labeled planned, proof-gated.</p>
+        </div>
+
+        <div class="token-confidence-grid">
+          <article class="token-confidence-card">
+            <span class="token-proof-state">Policy approved, execution proof-gated</span>
+            <h3>Fixed policy structure</h3>
+            <p>Seven categories total 1,000,000,000 $TCULT. Unissued allocations remain subject to their execution receipts.</p>
+          </article>
+          <article class="token-confidence-card">
+            <span class="token-proof-state">planned, proof-gated</span>
+            <h3>0% transfer tax, only if proven</h3>
+            <p>A 0% transfer tax appears as confirmed only after the deployed contract independently demonstrates it.</p>
+          </article>
+          <article class="token-confidence-card">
+            <span class="token-proof-state verified">Verified on-chain</span>
+            <h3>Official contract</h3>
+            <p>The official V2 contract is active on TON mainnet and listed below.</p>
+          </article>
+          <article class="token-confidence-card">
+            <span class="token-proof-state verified">Verified on-chain</span>
+            <h3>Liquidity evidence</h3>
+            <p>The STON.fi pool and initial 300M $TCULT plus 750 $GRAM deposit are receipt-backed on TON mainnet.</p>
+          </article>
+          <article class="token-confidence-card">
+            <span class="token-proof-state">planned, proof-gated</span>
+            <h3>Founder and community terms</h3>
+            <p>The six-month community and twelve-month founder public-hold terms remain proposed until each is backed by public receipts.</p>
+          </article>
+          <article class="token-confidence-card">
+            <span class="token-proof-state">planned, proof-gated</span>
+            <h3>Holder and migration record</h3>
+            <p>Current balances are not a distribution promise. Eligibility, cutoff, recipient set, and amounts appear only after the historical cutoff is frozen and the record is independently checked.</p>
+          </article>
+        </div>
+
+        <div class="token-ca-panel" aria-labelledby="token-ca-title">
+          <div class="token-ca-copy">
+            <span class="eyebrow">Official $TCULT V2 CA</span>
+            <h3 id="token-ca-title">Contract address</h3>
+            <p>Verified on TON mainnet.</p>
+          </div>
+          <div class="token-ca-value" aria-label="$TCULT V2 contract address">
+            <span>CA</span>
+            <code>EQBbuFW3-zTqkL3ZMuVPVqGWOMHqh8e-uEfPDISDNpNouhBY</code>
+            <button type="button" data-copy-ca="EQBbuFW3-zTqkL3ZMuVPVqGWOMHqh8e-uEfPDISDNpNouhBY">Copy CA</button>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
@@ -512,12 +680,94 @@
       </div>
       <div class="actions" style="margin-top:0">
         <a class="btn primary" href="https://t.me/TCULT_GROUP" target="_blank" rel="noopener">Join Telegram</a>
-        <a class="btn" href="https://tinyurl.com/BuyTCULT" target="_blank" rel="noopener">Gas Pump</a>
         <a class="btn" href="thesis.html">Thesis</a>
       </div>
     </div>
   </footer>
 
+  <script>
+    (function setupCinematicEntrance() {
+      var entry = document.querySelector("[data-cinematic-entry]");
+      var replay = document.querySelector("[data-replay-cinematic]");
+      var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      var closeTimer;
+
+      if (!entry) return;
+
+      function hasSeenEntrance() {
+        try {
+          return window.sessionStorage.getItem("tcult-cinematic-entry-seen-v2") === "true";
+        } catch (error) {
+          return false;
+        }
+      }
+
+      function markEntranceSeen() {
+        try {
+          window.sessionStorage.setItem("tcult-cinematic-entry-seen-v2", "true");
+        } catch (error) {}
+      }
+
+      function closeEntrance() {
+        window.clearTimeout(closeTimer);
+        entry.classList.add("is-closing");
+        markEntranceSeen();
+        window.setTimeout(function() {
+          entry.hidden = true;
+          entry.classList.remove("is-playing", "is-closing", "reduced-motion");
+          entry.setAttribute("aria-hidden", "true");
+          document.body.classList.remove("cinematic-open");
+        }, 920);
+      }
+
+      function openEntrance(forceReplay) {
+        if (!forceReplay && hasSeenEntrance()) {
+          entry.hidden = true;
+          entry.setAttribute("aria-hidden", "true");
+          return;
+        }
+
+        window.clearTimeout(closeTimer);
+        entry.hidden = false;
+        entry.classList.remove("is-playing", "is-closing", "reduced-motion");
+        void entry.offsetWidth;
+        entry.classList.add("is-playing");
+        entry.setAttribute("aria-hidden", "false");
+        document.body.classList.add("cinematic-open");
+
+        if (reducedMotion.matches) {
+          entry.classList.add("reduced-motion");
+        } else {
+          closeTimer = window.setTimeout(closeEntrance, 17600);
+          var entryVideo = entry.querySelector("[data-entry-video]");
+          if (entryVideo) {
+            entryVideo.muted = true;
+            entryVideo.currentTime = 0;
+            var playRequest = entryVideo.play();
+            if (playRequest && typeof playRequest.catch === "function") {
+              playRequest.catch(function() {});
+            }
+          }
+        }
+      }
+
+      entry.querySelectorAll("[data-enter-cinematic]").forEach(function(control) {
+        control.addEventListener("click", closeEntrance);
+      });
+
+      if (replay) {
+        replay.addEventListener("click", function() {
+          openEntrance(true);
+        });
+      }
+
+      document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape" && !entry.hidden) closeEntrance();
+      });
+
+      openEntrance(new URLSearchParams(window.location.search).get("cinema") === "1");
+    })();
+  </script>
   <script>
     (function setupTelegramMiniAppLinks() {
       var params = new URLSearchParams(window.location.search);
@@ -525,6 +775,48 @@
       document.querySelectorAll("[data-tg-app]").forEach(function(link) {
         var app = link.getAttribute("data-tg-app");
         if (app) link.href = "https://t.me/TCultPlushBot/" + app;
+      });
+    })();
+  </script>
+  <script>
+    (function setupContractCopy() {
+      var copyButton = document.querySelector("[data-copy-ca]");
+      if (!copyButton) return;
+
+      var contractAddress = copyButton.getAttribute("data-copy-ca");
+      var resetTimer;
+
+      function showCopyResult(label, copied) {
+        window.clearTimeout(resetTimer);
+        copyButton.textContent = label;
+        copyButton.classList.toggle("is-copied", copied);
+        resetTimer = window.setTimeout(function() {
+          copyButton.textContent = "Copy CA";
+          copyButton.classList.remove("is-copied");
+        }, 1800);
+      }
+
+      function fallbackCopy() {
+        var field = document.createElement("textarea");
+        field.value = contractAddress;
+        field.setAttribute("readonly", "");
+        field.style.position = "fixed";
+        field.style.opacity = "0";
+        document.body.appendChild(field);
+        field.select();
+        var copied = document.execCommand("copy");
+        field.remove();
+        showCopyResult(copied ? "CA copied" : "Select CA", copied);
+      }
+
+      copyButton.addEventListener("click", function() {
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(contractAddress).then(function() {
+            showCopyResult("CA copied", true);
+          }).catch(fallbackCopy);
+          return;
+        }
+        fallbackCopy();
       });
     })();
   </script>
