@@ -602,6 +602,7 @@ h3 {
 }
 
 .hero-ca-slot {
+  appearance: none;
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -612,7 +613,24 @@ h3 {
   border: 1px solid rgba(34, 184, 255, 0.34);
   border-radius: var(--radius);
   background: rgba(5, 10, 11, 0.68);
+  color: inherit;
+  font: inherit;
+  text-align: left;
   backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: border-color 160ms ease, background 160ms ease, box-shadow 160ms ease;
+}
+
+.hero-ca-slot:hover,
+.hero-ca-slot:focus-visible {
+  border-color: rgba(34, 184, 255, 0.72);
+  background: rgba(34, 184, 255, 0.1);
+  box-shadow: 0 0 24px rgba(34, 184, 255, 0.1);
+}
+
+.hero-ca-slot.is-copied {
+  border-color: rgba(114, 216, 135, 0.62);
+  background: rgba(114, 216, 135, 0.1);
 }
 
 .hero-ca-slot span {
@@ -623,12 +641,23 @@ h3 {
 }
 
 .hero-ca-slot code {
+  flex: 1 1 auto;
   min-width: 0;
   color: rgba(247, 239, 226, 0.72);
   font-family: "Courier New", monospace;
   font-size: 12px;
   overflow-wrap: anywhere;
   word-break: break-all;
+}
+
+.hero-ca-slot .hero-ca-action {
+  flex: 0 0 auto;
+  color: #fff1c4;
+  letter-spacing: 0.04em;
+}
+
+.hero-ca-slot.is-copied .hero-ca-action {
+  color: #d9ffe0;
 }
 
 .btn {

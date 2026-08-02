@@ -27,7 +27,7 @@
   <meta name="twitter:image:alt" content="$TCULT Portal with the plush Council, TON signal architecture, games, lore, artifacts, and Telegram-native utilities.">
   <link rel="icon" type="image/png" sizes="64x64" href="assets/optimized/favicon-64.png">
   <link rel="apple-touch-icon" href="assets/optimized/favicon-256.png">
-  <link rel="stylesheet" href="styles.css?v=20260801-1">
+  <link rel="stylesheet" href="styles.css?v=20260801-2">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -115,10 +115,11 @@
             <a class="btn ton" href="#arcade">Enter The Portal</a>
             <button class="btn" type="button" data-replay-cinematic>Replay Entrance</button>
           </div>
-          <div class="hero-ca-slot" aria-label="$TCULT V2 contract address">
+          <button class="hero-ca-slot" type="button" data-copy-ca="EQBbuFW3-zTqkL3ZMuVPVqGWOMHqh8e-uEfPDISDNpNouhBY" aria-label="Copy $TCULT V2 contract address">
             <span>CA</span>
             <code>EQBbuFW3-zTqkL3ZMuVPVqGWOMHqh8e-uEfPDISDNpNouhBY</code>
-          </div>
+            <span class="hero-ca-action" data-copy-label aria-live="polite">Copy</span>
+          </button>
         </div>
       </div>
     </section>
@@ -664,7 +665,7 @@
           <div class="token-ca-value" aria-label="$TCULT V2 contract address">
             <span>CA</span>
             <code>EQBbuFW3-zTqkL3ZMuVPVqGWOMHqh8e-uEfPDISDNpNouhBY</code>
-            <button type="button" data-copy-ca="EQBbuFW3-zTqkL3ZMuVPVqGWOMHqh8e-uEfPDISDNpNouhBY">Copy CA</button>
+            <button type="button" data-copy-ca="EQBbuFW3-zTqkL3ZMuVPVqGWOMHqh8e-uEfPDISDNpNouhBY"><span data-copy-label aria-live="polite">Copy CA</span></button>
           </div>
         </div>
       </div>
@@ -780,43 +781,52 @@
   </script>
   <script>
     (function setupContractCopy() {
-      var copyButton = document.querySelector("[data-copy-ca]");
-      if (!copyButton) return;
+      var copyButtons = document.querySelectorAll("[data-copy-ca]");
+      if (!copyButtons.length) return;
 
-      var contractAddress = copyButton.getAttribute("data-copy-ca");
-      var resetTimer;
+      copyButtons.forEach(function(copyButton) {
+        var contractAddress = copyButton.getAttribute("data-copy-ca");
+        var labelTarget = copyButton.querySelector("[data-copy-label]");
+        if (!labelTarget) return;
 
-      function showCopyResult(label, copied) {
-        window.clearTimeout(resetTimer);
-        copyButton.textContent = label;
-        copyButton.classList.toggle("is-copied", copied);
-        resetTimer = window.setTimeout(function() {
-          copyButton.textContent = "Copy CA";
-          copyButton.classList.remove("is-copied");
-        }, 1800);
-      }
+        var idleLabel = labelTarget.textContent;
+        var idleAriaLabel = copyButton.getAttribute("aria-label");
+        var resetTimer;
 
-      function fallbackCopy() {
-        var field = document.createElement("textarea");
-        field.value = contractAddress;
-        field.setAttribute("readonly", "");
-        field.style.position = "fixed";
-        field.style.opacity = "0";
-        document.body.appendChild(field);
-        field.select();
-        var copied = document.execCommand("copy");
-        field.remove();
-        showCopyResult(copied ? "CA copied" : "Select CA", copied);
-      }
-
-      copyButton.addEventListener("click", function() {
-        if (navigator.clipboard && window.isSecureContext) {
-          navigator.clipboard.writeText(contractAddress).then(function() {
-            showCopyResult("CA copied", true);
-          }).catch(fallbackCopy);
-          return;
+        function showCopyResult(label, copied) {
+          window.clearTimeout(resetTimer);
+          labelTarget.textContent = label;
+          copyButton.classList.toggle("is-copied", copied);
+          if (idleAriaLabel) copyButton.setAttribute("aria-label", copied ? "Contract address copied" : idleAriaLabel);
+          resetTimer = window.setTimeout(function() {
+            labelTarget.textContent = idleLabel;
+            copyButton.classList.remove("is-copied");
+            if (idleAriaLabel) copyButton.setAttribute("aria-label", idleAriaLabel);
+          }, 1800);
         }
-        fallbackCopy();
+
+        function fallbackCopy() {
+          var field = document.createElement("textarea");
+          field.value = contractAddress;
+          field.setAttribute("readonly", "");
+          field.style.position = "fixed";
+          field.style.opacity = "0";
+          document.body.appendChild(field);
+          field.select();
+          var copied = document.execCommand("copy");
+          field.remove();
+          showCopyResult(copied ? "CA copied" : "Select CA", copied);
+        }
+
+        copyButton.addEventListener("click", function() {
+          if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(contractAddress).then(function() {
+              showCopyResult("CA copied", true);
+            }).catch(fallbackCopy);
+            return;
+          }
+          fallbackCopy();
+        });
       });
     })();
   </script>
