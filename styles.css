@@ -371,7 +371,7 @@ svg {
   place-items: center;
   border-radius: 50%;
   border: 1px solid rgba(246, 200, 90, 0.62);
-  background: #090b0a url("assets/brand/tcult-gold-medallion-mark.png") center / cover no-repeat;
+  background: #090b0a url("assets/optimized/favicon-256.png?v=20260801-1") center / cover no-repeat;
   box-shadow: 0 0 28px rgba(246, 200, 90, 0.28);
   overflow: hidden;
 }
