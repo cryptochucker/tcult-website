@@ -32,7 +32,6 @@
   <link rel="icon" type="image/png" sizes="64x64" href="../assets/optimized/favicon-64.png">
   <link rel="apple-touch-icon" href="../assets/optimized/favicon-256.png">
   <link rel="stylesheet" href="../styles.css?v=20260816-1">
-  <meta name="robots" content="noindex">
 </head>
 <body>
   <a class="skip-link" href="#main" data-i18n="nav.skipLink">Перейти к содержимому</a>
@@ -51,7 +50,7 @@
       <div class="cinematic-chapter" style="--entry-delay: 9.55s" data-i18n="cinematic.chapter4"><span>$TCULT</span> <strong>это движение.</strong></div>
     </div>
     <div class="cinematic-final">
-      <span class="eyebrow" data-i18n="cinematic.finalEyebrow">TON КУЛЬТ вошёл в портал [REVIEW]</span>
+      <span class="eyebrow" data-i18n="cinematic.finalEyebrow">TON КУЛЬТ вошёл в портал</span>
       <h2 data-i18n="cinematic.finalHeading">Вступай в культ.</h2>
       <p data-i18n="cinematic.finalLead">Построено внутри Telegram. Работает на TON. Держится на сообществе.</p>
       <div class="cinematic-final-actions">
@@ -95,15 +94,15 @@
       <div class="shell">
         <div class="hero-copy">
           <div class="hero-kicker-row">
-            <span class="eyebrow" data-i18n="hero.eyebrow">$TCULT означает TON КУЛЬТ [REVIEW]</span>
+            <span class="eyebrow" data-i18n="hero.eyebrow">$TCULT означает TON КУЛЬТ</span>
             <span class="tag ton" data-i18n="hero.tagTelegramNative">Нативно для Telegram</span>
             <span class="tag green" data-i18n="hero.tagBuiltOnTon">На базе TON</span>
           </div>
           <h1 data-i18n="hero.title">Вступай в культ. Строй то, чем Telegram станет дальше.</h1>
-          <p class="lead" data-i18n="hero.lead">$TCULT означает TELEGRAM КУЛЬТ [REVIEW]: сообщество, нативное для Telegram, которое превращает лор, игры, артефакты и энергию разработчиков в самое сильное движение на $GRAM.</p>
+          <p class="lead" data-i18n="hero.lead">$TCULT означает TELEGRAM КУЛЬТ: сообщество, нативное для Telegram, которое превращает лор, игры, артефакты и энергию разработчиков в самое сильное движение на $GRAM.</p>
           <div class="manifesto-row" aria-label="Опоры движения $TCULT" data-i18n-attr="aria-label:hero.manifestoAriaLabel">
             <span data-i18n="hero.pillarCulture"><strong>Культура</strong> это интерфейс</span>
-            <span data-i18n="hero.pillarTon"><strong>TON</strong> это магистраль [REVIEW]</span>
+            <span data-i18n="hero.pillarTon"><strong>TON</strong> это магистраль</span>
             <span data-i18n="hero.pillarTelegram"><strong>Telegram</strong> это двигатель</span>
           </div>
           <div class="actions">
@@ -876,7 +875,7 @@
     <div class="shell footer-inner">
       <div class="footer-stack">
         <p data-i18n="footer.summary">$TCULT: игры работают, инструменты доказательств в разработке, решения остаются за пользователем. $GRAM остаётся нативной монетой TON.</p>
-        <p class="footer-credit" data-i18n="footer.safetyLine">$TCULT никогда не попросит пользователей мигрировать, обменивать, забирать, переводить через мост или конвертировать активы по ссылке. Относитесь к любой такой просьбе как к подозрительной. [REVIEW]</p>
+        <p class="footer-credit" data-i18n="footer.safetyLine">$TCULT никогда не попросит пользователей мигрировать, обменивать, забирать, переводить через мост или конвертировать активы по ссылке. Относитесь к любой такой просьбе как к подозрительной.</p>
         <div class="footer-credit" data-i18n="footer.developedBy">Разработано <a href="https://x.com/CryptoChucker" target="_blank" rel="noopener">CryptoChucker</a>.</div>
       </div>
       <div class="actions" style="margin-top:0">
@@ -1065,7 +1064,7 @@
       // (i18n spec 7.3). Flip RU_PUBLIC to true to show the toggle and enable the
       // first-visit redirect; the /ru/ pages themselves always show the toggle so a
       // reviewer who lands there directly can get back to English.
-      var RU_PUBLIC = false;
+      var RU_PUBLIC = true;
       var KEY = "tcult.locale";
       var stored;
       try { stored = window.localStorage.getItem(KEY); } catch (e) { stored = null; }

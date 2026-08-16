@@ -31,7 +31,6 @@
   <link rel="icon" type="image/png" sizes="64x64" href="../assets/optimized/favicon-64.png">
   <link rel="apple-touch-icon" href="../assets/optimized/favicon-256.png">
   <link rel="stylesheet" href="../styles.css?v=20260816-1">
-  <meta name="robots" content="noindex">
 </head>
 <body>
   <a class="skip-link" href="#main" data-i18n="nav.skipLink">Перейти к содержимому</a>
@@ -366,7 +365,7 @@
     <div class="shell footer-inner">
       <div class="footer-stack">
         <p data-i18n="thesis.page.p1">У $TCULT четыре работающие игры, нативные для Telegram, Handle Desk в вебе, Terminal в разработке, Guard в производстве и $GRAM как нативная монета TON.</p>
-        <p class="footer-credit" data-i18n="thesis.page.p2">$TCULT никогда не попросит пользователей мигрировать, обменивать, забирать, переводить через мост или конвертировать активы по ссылке. Относитесь к любой такой просьбе как к подозрительной. [REVIEW]</p>
+        <p class="footer-credit" data-i18n="thesis.page.p2">$TCULT никогда не попросит пользователей мигрировать, обменивать, забирать, переводить через мост или конвертировать активы по ссылке. Относитесь к любой такой просьбе как к подозрительной.</p>
         <div class="footer-credit" data-i18n="thesis.page.div1">Разработано <a href="https://x.com/CryptoChucker" target="_blank" rel="noopener">CryptoChucker</a>.</div>
       </div>
       <div class="actions" style="margin-top:0">
@@ -412,7 +411,7 @@
       // (i18n spec 7.3). Flip RU_PUBLIC to true to show the toggle and enable the
       // first-visit redirect; the /ru/ pages themselves always show the toggle so a
       // reviewer who lands there directly can get back to English.
-      var RU_PUBLIC = false;
+      var RU_PUBLIC = true;
       var KEY = "tcult.locale";
       var stored;
       try { stored = window.localStorage.getItem(KEY); } catch (e) { stored = null; }
