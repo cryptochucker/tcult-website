@@ -3,28 +3,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>$TCULT Terminal And TON Utility White Paper</title>
-  <meta name="description" content="Technical white paper for $TCULT Terminal, $TCULT Guard, four live Telegram games, current runtimes, read-only evidence, and later user-signed TON actions.">
+  <title data-i18n="wp.meta.title">$TCULT Terminal And TON Utility White Paper</title>
+  <meta name="description" content="Technical white paper for $TCULT Handle Desk, $TCULT Terminal, $TCULT Guard, four live Telegram games, current runtimes, read-only evidence, and later user-signed TON actions." data-i18n-attr="content:wp.meta.description">
   <meta name="theme-color" content="#070807">
   <link rel="canonical" href="https://www.tcult.site/whitepaper/TCULT_TON_BLOCKCHAIN_UTILITY_WHITE_PAPER.html">
+  <link rel="alternate" hreflang="en" href="https://www.tcult.site/whitepaper/TCULT_TON_BLOCKCHAIN_UTILITY_WHITE_PAPER.html">
+  <link rel="alternate" hreflang="ru" href="https://www.tcult.site/ru/whitepaper/TCULT_TON_BLOCKCHAIN_UTILITY_WHITE_PAPER.html">
+  <link rel="alternate" hreflang="x-default" href="https://www.tcult.site/whitepaper/TCULT_TON_BLOCKCHAIN_UTILITY_WHITE_PAPER.html">
   <meta property="og:site_name" content="$TCULT">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://www.tcult.site/whitepaper/TCULT_TON_BLOCKCHAIN_UTILITY_WHITE_PAPER.html">
-  <meta property="og:title" content="$TCULT Terminal And TON Utility White Paper">
-  <meta property="og:description" content="Four live Telegram games, $TCULT Terminal, $TCULT Guard, current runtimes, read-only evidence, and the later user-signed TON boundary.">
+  <meta property="og:title" content="$TCULT Terminal And TON Utility White Paper" data-i18n-attr="content:wp.meta.ogTitle">
+  <meta property="og:description" content="Four live Telegram games, $TCULT Handle Desk on the web, $TCULT Terminal, $TCULT Guard, current runtimes, read-only evidence, and the later user-signed TON boundary." data-i18n-attr="content:wp.meta.ogDescription">
   <meta property="og:image" content="https://www.tcult.site/assets/utility/tcult-terminal-ledger-architecture-640x360.webp">
   <meta property="og:image:secure_url" content="https://www.tcult.site/assets/utility/tcult-terminal-ledger-architecture-640x360.webp">
   <meta property="og:image:type" content="image/webp">
   <meta property="og:image:width" content="640">
   <meta property="og:image:height" content="360">
-  <meta property="og:image:alt" content="$TCULT Terminal with Cipher routing a TON signal while Ledger verifies the evidence card.">
+  <meta property="og:image:alt" content="$TCULT Terminal with Cipher routing a TON signal while Ledger verifies the evidence card." data-i18n-attr="content:wp.meta.ogImageAlt">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@CryptoChucker">
+  <meta name="twitter:site" content="@TCULTonTON">
   <meta name="twitter:creator" content="@CryptoChucker">
-  <meta name="twitter:title" content="$TCULT Terminal And TON Utility White Paper">
-  <meta name="twitter:description" content="Four live Telegram games, $TCULT Terminal, $TCULT Guard, current runtimes, read-only evidence, and the later user-signed TON boundary.">
+  <meta name="twitter:title" content="$TCULT Terminal And TON Utility White Paper" data-i18n-attr="content:wp.meta.twitterTitle">
+  <meta name="twitter:description" content="Four live Telegram games, $TCULT Handle Desk on the web, $TCULT Terminal, $TCULT Guard, current runtimes, read-only evidence, and the later user-signed TON boundary." data-i18n-attr="content:wp.meta.twitterDescription">
   <meta name="twitter:image" content="https://www.tcult.site/assets/utility/tcult-terminal-ledger-architecture-640x360.webp">
-  <meta name="twitter:image:alt" content="$TCULT Terminal with Cipher routing a TON signal while Ledger verifies the evidence card.">
+  <meta name="twitter:image:alt" content="$TCULT Terminal with Cipher routing a TON signal while Ledger verifies the evidence card." data-i18n-attr="content:wp.meta.twitterImageAlt">
   <link rel="icon" type="image/png" sizes="64x64" href="../assets/optimized/favicon-64.png">
   <style>
     :root {
@@ -519,428 +522,482 @@
         color: #0d5d8f;
       }
     }
+
+    /* Locale toggle (same behaviour as the main site pages; hidden until RU_PUBLIC flips). */
+    .tcult-locale-toggle {
+      display: inline-flex;
+      align-items: center;
+      flex-shrink: 0;
+      gap: 2px;
+      padding: 3px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(23, 21, 16, 0.03);
+    }
+    .tcult-locale-toggle[hidden] { display: none; }
+    .tcult-locale-toggle-link {
+      min-height: 30px;
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 999px;
+      color: rgba(23, 21, 16, 0.62);
+      font-size: 11px;
+      font-weight: 850;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+    .tcult-locale-toggle-link:hover { color: var(--ink); }
+    .tcult-locale-toggle-link[aria-current="page"] { color: #15100a; background: var(--gold); }
+    @media (max-width: 760px) {
+      .wp-topbar-inner { flex-direction: row; flex-wrap: wrap; }
+      .wp-topbar-inner .wp-nav { order: 2; width: 100%; }
+      .wp-topbar-inner .tcult-locale-toggle { order: 1; margin-left: auto; align-self: center; }
+    }
   </style>
 </head>
 <body>
-  <a class="wp-skip" href="#whitepaper">Skip to white paper</a>
+  <a class="wp-skip" href="#whitepaper" data-i18n="wp.page.a1">Skip to white paper</a>
   <header class="wp-topbar">
     <div class="wp-topbar-inner">
-      <a class="wp-brand" href="../index.html" aria-label="$TCULT portal home">
+      <a class="wp-brand" href="../index.html" aria-label="$TCULT portal home" data-i18n-attr="aria-label:wp.page.a2AriaLabel">
         <span class="wp-mark" aria-hidden="true"></span>
-        <span>$TCULT White Paper</span>
+        <span data-i18n="wp.page.span1">$TCULT White Paper</span>
       </a>
-      <nav class="wp-nav" aria-label="$TCULT white paper navigation">
-        <a href="../index.html">Portal</a>
-        <a href="../lore.html">Lore</a>
-        <a href="../thesis.html">Thesis</a>
-        <a class="active" href="TCULT_TON_BLOCKCHAIN_UTILITY_WHITE_PAPER.html">White Paper</a>
-        <a href="https://x.com/i/communities/1964017380331311157" target="_blank" rel="noopener">X Community</a>
-        <a class="nav-cta" href="https://t.me/TCULT_GROUP" target="_blank" rel="noopener">Telegram</a>
+      <nav class="wp-nav" aria-label="$TCULT white paper navigation" data-i18n-attr="aria-label:wp.page.nav1AriaLabel">
+        <a href="../index.html" data-i18n="nav.portal">Portal</a>
+        <a href="../lore.html" data-i18n="nav.lore">Lore</a>
+        <a href="../thesis.html" data-i18n="nav.thesis">Thesis</a>
+        <a class="active" href="TCULT_TON_BLOCKCHAIN_UTILITY_WHITE_PAPER.html" data-i18n="nav.whitepaper">White Paper</a>
+        <a href="https://x.com/i/communities/1964017380331311157" target="_blank" rel="noopener" data-i18n="wp.page.a3">X Community</a>
+        <a class="nav-cta" href="https://t.me/TCULT_GROUP" target="_blank" rel="noopener" data-i18n="nav.telegramCta">Telegram</a>
       </nav>
+      <span class="tcult-locale-toggle" hidden data-locale-toggle>
+        <a class="tcult-locale-toggle-link" href="/whitepaper/TCULT_TON_BLOCKCHAIN_UTILITY_WHITE_PAPER.html" data-i18n-link="whitepaper/TCULT_TON_BLOCKCHAIN_UTILITY_WHITE_PAPER.html" data-i18n="nav.localeEn" aria-current="page" data-i18n-attr="aria-current:nav.enLinkCurrent">EN</a>
+        <a class="tcult-locale-toggle-link" href="/ru/whitepaper/TCULT_TON_BLOCKCHAIN_UTILITY_WHITE_PAPER.html" data-i18n-link="ru/whitepaper/TCULT_TON_BLOCKCHAIN_UTILITY_WHITE_PAPER.html" data-i18n="nav.localeRu" data-i18n-attr="aria-current:nav.ruLinkCurrent">RU</a>
+      </span>
     </div>
   </header>
 
   <section class="cover" id="whitepaper">
     <video class="cover-video" src="../assets/videos/grand-council-chamber.mp4" muted loop playsinline preload="metadata" poster="../assets/posters/public/grand-council-chamber.png" data-motion-background aria-hidden="true"></video>
     <div class="cover-inner">
-      <span class="kicker">$TCULT White Paper</span>
-      <h1>Paste the signal. Read the evidence.</h1>
-      <p>A public technical record for four live Telegram-native games, $TCULT Terminal in development, $TCULT Guard in production, current Vercel and Hostinger runtime lanes, read-only evidence, and later user-signed TON actions. $GRAM remains TON's native coin.</p>
+      <span class="kicker" data-i18n="wp.whitepaper.span1">$TCULT White Paper</span>
+      <h1 data-i18n="wp.whitepaper.h11">Paste the signal. Read the evidence.</h1>
+      <p data-i18n="wp.whitepaper.p1">A public technical record for four live Telegram-native games, $TCULT Handle Desk live on the web, $TCULT Terminal in development, $TCULT Guard in production, current Vercel and Hostinger runtime lanes, read-only evidence, and later user-signed TON actions. $GRAM remains TON's native coin.</p>
       <div class="credit-line">
-        <span>Developed by <a href="https://x.com/CryptoChucker" target="_blank" rel="noopener">CryptoChucker</a></span>
-        <span>Version 1.1 | July 2026</span>
+        <span data-i18n="wp.whitepaper.span2">Developed by <a href="https://x.com/CryptoChucker" target="_blank" rel="noopener">CryptoChucker</a></span>
+        <span data-i18n="wp.whitepaper.span3">Version 1.2 | August 2026</span>
       </div>
     </div>
   </section>
 
   <main class="page">
     <section class="toc">
-      <span class="kicker" style="color:#8a641e;border-color:#d9b65c;background:#fff7df">Table Of Contents</span>
-      <h2>Contents</h2>
+      <span class="kicker" style="color:#8a641e;border-color:#d9b65c;background:#fff7df" data-i18n="wp.page.span2">Table Of Contents</span>
+      <h2 data-i18n="wp.page.h21">Contents</h2>
       <div class="toc-grid">
-        <div class="toc-row"><span class="toc-number">01</span><span>Current Thesis</span></div>
-        <div class="toc-row"><span class="toc-number">02</span><span>Why TON And Telegram Matter</span></div>
-        <div class="toc-row"><span class="toc-number">03</span><span>The Current Product Ladder</span></div>
-        <div class="toc-row"><span class="toc-number">04</span><span>$TCULT Terminal</span></div>
-        <div class="toc-row"><span class="toc-number">05</span><span>$TCULT Guard</span></div>
-        <div class="toc-row"><span class="toc-number">06</span><span>Architecture And Data</span></div>
-        <div class="toc-row"><span class="toc-number">07</span><span>Later User-Signed Boundary</span></div>
-        <div class="toc-row"><span class="toc-number">08</span><span>Release Gates, Metrics, And Safety</span></div>
+        <div class="toc-row"><span class="toc-number">01</span><span data-i18n="wp.page.span3">Current Thesis</span></div>
+        <div class="toc-row"><span class="toc-number">02</span><span data-i18n="wp.page.span4">Why TON And Telegram Matter</span></div>
+        <div class="toc-row"><span class="toc-number">03</span><span data-i18n="wp.page.span5">The Current Product Ladder</span></div>
+        <div class="toc-row"><span class="toc-number">04</span><span data-i18n="wp.page.span6">$TCULT Terminal</span></div>
+        <div class="toc-row"><span class="toc-number">05</span><span data-i18n="wp.page.span7">$TCULT Guard</span></div>
+        <div class="toc-row"><span class="toc-number">06</span><span data-i18n="wp.page.span8">Architecture And Data</span></div>
+        <div class="toc-row"><span class="toc-number">07</span><span data-i18n="wp.page.span9">Later User-Signed Boundary</span></div>
+        <div class="toc-row"><span class="toc-number">08</span><span data-i18n="wp.page.span10">Release Gates, Metrics, And Safety</span></div>
       </div>
     </section>
 
     <section class="section">
-      <span class="label">01 | Current Thesis</span>
-      <h2>$TCULT connects live play to read-only TON evidence.</h2>
-      <p class="lead">$TCULT begins with Telegram-native plush culture, then turns that attention into a concrete portfolio: four live games, $TCULT Terminal in development, and $TCULT Guard in production behind release gates.</p>
-      <div class="callout">
+      <span class="label" data-i18n="wp.page.span11">01 | Current Thesis</span>
+      <h2 data-i18n="wp.page.h22">$TCULT connects live play to read-only TON evidence.</h2>
+      <p class="lead" data-i18n="wp.page.p1">$TCULT begins with Telegram-native plush culture, then turns that attention into a concrete portfolio: four live games, $TCULT Handle Desk live on the web, $TCULT Terminal in development, and $TCULT Guard in production behind release gates.</p>
+      <div class="callout" data-i18n="wp.page.div1">
         <strong>TON and $GRAM terminology:</strong> This paper uses TON as the network name and $GRAM as its native coin. $TCULT will never ask users to migrate, swap, claim, bridge, or convert assets through a link.
       </div>
-      <p>Plush Tap: Daily Ritual, Plush Run: Gift Chase, and Plush Hop: Gift Tower are live on Vercel and Telegram. They are the participation layer: fast, mobile-native surfaces that invite people to open, play, share, and return.</p>
-      <p>The evidence lane is next. Terminal turns a pasted TON jetton address or explorer link into a fast panel, bundle analysis, and optional explanation. Guard checks official routes, Telegram paths, Fragment numbers, .ton domains, Getgems collections, addresses, and DEX links. Both current milestones are read-only.</p>
-      <div class="callout">
+      <p data-i18n="wp.page.p2">Plush Tap: Daily Ritual, Plush Run: Gift Chase, and Plush Hop: Gift Tower are live on Vercel and Telegram. They are the participation layer: fast, mobile-native surfaces that invite people to open, play, share, and return.</p>
+      <p data-i18n="wp.page.p3">The evidence lane is next. Handle Desk checks an exact Telegram username against public channel, supergroup, and Fragment evidence on the web. Terminal turns a pasted TON jetton address or explorer link into a fast panel, bundle analysis, and optional explanation. Guard checks official routes, Telegram paths, Fragment numbers, .ton domains, Getgems collections, addresses, and DEX links. All current milestones are read-only.</p>
+      <div class="callout" data-i18n="wp.page.div2">
         <strong>Core positioning:</strong> Evidence first. Decisions stay yours. Terminal and Guard present readable facts without custody, transaction execution, or financial direction.
       </div>
     </section>
 
     <section class="section">
-      <span class="label">02 | Why The TON Blockchain Matters</span>
-      <h2>The TON blockchain gives $TCULT a natural product surface.</h2>
-      <p>The TON blockchain matters because it sits close to Telegram behavior. $TCULT already lives in the language of Telegram groups, bots, mini apps, stickers, gifts, and social sharing. That makes the TON blockchain more than a settlement layer. It is the infrastructure connecting community rituals to wallet-aware tools, official resources, assets, verified records, and future applications.</p>
+      <span class="label" data-i18n="wp.page.span12">02 | Why The TON Blockchain Matters</span>
+      <h2 data-i18n="wp.page.h23">The TON blockchain gives $TCULT a natural product surface.</h2>
+      <p data-i18n="wp.page.p4">The TON blockchain matters because it sits close to Telegram behavior. $TCULT already lives in the language of Telegram groups, bots, mini apps, stickers, gifts, and social sharing. That makes the TON blockchain more than a settlement layer. It is the infrastructure connecting community rituals to wallet-aware tools, official resources, assets, verified records, and future applications.</p>
       <div class="grid two">
         <article class="card">
-          <span class="label">Telegram-Native Access</span>
-          <h3>Mini apps keep friction low.</h3>
-          <p>$TCULT utilities are designed to open inside Telegram, feel mobile-first, and make the first useful action clear. The project keeps games public and simple while utility surfaces mature into more serious product lanes over time.</p>
+          <span class="label" data-i18n="wp.page.span13">Telegram-Native Access</span>
+          <h3 data-i18n="wp.page.h31">Mini apps keep friction low.</h3>
+          <p data-i18n="wp.page.p5">$TCULT utilities are designed to open inside Telegram, feel mobile-first, and make the first useful action clear. The project keeps games public and simple while utility surfaces mature into more serious product lanes over time.</p>
         </article>
         <article class="card">
-          <span class="label">Later User-Signed Actions</span>
-          <h3>TON Connect stays outside the current release.</h3>
-          <p>Any later wallet feature must remain non-custodial, user-signed, and protected by a clear pre-sign review. It is separate from today's read-only evidence claims.</p>
+          <span class="label" data-i18n="wp.page.span14">Later User-Signed Actions</span>
+          <h3 data-i18n="wp.page.h32">TON Connect stays outside the current release.</h3>
+          <p data-i18n="wp.page.p6">Any later wallet feature must remain non-custodial, user-signed, and protected by a clear pre-sign review. It is separate from today's read-only evidence claims.</p>
         </article>
         <article class="card">
-          <span class="label">Indexed Data</span>
-          <h3>API v3 enables readable facts.</h3>
-          <p>TON Center API v3 provides indexed blockchain access for transactions, traces, jettons, NFTs, actions, wallet states, and analytics. That makes it suitable for scan cards, evidence tabs, explorer links, and read-only user education.</p>
+          <span class="label" data-i18n="wp.page.span15">Indexed Data</span>
+          <h3 data-i18n="wp.page.h33">API v3 enables readable facts.</h3>
+          <p data-i18n="wp.page.p7">TON Center API v3 provides indexed blockchain access for transactions, traces, jettons, NFTs, actions, wallet states, and analytics. That makes it suitable for scan cards, evidence tabs, explorer links, and read-only user education.</p>
         </article>
         <article class="card">
-          <span class="label">Runtime Discipline</span>
-          <h3>Each product keeps its proven lane.</h3>
-          <p>The live games use Vercel. Guard remains on its Vercel release path. Terminal targets a resident Node 20 Docker service on Hostinger after production approval.</p>
+          <span class="label" data-i18n="wp.page.span16">Runtime Discipline</span>
+          <h3 data-i18n="wp.page.h34">Each product keeps its proven lane.</h3>
+          <p data-i18n="wp.page.p8">The live games use Vercel. Guard remains on its Vercel release path. Terminal targets a resident Node 20 Docker service on Hostinger after production approval.</p>
         </article>
       </div>
     </section>
 
     <section class="section">
-      <span class="label">03 | Product Ladder</span>
-      <h2>The current ladder is concrete and status-aware.</h2>
-      <p>The games remain the front door. Terminal and Guard add read-only evidence without turning unreleased work into a public promise.</p>
+      <span class="label" data-i18n="wp.page.span17">03 | Product Ladder</span>
+      <h2 data-i18n="wp.page.h24">The current ladder is concrete and status-aware.</h2>
+      <p data-i18n="wp.page.p9">The games remain the front door. Terminal and Guard add read-only evidence without turning unreleased work into a public promise.</p>
       <table>
         <thead>
           <tr>
-            <th>Layer</th>
-            <th>Job</th>
-            <th>Representative Products</th>
+            <th data-i18n="wp.page.th1">Layer</th>
+            <th data-i18n="wp.page.th2">Job</th>
+            <th data-i18n="wp.page.th3">Representative Products</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Community play</td>
-            <td>Bring people back through fast, shareable loops.</td>
-            <td>Plush Tap: Daily Ritual, Plush Run: Gift Chase, Plush Hop: Gift Tower.</td>
+            <td data-i18n="wp.page.td1">Community play</td>
+            <td data-i18n="wp.page.td2">Bring people back through fast, shareable loops.</td>
+            <td data-i18n="wp.page.td3">Plush Tap: Daily Ritual, Plush Run: Gift Chase, Plush Hop: Gift Tower.</td>
           </tr>
           <tr>
-            <td>Identity and collection</td>
-            <td>Make community participation visible and collectible.</td>
-            <td>Sticker packs, PFPs, gift concepts, local cosmetic gift shelves.</td>
+            <td data-i18n="wp.page.td4">Identity and collection</td>
+            <td data-i18n="wp.page.td5">Make community participation visible and collectible.</td>
+            <td data-i18n="wp.page.td6">Sticker packs, PFPs, gift concepts, local cosmetic gift shelves.</td>
           </tr>
           <tr>
-            <td>Terminal evidence</td>
-            <td>Turn a pasted TON jetton address or explorer link into a fast panel, bundle analysis, and optional explanation.</td>
-            <td>$TCULT Terminal, in development and verified locally with fixtures.</td>
+            <td data-i18n="wp.page.td43">Exact-name evidence</td>
+            <td data-i18n="wp.page.td44">Check an exact Telegram username against public channel, supergroup, and Fragment evidence before acting.</td>
+            <td data-i18n="wp.page.td45">$TCULT Handle Desk, live on the web at handles.tcult.site; the Telegram route is held until real-device QA.</td>
           </tr>
           <tr>
-            <td>Route evidence</td>
-            <td>Compare routes and links against readable official-source context before interaction.</td>
-            <td>$TCULT Guard, in production behind redeploy, DNS, Telegram, provider, and mobile QA gates.</td>
+            <td data-i18n="wp.page.td7">Terminal evidence</td>
+            <td data-i18n="wp.page.td8">Turn a pasted TON jetton address or explorer link into a fast panel, bundle analysis, and optional explanation.</td>
+            <td data-i18n="wp.page.td9">$TCULT Terminal, in development and verified locally with fixtures.</td>
           </tr>
           <tr>
-            <td>Later research</td>
-            <td>Evaluate persistence and user-signed actions without changing the current read-only boundary.</td>
-            <td>Future Supabase persistence and TON Connect flows only after separate approval and security gates.</td>
+            <td data-i18n="wp.page.td10">Route evidence</td>
+            <td data-i18n="wp.page.td11">Compare routes and links against readable official-source context before interaction.</td>
+            <td data-i18n="wp.page.td12">$TCULT Guard, in production behind redeploy, DNS, Telegram, provider, and mobile QA gates.</td>
+          </tr>
+          <tr>
+            <td data-i18n="wp.page.td13">Later research</td>
+            <td data-i18n="wp.page.td14">Evaluate persistence and user-signed actions without changing the current read-only boundary.</td>
+            <td data-i18n="wp.page.td15">Future Supabase persistence and TON Connect flows only after separate approval and security gates.</td>
           </tr>
         </tbody>
       </table>
     </section>
 
     <section class="section" id="tcult-terminal">
-      <span class="label">04 | In Development</span>
-      <h2>$TCULT Terminal turns a pasted signal into progressive evidence.</h2>
-      <p>The M2 bot gateway and Telegram conversation preview are fixture-verified locally. Terminal reuses @TCultPlushBot and does not replace the current default Mini App menu button.</p>
+      <span class="label" data-i18n="wp.tcult-terminal.span1">04 | In Development</span>
+      <h2 data-i18n="wp.tcult-terminal.h21">$TCULT Terminal turns a pasted signal into progressive evidence.</h2>
+      <p data-i18n="wp.tcult-terminal.p1">The M2 bot gateway and Telegram conversation preview are fixture-verified locally. Terminal reuses @TCultPlushBot and does not replace the current default Mini App menu button.</p>
       <div class="grid two">
         <article class="card">
-          <h3>Built and verified locally</h3>
+          <h3 data-i18n="wp.tcult-terminal.h31">Built and verified locally</h3>
           <ul>
-            <li>Authenticated Telegram webhook and fail-closed secret validation.</li>
-            <li>/start, /help, /scan, and paste-to-scan routing.</li>
-            <li>Progressive fast-panel and bundle-analysis card edits.</li>
-            <li>Filtered plain-language explanation flow.</li>
-            <li>Duplicate-update suppression, per-chat limits, and Telegram API timeouts.</li>
-            <li>39 passing service tests across four production scan vectors.</li>
+            <li data-i18n="wp.tcult-terminal.li1">Authenticated Telegram webhook and fail-closed secret validation.</li>
+            <li data-i18n="wp.tcult-terminal.li2">/start, /help, /scan, and paste-to-scan routing.</li>
+            <li data-i18n="wp.tcult-terminal.li3">Progressive fast-panel and bundle-analysis card edits.</li>
+            <li data-i18n="wp.tcult-terminal.li4">Filtered plain-language explanation flow.</li>
+            <li data-i18n="wp.tcult-terminal.li5">Duplicate-update suppression, per-chat limits, and Telegram API timeouts.</li>
+            <li data-i18n="wp.tcult-terminal.li6">39 passing service tests across four production scan vectors.</li>
           </ul>
         </article>
         <article class="card">
-          <h3>Public release gates</h3>
+          <h3 data-i18n="wp.tcult-terminal.h32">Public release gates</h3>
           <ul>
-            <li>Confirm the Hostinger VPS, app root, Docker runtime, TLS route, and rollback path.</li>
-            <li>Select a CryptoChucker-owned Git remote.</li>
-            <li>Configure server-only values without exposing them.</li>
-            <li>Inspect the existing bot webhook before any cutover.</li>
-            <li>Receive production approval, deploy, and complete live Telegram and provider QA.</li>
+            <li data-i18n="wp.tcult-terminal.li7">Confirm the Hostinger VPS, app root, Docker runtime, TLS route, and rollback path.</li>
+            <li data-i18n="wp.tcult-terminal.li8">Select a CryptoChucker-owned Git remote.</li>
+            <li data-i18n="wp.tcult-terminal.li9">Configure server-only values without exposing them.</li>
+            <li data-i18n="wp.tcult-terminal.li10">Inspect the existing bot webhook before any cutover.</li>
+            <li data-i18n="wp.tcult-terminal.li11">Receive production approval, deploy, and complete live Telegram and provider QA.</li>
           </ul>
         </article>
       </div>
-      <div class="callout">
+      <div class="callout" data-i18n="wp.tcult-terminal.div1">
         Terminal is not live or publicly released. Its current preview uses the real gateway with recorded provider fixtures and does not touch Telegram or live providers.
       </div>
     </section>
 
     <section class="section" id="tcult-guard">
-      <span class="label">05 | In Production</span>
-      <h2>$TCULT Guard checks routes and links against readable evidence.</h2>
-      <p>Guard V1 is implemented locally. A prior public alias exists, but the current release still requires redeploy, branded DNS, Telegram configuration, provider configuration, and mobile QA before it may be described as publicly released.</p>
+      <span class="label" data-i18n="wp.tcult-guard.span1">05 | In Production</span>
+      <h2 data-i18n="wp.tcult-guard.h21">$TCULT Guard checks routes and links against readable evidence.</h2>
+      <p data-i18n="wp.tcult-guard.p1">Guard V1 is implemented locally. A prior public alias exists, but the current release still requires redeploy, branded DNS, Telegram configuration, provider configuration, and mobile QA before it may be described as publicly released.</p>
       <div class="grid two">
         <article class="card">
-          <h3>Current read-only loop</h3>
+          <h3 data-i18n="wp.tcult-guard.h31">Current read-only loop</h3>
           <ul>
-            <li>Accepts TON addresses, jettons, NFT collections, mini app links, DEX links, Getgems links, and explorer URLs.</li>
-            <li>Uses public provider evidence and official-route context.</li>
-            <li>Shows careful verdict labels, evidence sources, explorer routes, and next-step guidance.</li>
-            <li>Supports Telegram start parameters and server-validated Mini App identity.</li>
+            <li data-i18n="wp.tcult-guard.li1">Accepts TON addresses, jettons, NFT collections, mini app links, DEX links, Getgems links, and explorer URLs.</li>
+            <li data-i18n="wp.tcult-guard.li2">Uses public provider evidence and official-route context.</li>
+            <li data-i18n="wp.tcult-guard.li3">Shows careful verdict labels, evidence sources, explorer routes, and next-step guidance.</li>
+            <li data-i18n="wp.tcult-guard.li4">Supports Telegram start parameters and server-validated Mini App identity.</li>
           </ul>
         </article>
         <article class="card">
-          <h3>Release boundary</h3>
+          <h3 data-i18n="wp.tcult-guard.h32">Release boundary</h3>
           <ul>
-            <li>No wallet connection, custody, transaction execution, or trading recommendation.</li>
-            <li>No seed phrase handling or automatic posting.</li>
-            <li>Provider failures remain visible and conservative.</li>
-            <li>Release language changes only after the registries record completed deployment and mobile QA.</li>
+            <li data-i18n="wp.tcult-guard.li5">No wallet connection, custody, transaction execution, or trading recommendation.</li>
+            <li data-i18n="wp.tcult-guard.li6">No seed phrase handling or automatic posting.</li>
+            <li data-i18n="wp.tcult-guard.li7">Provider failures remain visible and conservative.</li>
+            <li data-i18n="wp.tcult-guard.li8">Release language changes only after the registries record completed deployment and mobile QA.</li>
           </ul>
         </article>
       </div>
-      <div class="callout">
+      <div class="callout" data-i18n="wp.tcult-guard.div1">
         Guard presents evidence, sources, context, and caution. It does not guarantee safety or turn an evidence match into a recommendation.
       </div>
     </section>
 
     <section class="section">
-      <span class="label">06 | Current Architecture</span>
-      <h2>The portfolio uses explicit product and runtime lanes.</h2>
+      <span class="label" data-i18n="wp.page.span18">06 | Current Architecture</span>
+      <h2 data-i18n="wp.page.h25">The portfolio uses explicit product and runtime lanes.</h2>
       <div class="architecture">
-        <p style="color:rgba(255,247,230,0.82)">The current architecture connects Telegram, four live games, Terminal, Guard, public TON evidence providers, Vercel, Hostinger, and release registries. Future persistence and user-signed actions remain outside today's release claims.</p>
+        <p style="color:rgba(255,247,230,0.82)" data-i18n="wp.page.p10">The current architecture connects Telegram, four live games, Handle Desk, Terminal, Guard, public TON evidence providers, Vercel, Hostinger, and release registries. Future persistence and user-signed actions remain outside today's release claims.</p>
         <div class="arch-grid">
-          <div class="arch-card"><strong>Telegram Surface</strong><span>@TCultPlushBot, Mini App routes, and the community entry points.</span></div>
-          <div class="arch-card"><strong>Live Games</strong><span>Plush Tap, Plush Run, and Plush Hop on Vercel with Telegram deep links.</span></div>
-          <div class="arch-card"><strong>Terminal Service</strong><span>Node 20, TypeScript, Docker, progressive Telegram cards, and a Hostinger resident runtime target.</span></div>
-          <div class="arch-card"><strong>Guard App</strong><span>Vite, React, TypeScript, Vercel Functions, and release gates still open.</span></div>
-          <div class="arch-card"><strong>Evidence Providers</strong><span>TonAPI, TON Center, and other public reads behind conservative responses.</span></div>
-          <div class="arch-card"><strong>Catalog And Gates</strong><span>Live registries, architecture records, deployment checks, QA, and approval evidence.</span></div>
+          <div class="arch-card"><strong data-i18n="wp.page.strong1">Telegram Surface</strong><span data-i18n="wp.page.span19">@TCultPlushBot, Mini App routes, and the community entry points.</span></div>
+          <div class="arch-card"><strong data-i18n="wp.page.strong2">Live Games</strong><span data-i18n="wp.page.span20">Plush Tap, Plush Run, and Plush Hop on Vercel with Telegram deep links.</span></div>
+          <div class="arch-card"><strong data-i18n="wp.page.strong7">Handle Desk App</strong><span data-i18n="wp.page.span33">Branded web route, typed exact-name lookup, public channel, supergroup, and Fragment evidence reads, and a Telegram route held until real-device QA.</span></div>
+          <div class="arch-card"><strong data-i18n="wp.page.strong3">Terminal Service</strong><span data-i18n="wp.page.span21">Node 20, TypeScript, Docker, progressive Telegram cards, and a Hostinger resident runtime target.</span></div>
+          <div class="arch-card"><strong data-i18n="wp.page.strong4">Guard App</strong><span data-i18n="wp.page.span22">Vite, React, TypeScript, Vercel Functions, and release gates still open.</span></div>
+          <div class="arch-card"><strong data-i18n="wp.page.strong5">Evidence Providers</strong><span data-i18n="wp.page.span23">TonAPI, TON Center, and other public reads behind conservative responses.</span></div>
+          <div class="arch-card"><strong data-i18n="wp.page.strong6">Catalog And Gates</strong><span data-i18n="wp.page.span24">Live registries, architecture records, deployment checks, QA, and approval evidence.</span></div>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <span class="label">07 | Data And Verification Architecture</span>
-      <h2>Read-only evidence comes first. Later actions stay user-signed.</h2>
-      <p>Terminal and Guard begin with user-submitted inputs and public data. Each product normalizes the input, reads available evidence, and returns a conservative result without taking custody or executing a transaction.</p>
+      <span class="label" data-i18n="wp.page.span25">07 | Data And Verification Architecture</span>
+      <h2 data-i18n="wp.page.h26">Read-only evidence comes first. Later actions stay user-signed.</h2>
+      <p data-i18n="wp.page.p11">Terminal and Guard begin with user-submitted inputs and public data. Each product normalizes the input, reads available evidence, and returns a conservative result without taking custody or executing a transaction.</p>
       <table>
         <thead>
           <tr>
-            <th>Component</th>
-            <th>Public Function</th>
-            <th>Boundary</th>
+            <th data-i18n="wp.page.th4">Component</th>
+            <th data-i18n="wp.page.th5">Public Function</th>
+            <th data-i18n="wp.page.th6">Boundary</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Terminal gateway</td>
-            <td>Receives a TON jetton address or explorer link through @TCultPlushBot and returns progressive evidence cards.</td>
-            <td>No transaction execution.</td>
+            <td data-i18n="wp.page.td46">Handle Desk lookup</td>
+            <td data-i18n="wp.page.td47">Checks an exact Telegram username against public channel or supergroup evidence and official Fragment evidence, then states the honest next step.</td>
+            <td data-i18n="wp.page.td48">No claim about personal handle status; that is confirmed only in Telegram settings.</td>
           </tr>
           <tr>
-            <td>Terminal scan pipeline</td>
-            <td>Builds a fast panel, bundle analysis, and filtered explanation from provider evidence.</td>
-            <td>No financial recommendation language.</td>
+            <td data-i18n="wp.page.td16">Terminal gateway</td>
+            <td data-i18n="wp.page.td17">Receives a TON jetton address or explorer link through @TCultPlushBot and returns progressive evidence cards.</td>
+            <td data-i18n="wp.page.td18">No transaction execution.</td>
           </tr>
           <tr>
-            <td>Guard evidence flow</td>
-            <td>Checks routes, handles, domains, collections, addresses, and DEX links against official-route context and public providers.</td>
-            <td>No safety guarantee or public accusation.</td>
+            <td data-i18n="wp.page.td19">Terminal scan pipeline</td>
+            <td data-i18n="wp.page.td20">Builds a fast panel, bundle analysis, and filtered explanation from provider evidence.</td>
+            <td data-i18n="wp.page.td21">No financial recommendation language.</td>
           </tr>
           <tr>
-            <td>Current providers</td>
-            <td>TonAPI, TON Center, and other public evidence reads where available.</td>
-            <td>Provider failures remain visible and conservative.</td>
+            <td data-i18n="wp.page.td22">Guard evidence flow</td>
+            <td data-i18n="wp.page.td23">Checks routes, handles, domains, collections, addresses, and DEX links against official-route context and public providers.</td>
+            <td data-i18n="wp.page.td24">No safety guarantee or public accusation.</td>
           </tr>
           <tr>
-            <td>Later persistence and actions</td>
-            <td>Future Supabase records and TON Connect flows only after separate implementation, security, and approval gates.</td>
-            <td>Non-custodial, user-signed, and not part of the current release.</td>
+            <td data-i18n="wp.page.td25">Current providers</td>
+            <td data-i18n="wp.page.td26">TonAPI, TON Center, and other public evidence reads where available.</td>
+            <td data-i18n="wp.page.td27">Provider failures remain visible and conservative.</td>
+          </tr>
+          <tr>
+            <td data-i18n="wp.page.td28">Later persistence and actions</td>
+            <td data-i18n="wp.page.td29">Future Supabase records and TON Connect flows only after separate implementation, security, and approval gates.</td>
+            <td data-i18n="wp.page.td30">Non-custodial, user-signed, and not part of the current release.</td>
           </tr>
         </tbody>
       </table>
     </section>
 
     <section class="section">
-      <span class="label">08 | Future Research Boundary</span>
-      <h2>Research does not become a product promise.</h2>
-      <p>Acton, Tolk, on-chain registries, persistent accounts, wallet context, and transaction flows remain research or later milestones. None of them is the current delivery path for Terminal or Guard.</p>
-      <p>Any future record layer must remain public, minimal, verifiable, and separate from recommendation language. Unknown inputs must stay unknown rather than being labeled by assumption.</p>
+      <span class="label" data-i18n="wp.page.span26">08 | Future Research Boundary</span>
+      <h2 data-i18n="wp.page.h27">Research does not become a product promise.</h2>
+      <p data-i18n="wp.page.p12">Acton, Tolk, on-chain registries, persistent accounts, wallet context, and transaction flows remain research or later milestones. None of them is the current delivery path for Terminal or Guard.</p>
+      <p data-i18n="wp.page.p13">Any future record layer must remain public, minimal, verifiable, and separate from recommendation language. Unknown inputs must stay unknown rather than being labeled by assumption.</p>
       <div class="grid two">
         <article class="card">
-          <h3>Research questions</h3>
+          <h3 data-i18n="wp.page.h35">Research questions</h3>
           <ul>
-            <li>What evidence genuinely benefits from persistence?</li>
-            <li>Which records belong off-chain or on-chain?</li>
-            <li>How are provenance and updates verified?</li>
-            <li>How does the interface avoid implying endorsement?</li>
+            <li data-i18n="wp.page.li1">What evidence genuinely benefits from persistence?</li>
+            <li data-i18n="wp.page.li2">Which records belong off-chain or on-chain?</li>
+            <li data-i18n="wp.page.li3">How are provenance and updates verified?</li>
+            <li data-i18n="wp.page.li4">How does the interface avoid implying endorsement?</li>
           </ul>
         </article>
         <article class="card">
-          <h3>Gates before any public commitment</h3>
+          <h3 data-i18n="wp.page.h36">Gates before any public commitment</h3>
           <ul>
-            <li>Architecture and threat model approved.</li>
-            <li>Implementation, tests, and independent review complete.</li>
-            <li>Testnet behavior and rollback path verified.</li>
-            <li>User signing and fee previews are explicit.</li>
-            <li>Public copy passes security and financial-claim review.</li>
+            <li data-i18n="wp.page.li5">Architecture and threat model approved.</li>
+            <li data-i18n="wp.page.li6">Implementation, tests, and independent review complete.</li>
+            <li data-i18n="wp.page.li7">Testnet behavior and rollback path verified.</li>
+            <li data-i18n="wp.page.li8">User signing and fee previews are explicit.</li>
+            <li data-i18n="wp.page.li9">Public copy passes security and financial-claim review.</li>
           </ul>
         </article>
       </div>
     </section>
 
     <section class="section">
-      <span class="label">09 | Human-Gated Development</span>
-      <h2>Automation supports the build and does not replace judgment.</h2>
-      <p>The $TCULT studio uses agents for research, code handoffs, architecture updates, media planning, QA scans, public-copy checks, and iteration across games, website, lore, and utility apps.</p>
-      <p>Human approval remains the gate for public releases, production changes, security-sensitive flows, wallet behavior, and anything involving user trust.</p>
-      <div class="callout">
+      <span class="label" data-i18n="wp.page.span27">09 | Human-Gated Development</span>
+      <h2 data-i18n="wp.page.h28">Automation supports the build and does not replace judgment.</h2>
+      <p data-i18n="wp.page.p14">The $TCULT studio uses agents for research, code handoffs, architecture updates, media planning, QA scans, public-copy checks, and iteration across games, website, lore, and utility apps.</p>
+      <p data-i18n="wp.page.p15">Human approval remains the gate for public releases, production changes, security-sensitive flows, wallet behavior, and anything involving user trust.</p>
+      <div class="callout" data-i18n="wp.page.div3">
         Automation is support, not authority. The public trust layer stays clear, conservative, and verifiable.
       </div>
     </section>
 
     <section class="section">
-      <span class="label">10 | Later User-Signed Actions</span>
-      <h2>Read-only evidence matures before transaction features begin.</h2>
-      <p>Later wallet and transaction milestones must remain non-custodial and user-signed. Every action requires a clear pre-sign preview, quote or request expiry where relevant, visible fees, and an explicit user decision.</p>
-      <p>Automatic trading, custody, seed phrase handling, and financial direction remain outside the product boundary. These later milestones do not change the current status of Terminal or Guard.</p>
+      <span class="label" data-i18n="wp.page.span28">10 | Later User-Signed Actions</span>
+      <h2 data-i18n="wp.page.h29">Read-only evidence matures before transaction features begin.</h2>
+      <p data-i18n="wp.page.p16">Later wallet and transaction milestones must remain non-custodial and user-signed. Every action requires a clear pre-sign preview, quote or request expiry where relevant, visible fees, and an explicit user decision.</p>
+      <p data-i18n="wp.page.p17">Automatic trading, custody, seed phrase handling, and financial direction remain outside the product boundary. These later milestones do not change the current status of Terminal or Guard.</p>
     </section>
 
     <section class="section">
-      <span class="label">11 | Roadmap</span>
-      <h2>Verified states replace date-based promises.</h2>
+      <span class="label" data-i18n="wp.page.span29">11 | Roadmap</span>
+      <h2 data-i18n="wp.page.h210">Verified states replace date-based promises.</h2>
       <table>
         <thead>
           <tr>
-            <th>Status</th>
-            <th>Product</th>
-            <th>Verified Boundary</th>
+            <th data-i18n="wp.page.th7">Status</th>
+            <th data-i18n="wp.page.th8">Product</th>
+            <th data-i18n="wp.page.th9">Verified Boundary</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Live now</td>
-            <td>Plush Tap, Plush Run, and Plush Hop.</td>
-            <td>Three Telegram routes and three Vercel web apps are public.</td>
+            <td data-i18n="wp.page.td31">Live now</td>
+            <td data-i18n="wp.page.td32">Plush Tap, Plush Run, and Plush Hop.</td>
+            <td data-i18n="wp.page.td33">Three Telegram routes and three Vercel web apps are public.</td>
           </tr>
           <tr>
-            <td>In development</td>
-            <td>$TCULT Terminal.</td>
-            <td>M2 gateway and local fixture preview are verified. Production deployment and live Telegram QA remain open.</td>
+            <td data-i18n="wp.page.td49">Live on the web</td>
+            <td data-i18n="wp.page.td50">$TCULT Handle Desk.</td>
+            <td data-i18n="wp.page.td51">The branded web route is public. The Telegram route opens after real-device QA.</td>
           </tr>
           <tr>
-            <td>In production</td>
-            <td>$TCULT Guard.</td>
-            <td>V1 is implemented locally. Redeploy, DNS, Telegram configuration, providers, and mobile QA remain open.</td>
+            <td data-i18n="wp.page.td34">In development</td>
+            <td data-i18n="wp.page.td35">$TCULT Terminal.</td>
+            <td data-i18n="wp.page.td36">M2 gateway and local fixture preview are verified. Production deployment and live Telegram QA remain open.</td>
           </tr>
           <tr>
-            <td>Later research</td>
-            <td>Persistence and user-signed actions.</td>
-            <td>Separate architecture, security, testnet, and approval gates are required before public commitment.</td>
+            <td data-i18n="wp.page.td37">In production</td>
+            <td data-i18n="wp.page.td38">$TCULT Guard.</td>
+            <td data-i18n="wp.page.td39">V1 is implemented locally. Redeploy, DNS, Telegram configuration, providers, and mobile QA remain open.</td>
+          </tr>
+          <tr>
+            <td data-i18n="wp.page.td40">Later research</td>
+            <td data-i18n="wp.page.td41">Persistence and user-signed actions.</td>
+            <td data-i18n="wp.page.td42">Separate architecture, security, testnet, and approval gates are required before public commitment.</td>
           </tr>
         </tbody>
       </table>
     </section>
 
     <section class="section">
-      <span class="label">12 | Success Metrics</span>
-      <h2>$TCULT measures utility, not just attention.</h2>
+      <span class="label" data-i18n="wp.page.span30">12 | Success Metrics</span>
+      <h2 data-i18n="wp.page.h211">$TCULT measures utility, not just attention.</h2>
       <div class="grid three">
         <article class="card">
-          <h3>Games</h3>
+          <h3 data-i18n="wp.page.h37">Games</h3>
           <ul>
-            <li>plays per day</li>
-            <li>replays per user</li>
-            <li>share clicks</li>
-            <li>score posts</li>
-            <li>mobile issue rate</li>
+            <li data-i18n="wp.page.li10">plays per day</li>
+            <li data-i18n="wp.page.li11">replays per user</li>
+            <li data-i18n="wp.page.li12">share clicks</li>
+            <li data-i18n="wp.page.li13">score posts</li>
+            <li data-i18n="wp.page.li14">mobile issue rate</li>
           </ul>
         </article>
         <article class="card">
-          <h3>Terminal</h3>
+          <h3 data-i18n="wp.page.h38">Terminal</h3>
           <ul>
-            <li>fixture and live scan accuracy</li>
-            <li>time to fast panel</li>
-            <li>time to bundle analysis</li>
-            <li>explanation completion rate</li>
-            <li>webhook rejection and timeout behavior</li>
+            <li data-i18n="wp.page.li15">fixture and live scan accuracy</li>
+            <li data-i18n="wp.page.li16">time to fast panel</li>
+            <li data-i18n="wp.page.li17">time to bundle analysis</li>
+            <li data-i18n="wp.page.li18">explanation completion rate</li>
+            <li data-i18n="wp.page.li19">webhook rejection and timeout behavior</li>
           </ul>
         </article>
         <article class="card">
-          <h3>Guard</h3>
+          <h3 data-i18n="wp.page.h39">Guard</h3>
           <ul>
-            <li>route checks completed</li>
-            <li>repeat scanner usage</li>
-            <li>provider agreement and failure visibility</li>
-            <li>false-positive reports</li>
-            <li>mobile QA issue rate</li>
+            <li data-i18n="wp.page.li20">route checks completed</li>
+            <li data-i18n="wp.page.li21">repeat scanner usage</li>
+            <li data-i18n="wp.page.li22">provider agreement and failure visibility</li>
+            <li data-i18n="wp.page.li23">false-positive reports</li>
+            <li data-i18n="wp.page.li24">mobile QA issue rate</li>
           </ul>
         </article>
       </div>
     </section>
 
     <section class="section">
-      <span class="label">13 | Public Safety Language</span>
-      <h2>The wording is part of the product.</h2>
-      <p>$TCULT builds trust through careful language. The public copy is confident about the roadmap, and the utility layer never overstates what a scan proves.</p>
+      <span class="label" data-i18n="wp.page.span31">13 | Public Safety Language</span>
+      <h2 data-i18n="wp.page.h212">The wording is part of the product.</h2>
+      <p data-i18n="wp.page.p18">$TCULT builds trust through careful language. The public copy is confident about the roadmap, and the utility layer never overstates what a scan proves.</p>
       <div class="grid two">
         <article class="card">
-          <h3>Preferred Language</h3>
+          <h3 data-i18n="wp.page.h310">Preferred Language</h3>
           <ul>
-            <li>Check before you click.</li>
-            <li>Readable on-chain facts.</li>
-            <li>Known official source.</li>
-            <li>Unknown.</li>
-            <li>Needs review.</li>
-            <li>Unable to verify.</li>
+            <li data-i18n="wp.page.li25">Check before you click.</li>
+            <li data-i18n="wp.page.li26">Readable on-chain facts.</li>
+            <li data-i18n="wp.page.li27">Known official source.</li>
+            <li data-i18n="wp.page.li28">Unknown.</li>
+            <li data-i18n="wp.page.li29">Needs review.</li>
+            <li data-i18n="wp.page.li30">Unable to verify.</li>
           </ul>
         </article>
         <article class="card">
-          <h3>Avoid</h3>
+          <h3 data-i18n="wp.page.h311">Avoid</h3>
           <ul>
-            <li>Guarantee language.</li>
-            <li>Trading direction.</li>
-            <li>Return promises.</li>
-            <li>Outcome predictions.</li>
-            <li>Eligibility assumptions.</li>
-            <li>Reward claims.</li>
+            <li data-i18n="wp.page.li31">Guarantee language.</li>
+            <li data-i18n="wp.page.li32">Trading direction.</li>
+            <li data-i18n="wp.page.li33">Return promises.</li>
+            <li data-i18n="wp.page.li34">Outcome predictions.</li>
+            <li data-i18n="wp.page.li35">Eligibility assumptions.</li>
+            <li data-i18n="wp.page.li36">Reward claims.</li>
           </ul>
         </article>
       </div>
     </section>
 
     <section class="section">
-      <span class="label">14 | References</span>
-      <h2>Research sources</h2>
-      <p class="muted">This public white paper reflects the July 10, 2026 $TCULT app registries, Terminal execution plan, Guard release status, and public TON documentation.</p>
+      <span class="label" data-i18n="wp.page.span32">14 | References</span>
+      <h2 data-i18n="wp.page.h213">Research sources</h2>
+      <p class="muted" data-i18n="wp.page.p19">This public white paper reflects the August 16, 2026 $TCULT app registries, Handle Desk release records, Terminal execution plan, Guard release status, and public TON documentation.</p>
       <ol class="reference-list">
-        <li>TON blockchain Acton documentation, "A unified toolchain for TON smart contracts," https://ton-blockchain.github.io/acton/</li>
-        <li>TON Docs, "TON Connect overview," https://docs.ton.org/ecosystem/ton-connect/overview</li>
-        <li>TON Docs, "TON Center API v3 overview," https://docs.ton.org/ecosystem/api/toncenter/v3/overview</li>
-        <li>$TCULT Mini App Registry and LIVE_APPS records, updated July 10, 2026.</li>
-        <li>$TCULT Terminal execution plan and README, updated July 10, 2026.</li>
-        <li>$TCULT Guard README and current production release gates.</li>
-        <li>$TCULT Mini Apps Architecture Catalog and app-local architecture packages.</li>
+        <li data-i18n="wp.page.li37">TON blockchain Acton documentation, "A unified toolchain for TON smart contracts," https://ton-blockchain.github.io/acton/</li>
+        <li data-i18n="wp.page.li38">TON Docs, "TON Connect overview," https://docs.ton.org/ecosystem/ton-connect/overview</li>
+        <li data-i18n="wp.page.li39">TON Docs, "TON Center API v3 overview," https://docs.ton.org/ecosystem/api/toncenter/v3/overview</li>
+        <li data-i18n="wp.page.li40">$TCULT Mini App Registry and LIVE_APPS records, updated August 16, 2026.</li>
+        <li data-i18n="wp.page.li44">$TCULT Handle Desk release records and work order evidence, August 16, 2026.</li>
+        <li data-i18n="wp.page.li41">$TCULT Terminal execution plan and README, updated July 10, 2026.</li>
+        <li data-i18n="wp.page.li42">$TCULT Guard README and current production release gates.</li>
+        <li data-i18n="wp.page.li43">$TCULT Mini Apps Architecture Catalog and app-local architecture packages.</li>
       </ol>
-      <div class="footer-note">
+      <div class="footer-note" data-i18n="wp.page.div4">
         Developed by <a href="https://x.com/CryptoChucker" target="_blank" rel="noopener">CryptoChucker</a>. This white paper is informational and does not provide financial, investment, legal, security, or tax advice.
       </div>
-      <div class="page-actions" aria-label="$TCULT page links">
-        <a href="../index.html">Portal Home</a>
-        <a href="../lore.html">Lore Page</a>
-        <a href="../thesis.html">Thesis Page</a>
-        <a href="https://x.com/CryptoChucker" target="_blank" rel="noopener">@CryptoChucker</a>
+      <div class="page-actions" aria-label="$TCULT page links" data-i18n-attr="aria-label:wp.page.div5AriaLabel">
+        <a href="../index.html" data-i18n="wp.page.a4">Portal Home</a>
+        <a href="../lore.html" data-i18n="wp.page.a5">Lore Page</a>
+        <a href="../thesis.html" data-i18n="wp.page.a6">Thesis Page</a>
+        <a href="https://x.com/CryptoChucker" target="_blank" rel="noopener" data-i18n="wp.page.a7">@CryptoChucker</a>
       </div>
     </section>
   </main>
@@ -971,6 +1028,32 @@
       } else if (typeof reducedMotion.addListener === "function") {
         reducedMotion.addListener(syncMotion);
       }
+    })();
+  </script>
+  <script>
+    (function setupLocaleToggle() {
+      // Russian ships in the build but stays unlinked until native-speaker sign-off
+      // (i18n spec 7.3). Flip RU_PUBLIC to true to show the toggle and enable the
+      // first-visit redirect; the /ru/ pages themselves always show the toggle so a
+      // reviewer who lands there directly can get back to English.
+      var RU_PUBLIC = false;
+      var KEY = "tcult.locale";
+      var stored;
+      try { stored = window.localStorage.getItem(KEY); } catch (e) { stored = null; }
+      var onRuPage = /^\/ru\//.test(window.location.pathname);
+      if (RU_PUBLIC && !stored && !onRuPage && (navigator.language || "").toLowerCase().indexOf("ru") === 0) {
+        try { window.localStorage.setItem(KEY, "ru"); } catch (e) {}
+        window.location.replace("/ru" + window.location.pathname + window.location.search);
+        return;
+      }
+      if (RU_PUBLIC || onRuPage) {
+        document.querySelectorAll("[data-locale-toggle]").forEach(function(el) { el.removeAttribute("hidden"); });
+      }
+      document.querySelectorAll(".tcult-locale-toggle-link").forEach(function(link) {
+        link.addEventListener("click", function() {
+          try { window.localStorage.setItem(KEY, link.getAttribute("href").indexOf("/ru/") === 0 ? "ru" : "en"); } catch (e) {}
+        });
+      });
     })();
   </script>
 </body>
