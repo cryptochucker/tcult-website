@@ -1036,7 +1036,7 @@
       // (i18n spec 7.3). Flip RU_PUBLIC to true to show the toggle and enable the
       // first-visit redirect; the /ru/ pages themselves always show the toggle so a
       // reviewer who lands there directly can get back to English.
-      var RU_PUBLIC = false;
+      var RU_PUBLIC = true;
       var KEY = "tcult.locale";
       var stored;
       try { stored = window.localStorage.getItem(KEY); } catch (e) { stored = null; }
