@@ -419,6 +419,47 @@ svg {
   color: var(--gold-2);
 }
 
+.tcult-locale-toggle {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 2px;
+  padding: 3px;
+  margin-left: 2px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* The toggle starts hidden until RU_PUBLIC flips (see setupLocaleToggle in each page).
+   An explicit display rule would otherwise beat the hidden attribute. */
+.tcult-locale-toggle[hidden] {
+  display: none;
+}
+
+.tcult-locale-toggle-link {
+  min-height: 30px;
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  color: rgba(247, 239, 226, 0.62);
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  transition: color 180ms ease, background 180ms ease;
+}
+
+.tcult-locale-toggle-link:hover {
+  color: var(--ink);
+}
+
+.tcult-locale-toggle-link[aria-current="page"] {
+  color: #15100a;
+  background: var(--gold);
+}
+
 .shell {
   width: min(var(--max), calc(100vw - 40px));
   margin: 0 auto;
@@ -2497,8 +2538,22 @@ h3 {
     min-height: 64px;
     align-items: flex-start;
     justify-content: flex-start;
-    flex-direction: column;
+    /* Row + wrap instead of column: brand and the locale toggle share row one, the
+       full-width nav wraps to row two. Visually identical to the old column layout
+       for brand and nav; only the toggle placement changes (no third header row). */
+    flex-direction: row;
+    flex-wrap: wrap;
     padding: 11px 0;
+  }
+
+  .topbar-inner .nav {
+    order: 2;
+  }
+
+  .topbar-inner .tcult-locale-toggle {
+    order: 1;
+    margin-left: auto;
+    align-self: center;
   }
 
   .nav {

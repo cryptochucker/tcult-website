@@ -1,0 +1,1032 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="wp.meta.title">Белая книга $TCULT Terminal и утилит TON</title>
+  <meta name="description" content="Техническая белая книга о $TCULT Terminal, $TCULT Guard, четырёх работающих играх в Telegram, текущих средах выполнения, доказательствах только для чтения и более поздних действиях TON с подписью пользователя." data-i18n-attr="content:wp.meta.description">
+  <meta name="theme-color" content="#070807">
+  <link rel="canonical" href="https://www.tcult.site/ru/whitepaper/TCULT_TON_BLOCKCHAIN_UTILITY_WHITE_PAPER.html">
+  <link rel="alternate" hreflang="en" href="https://www.tcult.site/whitepaper/TCULT_TON_BLOCKCHAIN_UTILITY_WHITE_PAPER.html">
+  <link rel="alternate" hreflang="ru" href="https://www.tcult.site/ru/whitepaper/TCULT_TON_BLOCKCHAIN_UTILITY_WHITE_PAPER.html">
+  <link rel="alternate" hreflang="x-default" href="https://www.tcult.site/whitepaper/TCULT_TON_BLOCKCHAIN_UTILITY_WHITE_PAPER.html">
+  <meta property="og:site_name" content="$TCULT">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.tcult.site/ru/whitepaper/TCULT_TON_BLOCKCHAIN_UTILITY_WHITE_PAPER.html">
+  <meta property="og:title" content="Белая книга $TCULT Terminal и утилит TON" data-i18n-attr="content:wp.meta.ogTitle">
+  <meta property="og:description" content="Четыре работающие игры в Telegram, $TCULT Terminal, $TCULT Guard, текущие среды выполнения, доказательства только для чтения и более поздняя граница действий TON с подписью пользователя." data-i18n-attr="content:wp.meta.ogDescription">
+  <meta property="og:image" content="https://www.tcult.site/assets/utility/tcult-terminal-ledger-architecture-640x360.webp">
+  <meta property="og:image:secure_url" content="https://www.tcult.site/assets/utility/tcult-terminal-ledger-architecture-640x360.webp">
+  <meta property="og:image:type" content="image/webp">
+  <meta property="og:image:width" content="640">
+  <meta property="og:image:height" content="360">
+  <meta property="og:image:alt" content="$TCULT Terminal: Cipher направляет сигнал TON, пока Ledger проверяет карточку доказательств." data-i18n-attr="content:wp.meta.ogImageAlt">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@CryptoChucker">
+  <meta name="twitter:creator" content="@CryptoChucker">
+  <meta name="twitter:title" content="Белая книга $TCULT Terminal и утилит TON" data-i18n-attr="content:wp.meta.twitterTitle">
+  <meta name="twitter:description" content="Четыре работающие игры в Telegram, $TCULT Terminal, $TCULT Guard, текущие среды выполнения, доказательства только для чтения и более поздняя граница действий TON с подписью пользователя." data-i18n-attr="content:wp.meta.twitterDescription">
+  <meta name="twitter:image" content="https://www.tcult.site/assets/utility/tcult-terminal-ledger-architecture-640x360.webp">
+  <meta name="twitter:image:alt" content="$TCULT Terminal: Cipher направляет сигнал TON, пока Ledger проверяет карточку доказательств." data-i18n-attr="content:wp.meta.twitterImageAlt">
+  <link rel="icon" type="image/png" sizes="64x64" href="../../assets/optimized/favicon-64.png">
+  <style>
+    :root {
+      --bg: #070807;
+      --paper: #fbf7ed;
+      --ink: #171510;
+      --muted: #5c5a54;
+      --gold: #c8922e;
+      --gold-soft: #f6d98c;
+      --ton: #168fd8;
+      --green: #308f54;
+      --line: #ded4c0;
+      --panel: #fffdf7;
+      --dark: #0c1111;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      background: var(--bg);
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      line-height: 1.58;
+      letter-spacing: 0;
+    }
+
+    a {
+      color: #0f6fa9;
+      text-decoration: none;
+    }
+
+    .wp-skip {
+      position: fixed;
+      left: 16px;
+      top: -50px;
+      z-index: 30;
+      padding: 10px 14px;
+      border-radius: 7px;
+      background: #ffe8a6;
+      color: #080907;
+      font-weight: 900;
+    }
+
+    .wp-skip:focus {
+      top: 16px;
+    }
+
+    .wp-topbar {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 20;
+      background: linear-gradient(180deg, rgba(6, 8, 7, 0.92), rgba(6, 8, 7, 0.64));
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(18px);
+    }
+
+    .wp-topbar-inner {
+      width: min(1180px, calc(100vw - 32px));
+      min-height: 66px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .wp-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff7e6;
+      font-size: 14px;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .wp-mark {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 1px solid rgba(246, 217, 140, 0.62);
+      background: #090b0a url("../assets/optimized/favicon-256.png?v=20260801-1") center / cover no-repeat;
+      box-shadow: 0 0 24px rgba(246, 217, 140, 0.28);
+      overflow: hidden;
+    }
+
+    .wp-nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .wp-nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    .wp-nav a,
+    .page-actions a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 37px;
+      padding: 9px 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 247, 230, 0.18);
+      background: rgba(255, 255, 255, 0.07);
+      color: rgba(255, 247, 230, 0.86);
+      font-size: 12px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .wp-nav a:hover,
+    .wp-nav a.active,
+    .page-actions a:hover {
+      border-color: rgba(246, 217, 140, 0.7);
+      background: rgba(246, 217, 140, 0.14);
+      color: #ffe8a6;
+    }
+
+    .wp-nav a.nav-cta {
+      border-color: rgba(246, 217, 140, 0.72);
+      background: linear-gradient(180deg, #ffe2a0, #d99124);
+      color: #15100a;
+    }
+
+    .cover a,
+    .credit-line a {
+      color: #ffe8a6;
+      font-weight: 900;
+    }
+
+    .cover {
+      position: relative;
+      min-height: 100vh;
+      display: grid;
+      align-items: end;
+      padding: 58px;
+      color: #fff7e6;
+      overflow: hidden;
+      background: #050605 url("../assets/posters/public/ai-signal-weave.png") center / cover no-repeat;
+      page-break-after: always;
+      padding-top: 100px;
+    }
+
+    .cover::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(90deg, rgba(6, 8, 7, 0.92), rgba(6, 8, 7, 0.52), rgba(6, 8, 7, 0.92));
+      pointer-events: none;
+    }
+
+    .cover-video {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .cover-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 980px;
+    }
+
+    .kicker {
+      display: inline-block;
+      margin-bottom: 22px;
+      padding: 8px 12px;
+      border: 1px solid rgba(246, 217, 140, 0.5);
+      border-radius: 999px;
+      color: #ffe8a6;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 22px;
+      font-size: 62px;
+      line-height: 0.98;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 0 0 15px;
+      color: #16130d;
+      font-size: 32px;
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin-bottom: 8px;
+      font-size: 20px;
+      line-height: 1.2;
+    }
+
+    .cover p {
+      max-width: 830px;
+      color: rgba(255, 247, 230, 0.83);
+      font-size: 18px;
+    }
+
+    .credit-line {
+      margin-top: 34px;
+      display: grid;
+      gap: 5px;
+      color: rgba(255, 247, 230, 0.76);
+      font-size: 13px;
+      font-weight: 760;
+    }
+
+    .page {
+      max-width: 1020px;
+      margin: 0 auto;
+      padding: 48px 54px;
+    }
+
+    .toc {
+      page-break-after: always;
+    }
+
+    .toc-grid {
+      display: grid;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .toc-row {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 13px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+
+    .toc-number {
+      color: var(--gold);
+      font-weight: 950;
+    }
+
+    .section {
+      padding: 24px 0 28px;
+      border-top: 1px solid var(--line);
+      page-break-inside: avoid;
+    }
+
+    .section:first-child {
+      border-top: 0;
+    }
+
+    .lead {
+      color: #35312a;
+      font-size: 18px;
+      line-height: 1.68;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .callout {
+      margin: 20px 0;
+      padding: 18px 20px;
+      border-left: 5px solid var(--gold);
+      background: #fff7df;
+      color: #272016;
+      page-break-inside: avoid;
+    }
+
+    .grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid.three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .card {
+      padding: 17px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      page-break-inside: avoid;
+    }
+
+    .card p,
+    li {
+      color: #3f3b34;
+    }
+
+    ul,
+    ol {
+      margin: 10px 0 0;
+      padding-left: 21px;
+    }
+
+    li {
+      margin-bottom: 7px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 18px 0;
+      font-size: 13px;
+      page-break-inside: avoid;
+    }
+
+    th,
+    td {
+      padding: 10px 11px;
+      border: 1px solid var(--line);
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      background: #efe2c0;
+      color: #1d170f;
+      font-weight: 900;
+    }
+
+    .label {
+      display: inline-block;
+      margin-bottom: 8px;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .architecture {
+      margin: 20px 0;
+      padding: 20px;
+      border-radius: 8px;
+      color: #fff7e6;
+      background: #071011;
+      page-break-inside: avoid;
+    }
+
+    .arch-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .arch-card {
+      padding: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.055);
+    }
+
+    .arch-card strong {
+      color: #ffe6a8;
+    }
+
+    .arch-card span {
+      display: block;
+      margin-top: 6px;
+      color: rgba(255, 247, 230, 0.76);
+      font-size: 13px;
+    }
+
+    .reference-list {
+      padding-left: 18px;
+      font-size: 12px;
+    }
+
+    .footer-note {
+      margin-top: 36px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      color: #6c6557;
+      font-size: 12px;
+    }
+
+    .page-actions {
+      margin: 28px 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .page-actions a {
+      border-color: rgba(21, 17, 11, 0.18);
+      background: #15110b;
+      color: #fff7e6;
+    }
+
+    @media (max-width: 760px) {
+      .wp-topbar-inner {
+        min-height: 72px;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+        padding: 11px 0;
+      }
+
+      .wp-nav {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .cover {
+        min-height: 86vh;
+        padding: 130px 22px 36px;
+      }
+
+      h1 {
+        font-size: 38px;
+      }
+
+      .page {
+        padding: 36px 22px;
+      }
+
+      .grid.two,
+      .grid.three,
+      .arch-grid {
+        grid-template-columns: 1fr;
+      }
+
+      table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+
+    @media print {
+      @page {
+        size: letter;
+        margin: 0.55in;
+      }
+
+      .wp-skip,
+      .wp-topbar,
+      .cover-video,
+      .page-actions {
+        display: none;
+      }
+
+      body {
+        background: #fffaf0;
+      }
+
+      .cover {
+        min-height: auto;
+        height: 10in;
+        margin: -0.55in;
+        padding: 0.65in;
+      }
+
+      .page {
+        padding: 0;
+      }
+
+      .section {
+        page-break-inside: avoid;
+      }
+
+      a {
+        color: #0d5d8f;
+      }
+    }
+
+    /* Locale toggle (same behaviour as the main site pages; hidden until RU_PUBLIC flips). */
+    .tcult-locale-toggle {
+      display: inline-flex;
+      align-items: center;
+      flex-shrink: 0;
+      gap: 2px;
+      padding: 3px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(23, 21, 16, 0.03);
+    }
+    .tcult-locale-toggle[hidden] { display: none; }
+    .tcult-locale-toggle-link {
+      min-height: 30px;
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 999px;
+      color: rgba(23, 21, 16, 0.62);
+      font-size: 11px;
+      font-weight: 850;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+    .tcult-locale-toggle-link:hover { color: var(--ink); }
+    .tcult-locale-toggle-link[aria-current="page"] { color: #15100a; background: var(--gold); }
+    @media (max-width: 760px) {
+      .wp-topbar-inner { flex-direction: row; flex-wrap: wrap; }
+      .wp-topbar-inner .wp-nav { order: 2; width: 100%; }
+      .wp-topbar-inner .tcult-locale-toggle { order: 1; margin-left: auto; align-self: center; }
+    }
+  </style>
+  <meta name="robots" content="noindex">
+</head>
+<body>
+  <a class="wp-skip" href="#whitepaper" data-i18n="wp.page.a1">Перейти к белой книге</a>
+  <header class="wp-topbar">
+    <div class="wp-topbar-inner">
+      <a class="wp-brand" href="../index.html" aria-label="$TCULT Портал, главная страница" data-i18n-attr="aria-label:wp.page.a2AriaLabel">
+        <span class="wp-mark" aria-hidden="true"></span>
+        <span data-i18n="wp.page.span1">$TCULT Белая книга</span>
+      </a>
+      <nav class="wp-nav" aria-label="Навигация по белой книге $TCULT" data-i18n-attr="aria-label:wp.page.nav1AriaLabel">
+        <a href="../index.html" data-i18n="nav.portal">Портал</a>
+        <a href="../lore.html" data-i18n="nav.lore">Лор</a>
+        <a href="../thesis.html" data-i18n="nav.thesis">Тезис</a>
+        <a class="active" href="TCULT_TON_BLOCKCHAIN_UTILITY_WHITE_PAPER.html" data-i18n="nav.whitepaper">Белая книга</a>
+        <a href="https://x.com/i/communities/1964017380331311157" target="_blank" rel="noopener" data-i18n="wp.page.a3">Сообщество в X</a>
+        <a class="nav-cta" href="https://t.me/TCULT_GROUP" target="_blank" rel="noopener" data-i18n="nav.telegramCta">Telegram</a>
+      </nav>
+      <span class="tcult-locale-toggle" hidden data-locale-toggle>
+        <a class="tcult-locale-toggle-link" href="/whitepaper/TCULT_TON_BLOCKCHAIN_UTILITY_WHITE_PAPER.html" data-i18n-link="whitepaper/TCULT_TON_BLOCKCHAIN_UTILITY_WHITE_PAPER.html" data-i18n="nav.localeEn" aria-current="false" data-i18n-attr="aria-current:nav.enLinkCurrent">EN</a>
+        <a class="tcult-locale-toggle-link" href="/ru/whitepaper/TCULT_TON_BLOCKCHAIN_UTILITY_WHITE_PAPER.html" data-i18n-link="ru/whitepaper/TCULT_TON_BLOCKCHAIN_UTILITY_WHITE_PAPER.html" data-i18n="nav.localeRu" data-i18n-attr="aria-current:nav.ruLinkCurrent" aria-current="page">RU</a>
+      </span>
+    </div>
+  </header>
+
+  <section class="cover" id="whitepaper">
+    <video class="cover-video" src="../../assets/videos/grand-council-chamber.mp4" muted loop playsinline preload="metadata" poster="../../assets/posters/public/grand-council-chamber.png" data-motion-background aria-hidden="true"></video>
+    <div class="cover-inner">
+      <span class="kicker" data-i18n="wp.whitepaper.span1">$TCULT Белая книга</span>
+      <h1 data-i18n="wp.whitepaper.h11">Вставьте сигнал. Прочитайте доказательства.</h1>
+      <p data-i18n="wp.whitepaper.p1">Публичная техническая запись о четырёх работающих играх, нативных для Telegram, $TCULT Terminal в разработке, $TCULT Guard в производстве, текущих линиях среды выполнения Vercel и Hostinger, доказательствах только для чтения и более поздних действиях TON с подписью пользователя. $GRAM остаётся нативной монетой TON.</p>
+      <div class="credit-line">
+        <span data-i18n="wp.whitepaper.span2">Разработано <a href="https://x.com/CryptoChucker" target="_blank" rel="noopener">CryptoChucker</a></span>
+        <span data-i18n="wp.whitepaper.span3">Версия 1.1 | Июль 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <main class="page">
+    <section class="toc">
+      <span class="kicker" style="color:#8a641e;border-color:#d9b65c;background:#fff7df" data-i18n="wp.page.span2">Оглавление</span>
+      <h2 data-i18n="wp.page.h21">Содержание</h2>
+      <div class="toc-grid">
+        <div class="toc-row"><span class="toc-number">01</span><span data-i18n="wp.page.span3">Текущий тезис</span></div>
+        <div class="toc-row"><span class="toc-number">02</span><span data-i18n="wp.page.span4">Почему важны TON и Telegram</span></div>
+        <div class="toc-row"><span class="toc-number">03</span><span data-i18n="wp.page.span5">Текущая продуктовая лестница</span></div>
+        <div class="toc-row"><span class="toc-number">04</span><span data-i18n="wp.page.span6">$TCULT Terminal</span></div>
+        <div class="toc-row"><span class="toc-number">05</span><span data-i18n="wp.page.span7">$TCULT Guard</span></div>
+        <div class="toc-row"><span class="toc-number">06</span><span data-i18n="wp.page.span8">Архитектура и данные</span></div>
+        <div class="toc-row"><span class="toc-number">07</span><span data-i18n="wp.page.span9">Более поздняя граница действий с подписью пользователя</span></div>
+        <div class="toc-row"><span class="toc-number">08</span><span data-i18n="wp.page.span10">Ворота релиза, метрики и безопасность</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <span class="label" data-i18n="wp.page.span11">01 | Текущий тезис</span>
+      <h2 data-i18n="wp.page.h22">$TCULT соединяет живую игру с доказательствами TON только для чтения.</h2>
+      <p class="lead" data-i18n="wp.page.p1">$TCULT начинается с плюшевой культуры, нативной для Telegram, а затем превращает это внимание в конкретный портфель: четыре работающие игры, $TCULT Terminal в разработке и $TCULT Guard в производстве за воротами релиза.</p>
+      <div class="callout" data-i18n="wp.page.div1"><strong>Терминология TON и $GRAM:</strong> в этой книге TON используется как название сети, а $GRAM как её нативная монета. $TCULT никогда не попросит пользователей мигрировать, обменивать, забирать, переносить через мост или конвертировать активы по ссылке.</div>
+      <p data-i18n="wp.page.p2">Plush Tap: ежедневный ритуал, Plush Run: погоня за подарком и Plush Hop: башня подарков работают на Vercel и в Telegram. Это слой участия: быстрые, мобильные поверхности, которые приглашают людей открыть, поиграть, поделиться и вернуться.</p>
+      <p data-i18n="wp.page.p3">Следующая линия: доказательства. Terminal превращает вставленный адрес jetton TON или ссылку из обозревателя в быструю панель, анализ бандла и необязательное объяснение. Guard проверяет официальные маршруты, пути Telegram, номера Fragment, домены .ton, коллекции Getgems, адреса и ссылки DEX. Обе текущие вехи работают только для чтения.</p>
+      <div class="callout" data-i18n="wp.page.div2"><strong>Ключевое позиционирование:</strong> сначала доказательства. Решение остаётся за вами. Terminal и Guard показывают понятные факты без хранения средств, выполнения транзакций и финансовых указаний.</div>
+    </section>
+
+    <section class="section">
+      <span class="label" data-i18n="wp.page.span12">02 | Почему важен блокчейн TON</span>
+      <h2 data-i18n="wp.page.h23">Блокчейн TON даёт $TCULT естественную продуктовую поверхность.</h2>
+      <p data-i18n="wp.page.p4">Блокчейн TON важен потому, что он находится близко к поведению в Telegram. $TCULT уже живёт на языке групп Telegram, ботов, мини-приложений, стикеров, подарков и социального шеринга. Поэтому блокчейн TON является чем-то большим, чем слой расчётов. Это инфраструктура, соединяющая ритуалы сообщества с инструментами, учитывающими кошелёк, официальными ресурсами, активами, проверенными записями и будущими приложениями.</p>
+      <div class="grid two">
+        <article class="card">
+          <span class="label" data-i18n="wp.page.span13">Доступ, нативный для Telegram</span>
+          <h3 data-i18n="wp.page.h31">Мини-приложения сохраняют низкий порог входа.</h3>
+          <p data-i18n="wp.page.p5">Утилиты $TCULT созданы так, чтобы открываться внутри Telegram, ощущаться мобильными в первую очередь и делать первое полезное действие понятным. Проект держит игры публичными и простыми, пока утилитарные поверхности со временем вырастают в более серьёзные продуктовые линии.</p>
+        </article>
+        <article class="card">
+          <span class="label" data-i18n="wp.page.span14">Более поздние действия с подписью пользователя</span>
+          <h3 data-i18n="wp.page.h32">TON Connect остаётся вне текущего релиза.</h3>
+          <p data-i18n="wp.page.p6">Любая более поздняя функция кошелька должна оставаться некастодиальной, с подписью пользователя и защищённой понятной проверкой перед подписанием. Она отделена от сегодняшних заявлений о доказательствах только для чтения.</p>
+        </article>
+        <article class="card">
+          <span class="label" data-i18n="wp.page.span15">Индексированные данные</span>
+          <h3 data-i18n="wp.page.h33">API v3 делает возможными понятные факты.</h3>
+          <p data-i18n="wp.page.p7">TON Center API v3 предоставляет индексированный доступ к блокчейну: транзакции, трассировки, jetton, NFT, действия, состояния кошельков и аналитика. Это делает его подходящим для карточек сканирования, вкладок доказательств, ссылок на обозреватель и обучения пользователей только для чтения.</p>
+        </article>
+        <article class="card">
+          <span class="label" data-i18n="wp.page.span16">Дисциплина среды выполнения</span>
+          <h3 data-i18n="wp.page.h34">Каждый продукт держится своей проверенной линии.</h3>
+          <p data-i18n="wp.page.p8">Работающие игры используют Vercel. Guard остаётся на своём пути релиза на Vercel. Terminal нацелен на постоянный сервис Docker на Node 20 на Hostinger после одобрения продакшена.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <span class="label" data-i18n="wp.page.span17">03 | Продуктовая лестница</span>
+      <h2 data-i18n="wp.page.h24">Текущая лестница конкретна и учитывает статус.</h2>
+      <p data-i18n="wp.page.p9">Игры остаются входной дверью. Terminal и Guard добавляют доказательства только для чтения, не превращая невыпущенную работу в публичное обещание.</p>
+      <table>
+        <thead>
+          <tr>
+            <th data-i18n="wp.page.th1">Слой</th>
+            <th data-i18n="wp.page.th2">Задача</th>
+            <th data-i18n="wp.page.th3">Представительные продукты</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-i18n="wp.page.td1">Игра сообщества</td>
+            <td data-i18n="wp.page.td2">Возвращать людей через быстрые циклы, которыми хочется делиться.</td>
+            <td data-i18n="wp.page.td3">Plush Tap: ежедневный ритуал, Plush Run: погоня за подарком, Plush Hop: башня подарков.</td>
+          </tr>
+          <tr>
+            <td data-i18n="wp.page.td4">Идентичность и коллекция</td>
+            <td data-i18n="wp.page.td5">Делать участие сообщества видимым и коллекционным.</td>
+            <td data-i18n="wp.page.td6">Наборы стикеров, PFP, концепты подарков, локальные полки косметических подарков.</td>
+          </tr>
+          <tr>
+            <td data-i18n="wp.page.td7">Доказательства Terminal</td>
+            <td data-i18n="wp.page.td8">Превращать вставленный адрес jetton TON или ссылку из обозревателя в быструю панель, анализ бандла и необязательное объяснение.</td>
+            <td data-i18n="wp.page.td9">$TCULT Terminal, в разработке и проверен локально на фикстурах.</td>
+          </tr>
+          <tr>
+            <td data-i18n="wp.page.td10">Доказательства маршрутов</td>
+            <td data-i18n="wp.page.td11">Сравнивать маршруты и ссылки с понятным контекстом официальных источников перед взаимодействием.</td>
+            <td data-i18n="wp.page.td12">$TCULT Guard, в производстве за воротами повторного деплоя, DNS, Telegram, поставщиков и мобильного QA.</td>
+          </tr>
+          <tr>
+            <td data-i18n="wp.page.td13">Более поздние исследования</td>
+            <td data-i18n="wp.page.td14">Оценивать сохранение данных и действия с подписью пользователя, не меняя текущую границу только для чтения.</td>
+            <td data-i18n="wp.page.td15">Будущее сохранение данных в Supabase и потоки TON Connect только после отдельных ворот одобрения и безопасности.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section" id="tcult-terminal">
+      <span class="label" data-i18n="wp.tcult-terminal.span1">04 | В разработке</span>
+      <h2 data-i18n="wp.tcult-terminal.h21">$TCULT Terminal превращает вставленный сигнал в прогрессивные доказательства.</h2>
+      <p data-i18n="wp.tcult-terminal.p1">Бот-шлюз M2 и предпросмотр диалога в Telegram проверены локально на фикстурах. Terminal переиспользует @TCultPlushBot и не заменяет текущую кнопку меню Mini App по умолчанию.</p>
+      <div class="grid two">
+        <article class="card">
+          <h3 data-i18n="wp.tcult-terminal.h31">Построено и проверено локально</h3>
+          <ul>
+            <li data-i18n="wp.tcult-terminal.li1">Аутентифицированный вебхук Telegram и проверка секрета с закрытием при ошибке.</li>
+            <li data-i18n="wp.tcult-terminal.li2">Маршрутизация /start, /help, /scan и сканирование по вставке.</li>
+            <li data-i18n="wp.tcult-terminal.li3">Прогрессивные правки карточек быстрой панели и анализа бандла.</li>
+            <li data-i18n="wp.tcult-terminal.li4">Отфильтрованный поток объяснения простым языком.</li>
+            <li data-i18n="wp.tcult-terminal.li5">Подавление дублирующихся обновлений, лимиты на чат и таймауты Telegram API.</li>
+            <li data-i18n="wp.tcult-terminal.li6">39 проходящих тестов сервиса по четырём продакшен-векторам сканирования.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3 data-i18n="wp.tcult-terminal.h32">Публичные ворота релиза</h3>
+          <ul>
+            <li data-i18n="wp.tcult-terminal.li7">Подтвердить VPS Hostinger, корень приложения, среду Docker, маршрут TLS и путь отката.</li>
+            <li data-i18n="wp.tcult-terminal.li8">Выбрать Git-remote, принадлежащий CryptoChucker.</li>
+            <li data-i18n="wp.tcult-terminal.li9">Настроить серверные значения, не раскрывая их.</li>
+            <li data-i18n="wp.tcult-terminal.li10">Проверить существующий вебхук бота перед любым переключением.</li>
+            <li data-i18n="wp.tcult-terminal.li11">Получить одобрение продакшена, развернуть и завершить живое QA в Telegram и у поставщиков.</li>
+          </ul>
+        </article>
+      </div>
+      <div class="callout" data-i18n="wp.tcult-terminal.div1">Terminal не работает публично и не выпущен. Его текущий предпросмотр использует настоящий шлюз с записанными фикстурами поставщиков и не касается Telegram или живых поставщиков.</div>
+    </section>
+
+    <section class="section" id="tcult-guard">
+      <span class="label" data-i18n="wp.tcult-guard.span1">05 | В производстве</span>
+      <h2 data-i18n="wp.tcult-guard.h21">$TCULT Guard проверяет маршруты и ссылки на основе понятных доказательств.</h2>
+      <p data-i18n="wp.tcult-guard.p1">Guard V1 реализован локально. Более ранний публичный алиас существует, но текущему релизу всё ещё нужны повторный деплой, фирменный DNS, настройка Telegram, настройка поставщиков и мобильное QA, прежде чем его можно будет называть публично выпущенным.</p>
+      <div class="grid two">
+        <article class="card">
+          <h3 data-i18n="wp.tcult-guard.h31">Текущий цикл только для чтения</h3>
+          <ul>
+            <li data-i18n="wp.tcult-guard.li1">Принимает адреса TON, jetton, коллекции NFT, ссылки мини-приложений, ссылки DEX, ссылки Getgems и URL обозревателей.</li>
+            <li data-i18n="wp.tcult-guard.li2">Использует публичные доказательства поставщиков и контекст официальных маршрутов.</li>
+            <li data-i18n="wp.tcult-guard.li3">Показывает осторожные метки вердикта, источники доказательств, маршруты обозревателя и подсказки следующего шага.</li>
+            <li data-i18n="wp.tcult-guard.li4">Поддерживает стартовые параметры Telegram и проверенную на сервере идентичность Mini App.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3 data-i18n="wp.tcult-guard.h32">Граница релиза</h3>
+          <ul>
+            <li data-i18n="wp.tcult-guard.li5">Никакого подключения кошелька, хранения средств, выполнения транзакций и торговых рекомендаций.</li>
+            <li data-i18n="wp.tcult-guard.li6">Никакой работы с фразой восстановления и автоматических публикаций.</li>
+            <li data-i18n="wp.tcult-guard.li7">Сбои поставщиков остаются видимыми и консервативными.</li>
+            <li data-i18n="wp.tcult-guard.li8">Язык релиза меняется только после того, как реестры зафиксируют завершённый деплой и мобильное QA.</li>
+          </ul>
+        </article>
+      </div>
+      <div class="callout" data-i18n="wp.tcult-guard.div1">Guard показывает доказательства, источники, контекст и осторожность. Он не гарантирует безопасность и не превращает совпадение доказательств в рекомендацию.</div>
+    </section>
+
+    <section class="section">
+      <span class="label" data-i18n="wp.page.span18">06 | Текущая архитектура</span>
+      <h2 data-i18n="wp.page.h25">Портфель использует явные продуктовые линии и линии среды выполнения.</h2>
+      <div class="architecture">
+        <p style="color:rgba(255,247,230,0.82)" data-i18n="wp.page.p10">Текущая архитектура соединяет Telegram, четыре работающие игры, Terminal, Guard, публичных поставщиков доказательств TON, Vercel, Hostinger и реестры релизов. Будущее сохранение данных и действия с подписью пользователя остаются вне сегодняшних заявлений о релизе.</p>
+        <div class="arch-grid">
+          <div class="arch-card"><strong data-i18n="wp.page.strong1">Поверхность Telegram</strong><span data-i18n="wp.page.span19">@TCultPlushBot, маршруты Mini App и точки входа сообщества.</span></div>
+          <div class="arch-card"><strong data-i18n="wp.page.strong2">Работающие игры</strong><span data-i18n="wp.page.span20">Plush Tap, Plush Run и Plush Hop на Vercel с глубокими ссылками Telegram.</span></div>
+          <div class="arch-card"><strong data-i18n="wp.page.strong3">Сервис Terminal</strong><span data-i18n="wp.page.span21">Node 20, TypeScript, Docker, прогрессивные карточки Telegram и цель в виде постоянной среды выполнения на Hostinger.</span></div>
+          <div class="arch-card"><strong data-i18n="wp.page.strong4">Приложение Guard</strong><span data-i18n="wp.page.span22">Vite, React, TypeScript, Vercel Functions и всё ещё открытые ворота релиза.</span></div>
+          <div class="arch-card"><strong data-i18n="wp.page.strong5">Поставщики доказательств</strong><span data-i18n="wp.page.span23">TonAPI, TON Center и другие публичные чтения за консервативными ответами.</span></div>
+          <div class="arch-card"><strong data-i18n="wp.page.strong6">Каталог и ворота</strong><span data-i18n="wp.page.span24">Живые реестры, записи архитектуры, проверки деплоя, QA и доказательства одобрения.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <span class="label" data-i18n="wp.page.span25">07 | Архитектура данных и проверки</span>
+      <h2 data-i18n="wp.page.h26">Сначала доказательства только для чтения. Более поздние действия остаются с подписью пользователя.</h2>
+      <p data-i18n="wp.page.p11">Terminal и Guard начинают с данных, отправленных пользователем, и публичных данных. Каждый продукт нормализует ввод, читает имеющиеся доказательства и возвращает консервативный результат, не беря средства на хранение и не выполняя транзакцию.</p>
+      <table>
+        <thead>
+          <tr>
+            <th data-i18n="wp.page.th4">Компонент</th>
+            <th data-i18n="wp.page.th5">Публичная функция</th>
+            <th data-i18n="wp.page.th6">Граница</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-i18n="wp.page.td16">Шлюз Terminal</td>
+            <td data-i18n="wp.page.td17">Получает адрес jetton TON или ссылку из обозревателя через @TCultPlushBot и возвращает прогрессивные карточки доказательств.</td>
+            <td data-i18n="wp.page.td18">Без выполнения транзакций.</td>
+          </tr>
+          <tr>
+            <td data-i18n="wp.page.td19">Конвейер сканирования Terminal</td>
+            <td data-i18n="wp.page.td20">Строит быструю панель, анализ бандла и отфильтрованное объяснение из доказательств поставщиков.</td>
+            <td data-i18n="wp.page.td21">Без языка финансовых рекомендаций.</td>
+          </tr>
+          <tr>
+            <td data-i18n="wp.page.td22">Поток доказательств Guard</td>
+            <td data-i18n="wp.page.td23">Проверяет маршруты, имена, домены, коллекции, адреса и ссылки DEX на основе контекста официальных маршрутов и публичных поставщиков.</td>
+            <td data-i18n="wp.page.td24">Без гарантий безопасности и публичных обвинений.</td>
+          </tr>
+          <tr>
+            <td data-i18n="wp.page.td25">Текущие поставщики</td>
+            <td data-i18n="wp.page.td26">TonAPI, TON Center и другие публичные чтения доказательств, где они есть.</td>
+            <td data-i18n="wp.page.td27">Сбои поставщиков остаются видимыми и консервативными.</td>
+          </tr>
+          <tr>
+            <td data-i18n="wp.page.td28">Более позднее сохранение данных и действия</td>
+            <td data-i18n="wp.page.td29">Будущие записи Supabase и потоки TON Connect только после отдельных ворот реализации, безопасности и одобрения.</td>
+            <td data-i18n="wp.page.td30">Некастодиально, с подписью пользователя и не является частью текущего релиза.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <span class="label" data-i18n="wp.page.span26">08 | Граница будущих исследований</span>
+      <h2 data-i18n="wp.page.h27">Исследование не становится продуктовым обещанием.</h2>
+      <p data-i18n="wp.page.p12">Acton, Tolk, ончейн-реестры, постоянные аккаунты, контекст кошелька и потоки транзакций остаются исследованиями или более поздними вехами. Ничто из этого не является текущим путём поставки Terminal или Guard.</p>
+      <p data-i18n="wp.page.p13">Любой будущий слой записей должен оставаться публичным, минимальным, проверяемым и отдельным от языка рекомендаций. Неизвестные входные данные должны оставаться неизвестными, а не получать метку по предположению.</p>
+      <div class="grid two">
+        <article class="card">
+          <h3 data-i18n="wp.page.h35">Вопросы исследования</h3>
+          <ul>
+            <li data-i18n="wp.page.li1">Каким доказательствам действительно нужно сохранение?</li>
+            <li data-i18n="wp.page.li2">Какие записи должны быть оффчейн, а какие ончейн?</li>
+            <li data-i18n="wp.page.li3">Как проверяются происхождение и обновления?</li>
+            <li data-i18n="wp.page.li4">Как интерфейсу избежать намёка на одобрение?</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3 data-i18n="wp.page.h36">Ворота перед любым публичным обязательством</h3>
+          <ul>
+            <li data-i18n="wp.page.li5">Архитектура и модель угроз одобрены.</li>
+            <li data-i18n="wp.page.li6">Реализация, тесты и независимая проверка завершены.</li>
+            <li data-i18n="wp.page.li7">Поведение в тестнете и путь отката проверены.</li>
+            <li data-i18n="wp.page.li8">Подпись пользователя и предпросмотр комиссий явные.</li>
+            <li data-i18n="wp.page.li9">Публичный текст проходит проверку безопасности и финансовых заявлений.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <span class="label" data-i18n="wp.page.span27">09 | Разработка с человеком у ворот</span>
+      <h2 data-i18n="wp.page.h28">Автоматизация поддерживает сборку и не заменяет суждение.</h2>
+      <p data-i18n="wp.page.p14">Студия $TCULT использует агентов для исследований, передачи кода, обновлений архитектуры, планирования медиа, сканов QA, проверок публичного текста и итераций по играм, сайту, лору и утилитарным приложениям.</p>
+      <p data-i18n="wp.page.p15">Одобрение человеком остаётся воротами для публичных релизов, изменений продакшена, чувствительных к безопасности потоков, поведения кошелька и всего, что затрагивает доверие пользователей.</p>
+      <div class="callout" data-i18n="wp.page.div3">Автоматизация является поддержкой, а не властью. Публичный слой доверия остаётся понятным, консервативным и проверяемым.</div>
+    </section>
+
+    <section class="section">
+      <span class="label" data-i18n="wp.page.span28">10 | Более поздние действия с подписью пользователя</span>
+      <h2 data-i18n="wp.page.h29">Доказательства только для чтения созревают раньше, чем начинаются функции транзакций.</h2>
+      <p data-i18n="wp.page.p16">Более поздние вехи кошелька и транзакций должны оставаться некастодиальными и с подписью пользователя. Каждое действие требует понятного предпросмотра перед подписанием, срока действия котировки или запроса, где это уместно, видимых комиссий и явного решения пользователя.</p>
+      <p data-i18n="wp.page.p17">Автоматическая торговля, хранение средств, работа с фразой восстановления и финансовые указания остаются вне границы продукта. Эти более поздние вехи не меняют текущий статус Terminal или Guard.</p>
+    </section>
+
+    <section class="section">
+      <span class="label" data-i18n="wp.page.span29">11 | Дорожная карта</span>
+      <h2 data-i18n="wp.page.h210">Проверенные состояния заменяют обещания с датами.</h2>
+      <table>
+        <thead>
+          <tr>
+            <th data-i18n="wp.page.th7">Статус</th>
+            <th data-i18n="wp.page.th8">Продукт</th>
+            <th data-i18n="wp.page.th9">Проверенная граница</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-i18n="wp.page.td31">Работает сейчас</td>
+            <td data-i18n="wp.page.td32">Plush Tap, Plush Run и Plush Hop.</td>
+            <td data-i18n="wp.page.td33">Три маршрута Telegram и три веб-приложения на Vercel публичны.</td>
+          </tr>
+          <tr>
+            <td data-i18n="wp.page.td34">В разработке</td>
+            <td data-i18n="wp.page.td35">$TCULT Terminal.</td>
+            <td data-i18n="wp.page.td36">Шлюз M2 и локальный предпросмотр на фикстурах проверены. Продакшен-деплой и живое QA в Telegram остаются открытыми.</td>
+          </tr>
+          <tr>
+            <td data-i18n="wp.page.td37">В производстве</td>
+            <td data-i18n="wp.page.td38">$TCULT Guard.</td>
+            <td data-i18n="wp.page.td39">V1 реализован локально. Повторный деплой, DNS, настройка Telegram, поставщики и мобильное QA остаются открытыми.</td>
+          </tr>
+          <tr>
+            <td data-i18n="wp.page.td40">Более поздние исследования</td>
+            <td data-i18n="wp.page.td41">Сохранение данных и действия с подписью пользователя.</td>
+            <td data-i18n="wp.page.td42">Перед публичным обязательством требуются отдельные ворота архитектуры, безопасности, тестнета и одобрения.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <span class="label" data-i18n="wp.page.span30">12 | Метрики успеха</span>
+      <h2 data-i18n="wp.page.h211">$TCULT измеряет пользу, а не только внимание.</h2>
+      <div class="grid three">
+        <article class="card">
+          <h3 data-i18n="wp.page.h37">Игры</h3>
+          <ul>
+            <li data-i18n="wp.page.li10">игр в день</li>
+            <li data-i18n="wp.page.li11">повторов на пользователя</li>
+            <li data-i18n="wp.page.li12">кликов по шерингу</li>
+            <li data-i18n="wp.page.li13">публикаций очков</li>
+            <li data-i18n="wp.page.li14">доля проблем на мобильных</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3 data-i18n="wp.page.h38">Terminal</h3>
+          <ul>
+            <li data-i18n="wp.page.li15">точность сканирования на фикстурах и вживую</li>
+            <li data-i18n="wp.page.li16">время до быстрой панели</li>
+            <li data-i18n="wp.page.li17">время до анализа бандла</li>
+            <li data-i18n="wp.page.li18">доля завершённых объяснений</li>
+            <li data-i18n="wp.page.li19">поведение при отклонении вебхука и таймаутах</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3 data-i18n="wp.page.h39">Guard</h3>
+          <ul>
+            <li data-i18n="wp.page.li20">завершённых проверок маршрутов</li>
+            <li data-i18n="wp.page.li21">повторное использование сканера</li>
+            <li data-i18n="wp.page.li22">согласие поставщиков и видимость сбоев</li>
+            <li data-i18n="wp.page.li23">сообщений о ложных срабатываниях</li>
+            <li data-i18n="wp.page.li24">доля проблем мобильного QA</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <span class="label" data-i18n="wp.page.span31">13 | Публичный язык безопасности</span>
+      <h2 data-i18n="wp.page.h212">Формулировки являются частью продукта.</h2>
+      <p data-i18n="wp.page.p18">$TCULT строит доверие через осторожный язык. Публичный текст уверен в дорожной карте, а утилитарный слой никогда не преувеличивает то, что доказывает сканирование.</p>
+      <div class="grid two">
+        <article class="card">
+          <h3 data-i18n="wp.page.h310">Предпочтительный язык</h3>
+          <ul>
+            <li data-i18n="wp.page.li25">Проверьте, прежде чем кликать.</li>
+            <li data-i18n="wp.page.li26">Понятные ончейн-факты.</li>
+            <li data-i18n="wp.page.li27">Известный официальный источник.</li>
+            <li data-i18n="wp.page.li28">Неизвестно.</li>
+            <li data-i18n="wp.page.li29">Требует проверки.</li>
+            <li data-i18n="wp.page.li30">Невозможно проверить.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3 data-i18n="wp.page.h311">Избегать</h3>
+          <ul>
+            <li data-i18n="wp.page.li31">Языка гарантий.</li>
+            <li data-i18n="wp.page.li32">Торговых указаний.</li>
+            <li data-i18n="wp.page.li33">Обещаний дохода.</li>
+            <li data-i18n="wp.page.li34">Предсказаний результата.</li>
+            <li data-i18n="wp.page.li35">Предположений о праве на участие.</li>
+            <li data-i18n="wp.page.li36">Заявлений о наградах.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <span class="label" data-i18n="wp.page.span32">14 | Источники</span>
+      <h2 data-i18n="wp.page.h213">Источники исследования</h2>
+      <p class="muted" data-i18n="wp.page.p19">Эта публичная белая книга отражает реестры приложений $TCULT, план выполнения Terminal, статус релиза Guard и публичную документацию TON по состоянию на 10 июля 2026 года.</p>
+      <ol class="reference-list">
+        <li data-i18n="wp.page.li37">Документация TON blockchain Acton, "A unified toolchain for TON smart contracts", https://ton-blockchain.github.io/acton/</li>
+        <li data-i18n="wp.page.li38">TON Docs, "TON Connect overview", https://docs.ton.org/ecosystem/ton-connect/overview</li>
+        <li data-i18n="wp.page.li39">TON Docs, "TON Center API v3 overview", https://docs.ton.org/ecosystem/api/toncenter/v3/overview</li>
+        <li data-i18n="wp.page.li40">Реестр Mini App $TCULT и записи LIVE_APPS, обновлены 10 июля 2026 года.</li>
+        <li data-i18n="wp.page.li41">План выполнения и README $TCULT Terminal, обновлены 10 июля 2026 года.</li>
+        <li data-i18n="wp.page.li42">README $TCULT Guard и текущие ворота продакшен-релиза.</li>
+        <li data-i18n="wp.page.li43">Каталог архитектуры мини-приложений $TCULT и локальные пакеты архитектуры приложений.</li>
+      </ol>
+      <div class="footer-note" data-i18n="wp.page.div4">Разработано <a href="https://x.com/CryptoChucker" target="_blank" rel="noopener">CryptoChucker</a>. Эта белая книга носит информационный характер и не является финансовой, инвестиционной, юридической, налоговой консультацией или консультацией по безопасности.</div>
+      <div class="page-actions" aria-label="Ссылки на страницы $TCULT" data-i18n-attr="aria-label:wp.page.div5AriaLabel">
+        <a href="../index.html" data-i18n="wp.page.a4">Главная портала</a>
+        <a href="../lore.html" data-i18n="wp.page.a5">Страница лора</a>
+        <a href="../thesis.html" data-i18n="wp.page.a6">Страница тезиса</a>
+        <a href="https://x.com/CryptoChucker" target="_blank" rel="noopener" data-i18n="wp.page.a7">@CryptoChucker</a>
+      </div>
+    </section>
+  </main>
+  <script>
+    (function setupMotionBackgrounds() {
+      var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      var motionVideos = Array.prototype.slice.call(document.querySelectorAll("video[autoplay], [data-motion-background]"));
+
+      function syncMotion() {
+        motionVideos.forEach(function(video) {
+          if (reducedMotion.matches || document.hidden) {
+            video.pause();
+            return;
+          }
+
+          video.muted = true;
+          var playRequest = video.play();
+          if (playRequest && typeof playRequest.catch === "function") {
+            playRequest.catch(function() {});
+          }
+        });
+      }
+
+      syncMotion();
+      document.addEventListener("visibilitychange", syncMotion);
+      if (typeof reducedMotion.addEventListener === "function") {
+        reducedMotion.addEventListener("change", syncMotion);
+      } else if (typeof reducedMotion.addListener === "function") {
+        reducedMotion.addListener(syncMotion);
+      }
+    })();
+  </script>
+  <script>
+    (function setupLocaleToggle() {
+      // Russian ships in the build but stays unlinked until native-speaker sign-off
+      // (i18n spec 7.3). Flip RU_PUBLIC to true to show the toggle and enable the
+      // first-visit redirect; the /ru/ pages themselves always show the toggle so a
+      // reviewer who lands there directly can get back to English.
+      var RU_PUBLIC = false;
+      var KEY = "tcult.locale";
+      var stored;
+      try { stored = window.localStorage.getItem(KEY); } catch (e) { stored = null; }
+      var onRuPage = /^\/ru\//.test(window.location.pathname);
+      if (RU_PUBLIC && !stored && !onRuPage && (navigator.language || "").toLowerCase().indexOf("ru") === 0) {
+        try { window.localStorage.setItem(KEY, "ru"); } catch (e) {}
+        window.location.replace("/ru" + window.location.pathname + window.location.search);
+        return;
+      }
+      if (RU_PUBLIC || onRuPage) {
+        document.querySelectorAll("[data-locale-toggle]").forEach(function(el) { el.removeAttribute("hidden"); });
+      }
+      document.querySelectorAll(".tcult-locale-toggle-link").forEach(function(link) {
+        link.addEventListener("click", function() {
+          try { window.localStorage.setItem(KEY, link.getAttribute("href").indexOf("/ru/") === 0 ? "ru" : "en"); } catch (e) {}
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

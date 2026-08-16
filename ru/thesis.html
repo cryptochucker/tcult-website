@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="thesis.meta.title">$TCULT Terminal и продуктовый тезис</title>
+  <meta name="description" content="Продуктовый тезис $TCULT: четыре работающие игры в Telegram, поток доказательств $TCULT Terminal на основе бота, $TCULT Guard и архитектура за портфелем, где решения остаются за человеком." data-i18n-attr="content:thesis.meta.description">
+  <meta name="theme-color" content="#070807">
+  <link rel="canonical" href="https://www.tcult.site/ru/thesis.html">
+  <link rel="alternate" hreflang="en" href="https://www.tcult.site/thesis.html">
+  <link rel="alternate" hreflang="ru" href="https://www.tcult.site/ru/thesis.html">
+  <link rel="alternate" hreflang="x-default" href="https://www.tcult.site/thesis.html">
+  <meta property="og:site_name" content="$TCULT">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.tcult.site/ru/thesis.html">
+  <meta property="og:title" content="$TCULT Terminal и продуктовый тезис" data-i18n-attr="content:thesis.meta.ogTitle">
+  <meta property="og:description" content="Четыре работающие игры в Telegram, поток доказательств $TCULT Terminal на основе бота, $TCULT Guard и архитектура за портфелем, где решения остаются за человеком." data-i18n-attr="content:thesis.meta.ogDescription">
+  <meta property="og:image" content="https://www.tcult.site/assets/utility/tcult-terminal-ledger-architecture-640x360.webp">
+  <meta property="og:image:secure_url" content="https://www.tcult.site/assets/utility/tcult-terminal-ledger-architecture-640x360.webp">
+  <meta property="og:image:type" content="image/webp">
+  <meta property="og:image:width" content="640">
+  <meta property="og:image:height" content="360">
+  <meta property="og:image:alt" content="$TCULT Terminal: Cipher направляет сигнал TON, пока Ledger проверяет карточку доказательств." data-i18n-attr="content:thesis.meta.ogImageAlt">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@CryptoChucker">
+  <meta name="twitter:creator" content="@CryptoChucker">
+  <meta name="twitter:title" content="$TCULT Terminal и продуктовый тезис" data-i18n-attr="content:thesis.meta.twitterTitle">
+  <meta name="twitter:description" content="Четыре работающие игры в Telegram, поток доказательств $TCULT Terminal на основе бота, $TCULT Guard и архитектура за портфелем, где решения остаются за человеком." data-i18n-attr="content:thesis.meta.twitterDescription">
+  <meta name="twitter:image" content="https://www.tcult.site/assets/utility/tcult-terminal-ledger-architecture-640x360.webp">
+  <meta name="twitter:image:alt" content="$TCULT Terminal: Cipher направляет сигнал TON, пока Ledger проверяет карточку доказательств." data-i18n-attr="content:thesis.meta.twitterImageAlt">
+  <link rel="icon" type="image/png" sizes="64x64" href="../assets/optimized/favicon-64.png">
+  <link rel="apple-touch-icon" href="../assets/optimized/favicon-256.png">
+  <link rel="stylesheet" href="../styles.css?v=20260816-1">
+  <meta name="robots" content="noindex">
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="nav.skipLink">Перейти к содержимому</a>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html" aria-label="$TCULT Портал, главная страница" data-i18n-attr="aria-label:thesis.page.a1AriaLabel">
+        <span class="mark" aria-hidden="true"></span>
+        <span data-i18n="thesis.page.span1">$TCULT Тезис</span>
+      </a>
+      <nav class="nav" aria-label="Навигация по тезису $TCULT" data-i18n-attr="aria-label:thesis.page.nav1AriaLabel">
+        <a href="index.html" data-i18n="nav.portal">Портал</a>
+        <a href="lore.html" data-i18n="nav.lore">Лор</a>
+        <a class="active" href="thesis.html" data-i18n="nav.thesis">Тезис</a>
+        <a href="#white-paper" data-i18n="nav.whitepaper">Белая книга</a>
+        <a href="#architecture" data-i18n="nav.architecture">Архитектура</a>
+        <a href="whitepaper/TCULT_TON_BLOCKCHAIN_UTILITY_WHITE_PAPER.html" data-i18n="thesis.page.a2">Страница белой книги</a>
+        <a href="#watch" data-i18n="thesis.page.a3">За чем следить</a>
+        <a class="nav-cta" href="https://t.me/TCULT_GROUP" target="_blank" rel="noopener" data-i18n="nav.telegramCta">Telegram</a>
+      </nav>
+      <span class="tcult-locale-toggle" hidden data-locale-toggle>
+        <a class="tcult-locale-toggle-link" href="/thesis.html" data-i18n-link="thesis.html" data-i18n="nav.localeEn" aria-current="false" data-i18n-attr="aria-current:nav.enLinkCurrent">EN</a>
+        <a class="tcult-locale-toggle-link" href="/ru/thesis.html" data-i18n-link="ru/thesis.html" data-i18n="nav.localeRu" data-i18n-attr="aria-current:nav.ruLinkCurrent" aria-current="page">RU</a>
+      </span>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero compact">
+      <div class="hero-media">
+        <video src="../assets/videos/grand-council-chamber.mp4" muted loop playsinline preload="metadata" poster="../assets/posters/public/grand-council-chamber.png" data-motion-background aria-hidden="true"></video>
+      </div>
+      <div class="shell">
+        <div class="hero-copy">
+          <div class="hero-kicker-row">
+            <span class="eyebrow" data-i18n="thesis.main.span1">Технический тезис</span>
+            <span class="tag ton" data-i18n="thesis.main.span2">$TCULT Terminal</span>
+            <span class="tag green" data-i18n="thesis.main.span3">Доказательства только для чтения</span>
+          </div>
+          <h1 data-i18n="thesis.main.h11"><span class="headline-line">Культура является интерфейсом.</span><span class="headline-line">Блокчейн TON является магистралью.</span><span class="headline-line">ИИ является двигателем.</span></h1>
+          <p class="lead" data-i18n="thesis.main.p1">$TCULT соединяет четыре работающие игры, нативные для Telegram, с практической линией доказательств. $TCULT Terminal находится в проверенном локальном предпросмотре, $TCULT Guard V1 реализован локально за воротами релиза, а $GRAM остаётся нативной монетой TON.</p>
+          <div class="actions">
+            <a class="btn primary" href="#white-paper" data-i18n="thesis.main.a1">Читать белую книгу</a>
+            <a class="btn ton" href="whitepaper/TCULT_TON_BLOCKCHAIN_UTILITY_WHITE_PAPER.html" data-i18n="thesis.main.a2">Открыть страницу белой книги</a>
+            <a class="btn" href="#architecture" data-i18n="thesis.main.a3">Смотреть модель сборки</a>
+            <a class="btn" href="lore.html" data-i18n="thesis.main.a4">Познакомиться с Council</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="thesis">
+      <div class="shell">
+        <div class="thesis-layout">
+          <article class="card thesis-panel">
+            <span class="eyebrow" data-i18n="thesis.thesis.span1">Тезис</span>
+            <h2 data-i18n="thesis.thesis.h21">$TCULT превращает культуру в конкретную продуктовую лестницу.</h2>
+            <p data-i18n="thesis.thesis.p1">$TCULT построен на простом стратегическом убеждении: следующее поколение криптопродуктов будет побеждать не только потому, что они технически корректны. Они будут побеждать тогда, когда в них легко войти, их легко узнать, ими легко делиться и они достаточно полезны, чтобы стать частью ежедневной привычки.</p>
+            <p data-i18n="thesis.thesis.p2">Мем создаёт первую дверь. Персонажи создают память. Plush Tap, Plush Run и Plush Hop создают участие. $TCULT Terminal превращает вставленный сигнал TON в доказательства. $TCULT Guard проверяет маршруты и ссылки. Архитектура и человеческая проверка держат каждое публичное утверждение привязанным к проверенной вехе.</p>
+            <p data-i18n="thesis.thesis.p3">Результат: сфокусированный портфель. Работающие игры для ежедневного движения, инструменты доказательств только для чтения, проходящие ворота релиза, и более поздние функции с подписью пользователя, которые держатся отдельно от того, что есть сейчас.</p>
+          </article>
+          <div class="media-frame">
+            <video src="../assets/videos/grand-council-chamber.mp4" autoplay muted loop playsinline poster="../assets/posters/public/grand-council-chamber.png"></video>
+            <div class="overlay-caption">
+              <strong data-i18n="thesis.thesis.strong1">Grand Council представляет слой интеллекта.</strong>
+              <p data-i18n="thesis.thesis.p4">Видение, изобретение, защита и сигнал направляют то, что становится публичным, и когда.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="principles">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow" data-i18n="thesis.principles.span1">Принципы работы</span>
+            <h2 data-i18n="thesis.principles.h21">Шесть убеждений формируют каждую сборку.</h2>
+            <p class="lead" data-i18n="thesis.principles.p1">Тезис не является языком хайпа. Это операционная логика того, как $TCULT выбирает, что строить, как раскрывает работу и как удерживает вовлечённость сообщества, не открывая хранилище слишком рано.</p>
+          </div>
+          <div class="note" data-i18n="thesis.principles.div1">Публичный проект должен ощущаться захватывающим, но он также должен ощущаться дисциплинированным. Самый сильный сигнал: стабильная поставка.</div>
+        </div>
+
+        <div class="grid two">
+          <article class="proposition">
+            <span class="prop-number">01</span>
+            <div><h3 data-i18n="thesis.principles.h31">Дистрибуция начинается с культуры.</h3><p data-i18n="thesis.principles.p2">Люди не возвращаются к инструменту, который не могут вспомнить. Персонажи, символы и ритуалы делают экосистему узнаваемой раньше, чем утилита попросит более глубокого внимания.</p></div>
+          </article>
+          <article class="proposition">
+            <span class="prop-number">02</span>
+            <div><h3 data-i18n="thesis.principles.h32">Игры создают ежедневное движение.</h3><p data-i18n="thesis.principles.p3">Мини-игры не являются побочными квестами. Это лёгкие циклы активации, которые учат сообщество кликать, играть, делиться и возвращаться.</p></div>
+          </article>
+          <article class="proposition">
+            <span class="prop-number">03</span>
+            <div><h3 data-i18n="thesis.principles.h33">Артефакты создают идентичность.</h3><p data-i18n="thesis.principles.p4">Стикеры, PFP и концепты коллекционных предметов позволяют участникам нести мир в Telegram, X и будущие поверхности, нативные для блокчейна TON.</p></div>
+          </article>
+          <article class="proposition">
+            <span class="prop-number">04</span>
+            <div><h3 data-i18n="thesis.principles.h34">Утилиты дают устойчивость.</h3><p data-i18n="thesis.principles.p5">Более глубокая сборка практична: приложения, которые помогают пользователям блокчейна TON делать значимые вещи и при этом ощущаются нативными для мира $TCULT.</p></div>
+          </article>
+          <article class="proposition">
+            <span class="prop-number">05</span>
+            <div><h3 data-i18n="thesis.principles.h35">Ворота релиза остаются за людьми.</h3><p data-i18n="thesis.principles.p6">Агентные процессы могут поддерживать планирование, дизайн, контент, тестирование и передачи, пока люди сохраняют за собой суждение, проверку безопасности и контроль запуска.</p></div>
+          </article>
+          <article class="proposition">
+            <span class="prop-number">06</span>
+            <div><h3 data-i18n="thesis.principles.h36">Архитектура защищает импульс.</h3><p data-i18n="thesis.principles.p7">У каждой сборки должна быть живая карта, чтобы будущие агенты, разработчики и версии могли улучшать нужный слой, не ломая всю систему.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section ton-band" id="white-paper">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow" data-i18n="thesis.white-paper.span1">Слой белой книги</span>
+            <h2 data-i18n="thesis.white-paper.h21">Публичный технический нарратив о том, куда движется экосистема.</h2>
+            <p class="lead" data-i18n="thesis.white-paper.p1">Эти карточки документируют портфель в его сегодняшнем виде. Четыре игры работают, Terminal находится в разработке, а Guard находится в производстве за воротами релиза. Полная белая книга объясняет текущую архитектуру только для чтения и более позднюю границу действий с подписью пользователя.</p>
+          </div>
+          <div class="note" data-i18n="thesis.white-paper.div1">Тезис даёт посетителям форму стратегии. Страница белой книги даёт серьёзным последователям слой доказательств.</div>
+        </div>
+
+        <div class="grid two">
+          <article class="card thesis-panel">
+            <span class="tag" data-i18n="thesis.white-paper.span2">Аннотация</span>
+            <h3 data-i18n="thesis.white-paper.h31">Тезис экосистемы.</h3>
+            <p data-i18n="thesis.white-paper.p2">$TCULT является плюшевой культурой, нативной для Telegram, на рельсах TON. Его текущая продуктовая лестница конкретна: Plush Tap, Plush Run и Plush Hop работают; $TCULT Terminal находится в проверенном локальном предпросмотре; $TCULT Guard V1 реализован локально за воротами релиза. $GRAM является терминологией нативной монеты там, где появляются суммы нативного актива.</p>
+            <p data-i18n="thesis.white-paper.p3">Каждый релиз сохраняет одну и ту же дисциплину: показывать проверенный статус, документировать архитектуру, держать доказательства читаемыми и оставлять решения за пользователем.</p>
+          </article>
+
+          <article class="card thesis-panel">
+            <span class="tag" data-i18n="thesis.white-paper.span3">Техническое направление</span>
+            <h3 data-i18n="thesis.white-paper.h32">Стек движения.</h3>
+            <ul>
+              <li data-i18n="thesis.white-paper.li1">Доступ, нативный для Telegram, через @TCultPlushBot и маршруты Mini App.</li>
+              <li data-i18n="thesis.white-paper.li2">Четыре работающие игры, развёрнутые на Vercel.</li>
+              <li data-i18n="thesis.white-paper.li3">Сервис Terminal на Node 20, нацеленный на постоянную среду Docker на Hostinger после одобрения.</li>
+              <li data-i18n="thesis.white-paper.li4">Приложение Guard на Vite и React, проходящее ворота повторного деплоя на Vercel, DNS, настройки Telegram, поставщиков и мобильного QA.</li>
+              <li data-i18n="thesis.white-paper.li5">Публичные чтения доказательств из TonAPI и TON Center, при этом реестры архитектуры управляют языком релизов.</li>
+            </ul>
+          </article>
+
+          <article class="card thesis-panel">
+            <span class="tag" data-i18n="thesis.white-paper.span4">Продуктовые линии</span>
+            <h3 data-i18n="thesis.white-paper.h33">Что экосистема строит сейчас.</h3>
+            <p data-i18n="thesis.white-paper.p4">Публичные линии конкретны: четыре работающие игры, поток доказательств $TCULT Terminal на основе бота и проверки маршрутов только для чтения от $TCULT Guard. Коллекционные предметы и лор остаются слоем идентичности вокруг этих продуктов.</p>
+            <p data-i18n="thesis.white-paper.p5">Более поздние сохранение данных, контекст кошелька и транзакции остаются вне текущего заявления о релизе, пока их собственные ворота безопасности и одобрения не будут пройдены.</p>
+          </article>
+
+          <article class="card thesis-panel">
+            <span class="tag" data-i18n="thesis.white-paper.span5">Текущая сборка утилит</span>
+            <h3 data-i18n="thesis.white-paper.h34">$TCULT Terminal</h3>
+            <p data-i18n="thesis.white-paper.p6">Поток M2 на основе бота превращает адрес jetton TON или ссылку из обозревателя в быструю панель доказательств, анализ бандла и необязательное объяснение. Он проверен локально и остаётся за воротами продакшен-деплоя и живого QA в Telegram.</p>
+            <p data-i18n="thesis.white-paper.p7">$TCULT Guard дополняет этот поток проверками маршрутов и ссылок только для чтения. Ни одна из текущих вех не берёт средства на хранение, не выполняет транзакции и не заменяет суждение пользователя.</p>
+          </article>
+        </div>
+
+        <div class="paper-download">
+          <div>
+            <span class="eyebrow" data-i18n="thesis.white-paper.span6">Страница белой книги</span>
+            <h3 data-i18n="thesis.white-paper.h35">Белая книга $TCULT Terminal и утилит TON</h3>
+            <p data-i18n="thesis.white-paper.p8">Полная белая книга документирует четыре работающие игры, проверенный на фикстурах поток бота Terminal, текущие ворота релиза Guard, линии среды выполнения Vercel и Hostinger и границу между доказательствами только для чтения и более поздними действиями с подписью пользователя.</p>
+          </div>
+          <div class="paper-actions">
+            <a class="btn primary" href="whitepaper/TCULT_TON_BLOCKCHAIN_UTILITY_WHITE_PAPER.html" data-i18n="thesis.white-paper.a1">Читать белую книгу</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section ember-band" id="architecture">
+      <div class="shell">
+        <div class="split">
+          <div>
+            <span class="eyebrow" data-i18n="thesis.architecture.span1">Доктрина архитектуры</span>
+            <h2 data-i18n="thesis.architecture.h21">Каждая сборка получает карту до начала следующей версии.</h2>
+            <p class="lead" data-i18n="thesis.architecture.p1">Каталог архитектуры держит публичную историю согласованной с реализацией: четыре работающие игры на Vercel, Terminal, нацеленный на постоянный сервис Hostinger, Guard, проходящий свои ворота релиза на Vercel, и публичные поставщики доказательств TON за обоими потоками только для чтения.</p>
+            <p class="copy" data-i18n="thesis.architecture.p2">Это значит, что будущие агенты могут изучить объекты, зоны ответственности, потоки данных, интеграции, требования авторизации, автоматизацию, инфраструктуру, зоны изменений и метки свежести до того, как коснутся кода. Система сохраняет память по мере роста.</p>
+          </div>
+          <div class="media-frame">
+            <video src="../assets/videos/ledger-architecture-table.mp4" autoplay muted loop playsinline poster="../assets/posters/public/ledger-architecture-table.png"></video>
+            <div class="overlay-caption">
+              <strong data-i18n="thesis.architecture.strong1">Ledger поддерживает карту живой.</strong>
+              <p data-i18n="thesis.architecture.p3">Архитектура рассматривается как живой продуктовый артефакт, а не как скриншот старого мышления.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="thesis-architecture-grid">
+          <div class="layer-list">
+            <div class="layer-row"><strong data-i18n="thesis.architecture.strong2">Слой сообщества</strong><span data-i18n="thesis.architecture.span2">Telegram, X, артефакты и лор приводят людей в мир.</span></div>
+            <div class="layer-row"><strong data-i18n="thesis.architecture.strong3">Слой работающих игр</strong><span data-i18n="thesis.architecture.span3">Plush Tap, Plush Run и Plush Hop работают через маршруты Telegram и веб-приложения на Vercel.</span></div>
+            <div class="layer-row"><strong data-i18n="thesis.architecture.strong4">Слой Terminal</strong><span data-i18n="thesis.architecture.span4">Бот-шлюз на Node 20 создаёт прогрессивные карточки доказательств и нацелен на среду Docker на Hostinger после одобрения.</span></div>
+            <div class="layer-row"><strong data-i18n="thesis.architecture.strong5">Слой Guard</strong><span data-i18n="thesis.architecture.span5">Приложение на Vite и React проверяет маршруты и ссылки, пока повторный деплой, DNS, настройка Telegram, поставщики и мобильное QA остаются открытыми.</span></div>
+            <div class="layer-row"><strong data-i18n="thesis.architecture.strong6">Слой доказательств</strong><span data-i18n="thesis.architecture.span6">TonAPI и TON Center предоставляют публичные данные только для чтения. Будущее сохранение данных остаётся за воротами.</span></div>
+            <div class="layer-row"><strong data-i18n="thesis.architecture.strong7">Слой каталога</strong><span data-i18n="thesis.architecture.span7">Реестры, записи архитектуры и доказательства релизов держат каждый публичный статус точным.</span></div>
+          </div>
+
+          <div class="architecture-stage">
+            <svg class="layer-architecture-map" viewBox="0 0 900 760" role="img" aria-labelledby="thesis-map-title thesis-map-desc">
+              <title id="thesis-map-title" data-i18n="thesis.architecture.title1">Многослойная диаграмма архитектуры $TCULT</title>
+              <desc id="thesis-map-desc" data-i18n="thesis.architecture.desc1">Многослойная архитектура, показывающая Telegram, четыре работающие игры, $TCULT Terminal, $TCULT Guard, Vercel, Hostinger, поставщиков доказательств TON и ворота релиза, соединённые через ядро $TCULT.</desc>
+              <defs>
+                <linearGradient id="thesisCore" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0%" stop-color="#ffe6a8"/>
+                  <stop offset="100%" stop-color="#d99124"/>
+                </linearGradient>
+                <linearGradient id="thesisBlue" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0%" stop-color="#7deeff"/>
+                  <stop offset="100%" stop-color="#1aa7ff"/>
+                </linearGradient>
+                <filter id="thesisGlow">
+                  <feGaussianBlur stdDeviation="4" result="blur"/>
+                  <feMerge>
+                    <feMergeNode in="blur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+              </defs>
+              <rect x="16" y="16" width="868" height="728" rx="8" fill="#071011" stroke="rgba(255,255,255,0.12)"/>
+              <path class="flow data" d="M154 142 C280 86 390 122 450 270"/>
+              <path class="flow auto" d="M746 142 C622 86 510 122 450 270"/>
+              <path class="flow ton" d="M450 490 C560 570 635 628 746 628"/>
+              <path class="flow auth" d="M450 490 C338 570 262 628 154 628"/>
+              <path class="flow data" d="M450 270 C328 308 250 354 154 384"/>
+              <path class="flow auto" d="M450 270 C572 308 650 354 746 384"/>
+              <path class="flow ton" d="M154 142 C130 310 130 476 154 628"/>
+              <path class="flow data" d="M746 142 C770 310 770 476 746 628"/>
+
+              <g class="map-node">
+                <rect x="72" y="84" width="164" height="112" rx="8" fill="rgba(246,200,90,0.12)" stroke="rgba(246,200,90,0.48)"/>
+                <text x="154" y="128" text-anchor="middle" class="map-label" data-i18n="thesis.architecture.text1">Сообщество</text>
+                <text x="154" y="154" text-anchor="middle" class="map-small" data-i18n="thesis.architecture.text2">Telegram, X</text>
+                <text x="154" y="176" text-anchor="middle" class="map-small" data-i18n="thesis.architecture.text3">социальные ритуалы</text>
+              </g>
+
+              <g class="map-node">
+                <rect x="664" y="84" width="164" height="112" rx="8" fill="rgba(99,236,255,0.12)" stroke="rgba(99,236,255,0.48)"/>
+                <text x="746" y="128" text-anchor="middle" class="map-label" data-i18n="thesis.architecture.text4">Работающие игры</text>
+                <text x="746" y="154" text-anchor="middle" class="map-small" data-i18n="thesis.architecture.text5">Tap, Run, Hop</text>
+                <text x="746" y="176" text-anchor="middle" class="map-small" data-i18n="thesis.architecture.text6">Telegram + Vercel</text>
+              </g>
+
+              <g class="map-node" filter="url(#thesisGlow)">
+                <path d="M450 238 L562 302 L562 440 L450 504 L338 440 L338 302 Z" fill="url(#thesisCore)" stroke="#fff0bd" stroke-width="3"/>
+                <text x="450" y="358" text-anchor="middle" fill="#140f09" font-size="32" font-weight="950" data-i18n="thesis.architecture.text7">$TCULT</text>
+                <text x="450" y="388" text-anchor="middle" fill="#241707" font-size="15" font-weight="850" data-i18n="thesis.architecture.text8">ядро культуры + продукта</text>
+              </g>
+
+              <g class="map-node">
+                <rect x="52" y="328" width="204" height="122" rx="8" fill="rgba(255,122,61,0.115)" stroke="rgba(255,122,61,0.48)"/>
+                <text x="154" y="372" text-anchor="middle" class="map-label" data-i18n="thesis.architecture.text9">Terminal</text>
+                <text x="154" y="400" text-anchor="middle" class="map-small" data-i18n="thesis.architecture.text10">доказательства через бота</text>
+                <text x="154" y="422" text-anchor="middle" class="map-small" data-i18n="thesis.architecture.text11">цель: Hostinger</text>
+              </g>
+
+              <g class="map-node">
+                <rect x="644" y="328" width="204" height="122" rx="8" fill="rgba(114,216,135,0.12)" stroke="rgba(114,216,135,0.5)"/>
+                <text x="746" y="370" text-anchor="middle" class="map-label" data-i18n="thesis.architecture.text12">Guard</text>
+                <text x="746" y="398" text-anchor="middle" class="map-small" data-i18n="thesis.architecture.text13">доказательства маршрутов</text>
+                <text x="746" y="420" text-anchor="middle" class="map-small" data-i18n="thesis.architecture.text14">ворота релиза Vercel</text>
+              </g>
+
+              <g class="map-node">
+                <rect x="72" y="572" width="164" height="112" rx="8" fill="rgba(255,125,165,0.105)" stroke="rgba(255,125,165,0.48)"/>
+                <text x="154" y="616" text-anchor="middle" class="map-label" data-i18n="thesis.architecture.text15">Доказательства</text>
+                <text x="154" y="642" text-anchor="middle" class="map-small" data-i18n="thesis.architecture.text16">TonAPI, TON Center</text>
+                <text x="154" y="664" text-anchor="middle" class="map-small" data-i18n="thesis.architecture.text17">поставщики только для чтения</text>
+              </g>
+
+              <g class="map-node">
+                <rect x="664" y="572" width="164" height="112" rx="8" fill="rgba(246,200,90,0.105)" stroke="rgba(246,200,90,0.48)"/>
+                <text x="746" y="616" text-anchor="middle" class="map-label" data-i18n="thesis.architecture.text18">Ворота релиза</text>
+                <text x="746" y="642" text-anchor="middle" class="map-small" data-i18n="thesis.architecture.text19">деплой, DNS, QA</text>
+                <text x="746" y="664" text-anchor="middle" class="map-small" data-i18n="thesis.architecture.text20">одобрение человеком</text>
+              </g>
+
+              <g>
+                <rect x="324" y="64" width="252" height="76" rx="8" fill="rgba(255,255,255,0.055)" stroke="rgba(255,255,255,0.16)"/>
+                <text x="450" y="98" text-anchor="middle" class="map-label" data-i18n="thesis.architecture.text21">Поверхность Telegram</text>
+                <text x="450" y="122" text-anchor="middle" class="map-small" data-i18n="thesis.architecture.text22">@TCultPlushBot + мини-приложения</text>
+                <path class="flow data" d="M450 140 L450 236"/>
+              </g>
+
+              <g>
+                <rect x="306" y="620" width="288" height="70" rx="8" fill="rgba(255,255,255,0.055)" stroke="rgba(255,255,255,0.16)"/>
+                <text x="450" y="650" text-anchor="middle" class="map-label" data-i18n="thesis.architecture.text23">Поздние функции</text>
+                <text x="450" y="674" text-anchor="middle" class="map-small" data-i18n="thesis.architecture.text24">сохранение за воротами + действия с подписью</text>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="watch">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow" data-i18n="thesis.watch.span1">За чем следить</span>
+            <h2 data-i18n="thesis.watch.h21">Сигнал является не одним анонсом. Это паттерн.</h2>
+            <p class="lead" data-i18n="thesis.watch.p1">Текущий сигнал измерим: четыре игры работают, Terminal проверен локально на фикстурах, а Guard V1 реализован локально. Публичные ссылки и язык релизов следуют за деплоем, настройкой и мобильным QA.</p>
+          </div>
+          <div class="note" data-i18n="thesis.watch.div1">Будущее должно ощущаться интригующим, не становясь расплывчатым. Сообщество должно знать линии и чувствовать импульс.</div>
+        </div>
+
+        <div class="grid three">
+          <article class="card image-card">
+            <video src="../assets/videos/spark-builds-arcade.mp4" autoplay muted loop playsinline poster="../assets/posters/public/spark-builds-arcade.png"></video>
+            <div class="card-body"><span class="tag" data-i18n="thesis.watch.span2">Аркада</span><h3 data-i18n="thesis.watch.h31">Больше играбельных ритуалов.</h3><p data-i18n="thesis.watch.p2">Ожидайте, что аркадная линия продолжит развиваться как самый быстрый способ участия для сообщества.</p></div>
+          </article>
+          <article class="card image-card">
+            <img src="../assets/utility/tcult-terminal-ledger-architecture-640x360.webp" alt="$TCULT Terminal: Cipher направляет сигнал TON, пока Ledger проверяет карточку доказательств." loading="lazy" decoding="async" data-i18n-attr="alt:thesis.watch.img1Alt">
+            <div class="card-body"><span class="tag ton" data-i18n="thesis.watch.span3">В разработке</span><h3 data-i18n="thesis.watch.h32">$TCULT Terminal</h3><p data-i18n="thesis.watch.p3">Поток доказательств на основе бота проверен локально. Продакшен-деплой и живое QA в Telegram остаются открытыми воротами.</p></div>
+          </article>
+          <article class="card image-card">
+            <img src="../assets/utility/tcult-guard-route-gate-640x360.webp" alt="$TCULT Guard: Ledger и Aegis проверяют светящиеся ворота маршрута TON перед тем, как пользователь продолжит." loading="lazy" decoding="async" data-i18n-attr="alt:thesis.watch.img2Alt">
+            <div class="card-body"><span class="tag ember" data-i18n="thesis.watch.span4">В производстве</span><h3 data-i18n="thesis.watch.h33">$TCULT Guard</h3><p data-i18n="thesis.watch.p4">Guard V1 реализован локально, пока повторный деплой, DNS, настройка Telegram, настройка поставщиков и мобильное QA остаются открытыми.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer-inner">
+      <div class="footer-stack">
+        <p data-i18n="thesis.page.p1">У $TCULT четыре работающие игры, нативные для Telegram, Terminal в разработке, Guard в производстве и $GRAM как нативная монета TON.</p>
+        <p class="footer-credit" data-i18n="thesis.page.p2">$TCULT никогда не попросит пользователей мигрировать, обменивать, забирать, переводить через мост или конвертировать активы по ссылке. Относитесь к любой такой просьбе как к подозрительной. [REVIEW]</p>
+        <div class="footer-credit" data-i18n="thesis.page.div1">Разработано <a href="https://x.com/CryptoChucker" target="_blank" rel="noopener">CryptoChucker</a>.</div>
+      </div>
+      <div class="actions" style="margin-top:0">
+        <a class="btn primary" href="index.html" data-i18n="thesis.page.a4">Главная портала</a>
+        <a class="btn" href="lore.html" data-i18n="thesis.page.a5">Страница лора</a>
+        <a class="btn" href="whitepaper/TCULT_TON_BLOCKCHAIN_UTILITY_WHITE_PAPER.html" data-i18n="thesis.page.a6">Читать белую книгу</a>
+        <a class="btn" href="https://t.me/TCULT_GROUP" target="_blank" rel="noopener" data-i18n="nav.telegramCta">Telegram</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    (function setupMotionBackgrounds() {
+      var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      var motionVideos = Array.prototype.slice.call(document.querySelectorAll("video[autoplay], [data-motion-background]"));
+
+      function syncMotion() {
+        motionVideos.forEach(function(video) {
+          if (reducedMotion.matches || document.hidden) {
+            video.pause();
+            return;
+          }
+
+          video.muted = true;
+          var playRequest = video.play();
+          if (playRequest && typeof playRequest.catch === "function") {
+            playRequest.catch(function() {});
+          }
+        });
+      }
+
+      syncMotion();
+      document.addEventListener("visibilitychange", syncMotion);
+      if (typeof reducedMotion.addEventListener === "function") {
+        reducedMotion.addEventListener("change", syncMotion);
+      } else if (typeof reducedMotion.addListener === "function") {
+        reducedMotion.addListener(syncMotion);
+      }
+    })();
+  </script>
+  <script>
+    (function setupLocaleToggle() {
+      // Russian ships in the build but stays unlinked until native-speaker sign-off
+      // (i18n spec 7.3). Flip RU_PUBLIC to true to show the toggle and enable the
+      // first-visit redirect; the /ru/ pages themselves always show the toggle so a
+      // reviewer who lands there directly can get back to English.
+      var RU_PUBLIC = false;
+      var KEY = "tcult.locale";
+      var stored;
+      try { stored = window.localStorage.getItem(KEY); } catch (e) { stored = null; }
+      var onRuPage = /^\/ru\//.test(window.location.pathname);
+      if (RU_PUBLIC && !stored && !onRuPage && (navigator.language || "").toLowerCase().indexOf("ru") === 0) {
+        try { window.localStorage.setItem(KEY, "ru"); } catch (e) {}
+        window.location.replace("/ru" + window.location.pathname + window.location.search);
+        return;
+      }
+      if (RU_PUBLIC || onRuPage) {
+        document.querySelectorAll("[data-locale-toggle]").forEach(function(el) { el.removeAttribute("hidden"); });
+      }
+      document.querySelectorAll(".tcult-locale-toggle-link").forEach(function(link) {
+        link.addEventListener("click", function() {
+          try { window.localStorage.setItem(KEY, link.getAttribute("href").indexOf("/ru/") === 0 ? "ru" : "en"); } catch (e) {}
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
