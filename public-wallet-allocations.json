@@ -1,0 +1,115 @@
+{
+  "schemaVersion": "tcult.publicWalletAllocations.v1",
+  "project": "$TCULT",
+  "operator": "CryptoChucker",
+  "chain": "TON",
+  "publishedAt": "2026-08-26T14:31:49Z",
+  "snapshot": {
+    "checkedAt": "2026-08-26T14:31:49Z",
+    "source": "TonAPI public API",
+    "jettonMasterFriendlyAddress": "EQBbuFW3-zTqkL3ZMuVPVqGWOMHqh8e-uEfPDISDNpNouhBY",
+    "tokenRawAddress": "0:5bb855b7fb34ea90bdd932e54f56a19638c1ea87c7beb847cf0c8483369368ba",
+    "decimals": 9,
+    "issuedSupply": "750000000.000000000",
+    "policyAllocationBasis": "1000000000.000000000",
+    "mintable": true,
+    "verification": "none",
+    "holdersCount": 19
+  },
+  "ownershipDisclosure": {
+    "classification": "single-project-controlled-ownership-group",
+    "statement": "All addresses below with a published address are disclosed as one project-controlled ownership group and must not be counted as independent community holders.",
+    "roleLabelAuthority": "CryptoChucker public declaration",
+    "balanceEvidenceAuthority": "TON mainnet"
+  },
+  "roles": [
+    {
+      "id": "founder",
+      "publicLabel": "$TCULT Founder Allocation",
+      "address": "UQAprBkBLgUs1QdBa4BchI5sjvCVUJ5p8YmX-ufWZeiX_x2i",
+      "policyAllocation": "50000000.000000000",
+      "issuedAllocation": "50000000.000000000",
+      "observedBalance": "50000000.000000000",
+      "status": "issued-and-held",
+      "explorerUrl": "https://tonviewer.com/UQAprBkBLgUs1QdBa4BchI5sjvCVUJ5p8YmX-ufWZeiX_x2i"
+    },
+    {
+      "id": "community-reserve",
+      "publicLabel": "$TCULT Community Reserve",
+      "address": "UQAAUEuJNXJDTkHA3-IEh6yboHsZjailR9G5NeNTFh5ATPH8",
+      "policyAllocation": "100000000.000000000",
+      "issuedAllocation": "100000000.000000000",
+      "observedBalance": "100000000.000000000",
+      "status": "issued-and-held",
+      "explorerUrl": "https://tonviewer.com/UQAAUEuJNXJDTkHA3-IEh6yboHsZjailR9G5NeNTFh5ATPH8"
+    },
+    {
+      "id": "marketing-operations",
+      "publicLabel": "$TCULT Marketing and Operations",
+      "address": "UQAciXuxtE2W6K8DdztXmzMRdiiC6JRofBX9ORwspf1WI633",
+      "policyAllocation": "100000000.000000000",
+      "issuedAllocation": "100000000.000000000",
+      "observedBalance": "100000000.000000000",
+      "status": "issued-and-held",
+      "explorerUrl": "https://tonviewer.com/UQAciXuxtE2W6K8DdztXmzMRdiiC6JRofBX9ORwspf1WI633"
+    },
+    {
+      "id": "public-float-reserve",
+      "publicLabel": "$TCULT Public Float Reserve",
+      "address": "UQD-zCRDWZyHDLPHWpR0RNg4wnqx0UdezudvXKc6gCByHPk4",
+      "policyAllocation": "200000000.000000000",
+      "issuedAllocation": "200000000.000000000",
+      "observedBalance": "200000000.000000000",
+      "status": "issued-and-held",
+      "explorerUrl": "https://tonviewer.com/UQD-zCRDWZyHDLPHWpR0RNg4wnqx0UdezudvXKc6gCByHPk4"
+    },
+    {
+      "id": "liquidity-owner",
+      "publicLabel": "$TCULT Liquidity Owner",
+      "address": "UQA5fik2XdotO0I4IKuVmXXaUFU9qYtALPYuHvO3KHvy0zbB",
+      "policyAllocation": "300000000.000000000",
+      "issuedAllocation": "300000000.000000000",
+      "observedBalance": "0.000000000",
+      "status": "issued-and-deposited-to-stonfi-pool",
+      "disposition": "Initial allocation deposited to the live STON.fi V2 $TCULT/$GRAM pool. Initial LP retained under public-hold policy. LP is not represented as contract-locked.",
+      "poolAddress": "EQCXlhueJOsSjauajRJAc1VcgxnYU4G5Z8AmBxZcG56IVB7P",
+      "lpWalletAddress": "EQDchKFxRctsCkVu4aIvrVEyTZpEpdT4t_A4JsRO6fhTg50T",
+      "explorerUrl": "https://tonviewer.com/UQA5fik2XdotO0I4IKuVmXXaUFU9qYtALPYuHvO3KHvy0zbB"
+    },
+    {
+      "id": "deploy-admin",
+      "publicLabel": "$TCULT Deploy and Admin Wallet",
+      "address": "UQB7NKHSugzMqa_qdhIKRNRvZN4ofH8nRPDhPGce78Ps76OD",
+      "policyAllocation": "0.000000000",
+      "issuedAllocation": "0.000000000",
+      "observedBalance": "0.000000000",
+      "status": "active-contract-admin",
+      "disposition": "Active admin authority. No $TCULT allocation. Minting capability remains disclosed.",
+      "explorerUrl": "https://tonviewer.com/UQB7NKHSugzMqa_qdhIKRNRvZN4ofH8nRPDhPGce78Ps76OD"
+    },
+    {
+      "id": "treasury-multisig",
+      "publicLabel": "$TCULT Treasury Multisig",
+      "address": null,
+      "policyAllocation": "150000000.000000000",
+      "issuedAllocation": "0.000000000",
+      "observedBalance": null,
+      "status": "not-created-not-issued"
+    },
+    {
+      "id": "holder-migration",
+      "publicLabel": "$TCULT Holder Migration",
+      "address": null,
+      "policyAllocation": "100000000.000000000",
+      "issuedAllocation": "0.000000000",
+      "observedBalance": null,
+      "status": "recipient-set-not-frozen-not-issued"
+    }
+  ],
+  "excludedFromPublicAllocationRegister": [
+    {
+      "role": "security-only signer candidate",
+      "reason": "No allocation and no active treasury multisig role. Tracked internally, not presented as an allocation wallet."
+    }
+  ]
+}
